@@ -1,0 +1,53 @@
+{
+  "name": "@use-cdn/monorepo",
+  "private": true,
+  "version": "1.0.0-alpha.1",
+  "description": "use-cdn is a suite of packages helping with the use of CDNs in testing.",
+  "repository": "https://github.com/lemur-lake-software/use-cdn.git",
+  "scripts": {
+    "test": "nyc monist run --serial --local-deps=install test",
+    "clean": "monist run clean",
+    "postinstall": "link-parent-bin",
+    "lint": "npmPkgJsonLint package.json",
+    "self:publish": "monist npm --serial publish",
+    "self:test-publish": "env npm_config_registry=http://localhost:4873 npm run self:publish",
+    "preversion": "monist npm --serial version $npm_package_version",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
+    "postversion": "monist update-versions $npm_package_version && git add package.json package-lock.json packages/*/package.json && git commit -m'build: version bump' && git tag -a v$npm_package_version && npm run test && npm run self:publish",
+    "distclean": "rm -rf node_modules && monist run distclean",
+    "packages-distclean": "monist run distclean"
+  },
+  "keywords": [
+    "cdn",
+    "testing"
+  ],
+  "author": "Louis-Dominique <ldd@lddubeau.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/cli": "^7.5.2",
+    "@commitlint/config-angular": "^7.5.0",
+    "chai": "^4.2.0",
+    "conventional-changelog-cli": "^2.0.12",
+    "eslint": "^5.15.1",
+    "eslint-config-lddubeau-base": "^3.0.1",
+    "expect-rejection": "^1.1.0",
+    "fs-extra": "^7.0.1",
+    "husky": "^1.3.1",
+    "link-parent-bin": "^1.0.0",
+    "log4js": "^4.1.0",
+    "mocha": "^6.1.4",
+    "mock-fs": "^4.8.0",
+    "nock": "^10.0.6",
+    "nyc": "^14.0.0",
+    "renovate-config-lddubeau": "^1.0.0",
+    "require-reload": "^0.2.2",
+    "sinon": "^7.3.1",
+    "sinon-chai": "^3.3.0",
+    "superagent": "^5.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "@use-cdn/common",
+  "version": "1.0.0-alpha.1",
+  "description": "This is the common code for the suite of use-cdn packages.",
+  "files": [
+    "*.js",
+    "sessions/**/*.js"
+  ],
+  "repository": "https://github.com/lemur-lake-software/use-cdn.git",
+  "scripts": {
+    "test": "mocha",
+    "posttest": "eslint *.js 'test/**/*.js'"
+  },
+  "keywords": [
+    "cdn",
+    "testing"
+  ],
+  "author": "Louis-Dominique <ldd@lddubeau.com>",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^7.0.1",
+    "log4js": "^4.1.0",
+    "require-reload": "^0.2.2",
+    "superagent": "^5.0.2"
+  }
+}

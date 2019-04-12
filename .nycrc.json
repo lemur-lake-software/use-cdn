@@ -1,0 +1,10 @@
+{
+  "exclude": [
+    "**/.eslintrc.js",
+    "**/.mocharc.js",
+    "**/test",
+    "**/use-cdn.conf.js"
+  ],
+  "reporter": ["text-summary", "html"],
+  "report-dir": "coverage"
+}

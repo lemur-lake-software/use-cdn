@@ -1,0 +1,24 @@
+{
+  "name": "@use-cdn/karma",
+  "version": "1.0.0-alpha.1",
+  "description": "This is the Karma framework for using use-cdn in Karma.",
+  "files": [
+    "index.js",
+    "src/**/*.js"
+  ],
+  "repository": "https://github.com/lemur-lake-software/use-cdn.git",
+  "scripts": {
+    "test": "mocha",
+    "posttest": "eslint *.js test/*.js"
+  },
+  "keywords": [
+    "cdn",
+    "testing",
+    "karma"
+  ],
+  "author": "Louis-Dominique <ldd@lddubeau.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@use-cdn/common": "1.0.0-alpha.1"
+  }
+}

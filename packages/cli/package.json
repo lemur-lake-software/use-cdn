@@ -1,0 +1,26 @@
+{
+  "name": "@use-cdn/cli",
+  "version": "1.0.0-alpha.1",
+  "description": "This is the cli utility for the use-cdn suite of packages.",
+  "bin": {
+    "use-cdn": "./bin/use-cdn"
+  },
+  "files": [
+    "bin/**/*",
+    "index.js"
+  ],
+  "repository": "https://github.com/lemur-lake-software/use-cdn.git",
+  "scripts": {
+    "test": "mocha",
+    "posttest": "eslint *.js test/*.js"
+  },
+  "keywords": [
+    "cdn",
+    "testing"
+  ],
+  "author": "Louis-Dominique <ldd@lddubeau.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@use-cdn/common": "1.0.0-alpha.1"
+  }
+}
