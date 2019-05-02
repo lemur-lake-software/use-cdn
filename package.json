@@ -27,7 +27,7 @@
     "@commitlint/cli": "^7.5.2",
     "@commitlint/config-angular": "^7.5.0",
     "chai": "^4.2.0",
-    "conventional-changelog-cli": "^2.0.12",
+    "conventional-changelog-cli": "^2.0.17",
     "eslint": "^5.15.1",
     "eslint-config-lddubeau-base": "^3.0.1",
     "expect-rejection": "^1.1.0",
