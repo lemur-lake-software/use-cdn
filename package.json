@@ -1,7 +1,7 @@
 {
   "name": "@use-cdn/monorepo",
   "private": true,
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0",
   "description": "use-cdn is a suite of packages helping with the use of CDNs in testing.",
   "repository": "https://github.com/lemur-lake-software/use-cdn.git",
   "scripts": {

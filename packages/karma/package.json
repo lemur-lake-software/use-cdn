@@ -1,6 +1,6 @@
 {
   "name": "@use-cdn/karma",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0",
   "description": "This is the Karma framework for using use-cdn in Karma.",
   "files": [
     "index.js",
@@ -19,6 +19,6 @@
   "author": "Louis-Dominique <ldd@lddubeau.com>",
   "license": "MIT",
   "dependencies": {
-    "@use-cdn/common": "1.0.0-alpha.1"
+    "@use-cdn/common": "1.0.0"
   }
 }

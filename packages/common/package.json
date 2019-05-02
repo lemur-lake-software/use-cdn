@@ -1,6 +1,6 @@
 {
   "name": "@use-cdn/common",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0",
   "description": "This is the common code for the suite of use-cdn packages.",
   "files": [
     "*.js",
