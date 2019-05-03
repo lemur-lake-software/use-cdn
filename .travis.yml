@@ -4,3 +4,8 @@ node_js:
   - 10
   - 8
 cache: npm
+# Developers do not need coveralls installed locally while developing. So
+# there's no great benefit to adding it to devDependencies. Instead, we install
+# it here.
+before_script: npm i --no-save coveralls
+after_success: npm run coverage

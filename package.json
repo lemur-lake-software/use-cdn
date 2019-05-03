@@ -6,6 +6,7 @@
   "repository": "https://github.com/lemur-lake-software/use-cdn.git",
   "scripts": {
     "test": "nyc monist run --serial --local-deps=install test",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "clean": "monist run clean",
     "postinstall": "link-parent-bin",
     "lint": "npmPkgJsonLint package.json",
