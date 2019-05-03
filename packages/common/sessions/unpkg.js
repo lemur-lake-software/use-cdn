@@ -1,5 +1,8 @@
 "use strict";
 
+// We need this on Node 8.
+const { URL } = require("url");
+
 const superagent = require("superagent");
 
 const unpkgBase = "https://unpkg.com/";
