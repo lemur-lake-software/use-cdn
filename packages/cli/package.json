@@ -12,7 +12,8 @@
   "repository": "https://github.com/lemur-lake-software/use-cdn.git",
   "scripts": {
     "test": "mocha",
-    "posttest": "eslint *.js test/*.js"
+    "posttest": "eslint *.js test/*.js",
+    "distclean": "rm -rf node_modules"
   },
   "keywords": [
     "cdn",
