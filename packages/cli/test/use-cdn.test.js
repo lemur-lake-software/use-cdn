@@ -74,16 +74,14 @@ module.exports = [{
                                              "-type", "f"]);
     const bs3 = "3.4.1";
     const jq3 = "3.4.1";
-    expect(stdout).to.equal(`\
+    expect(stdout.split("\n").sort().join("\n")).to.equal(`
 test/tmp/.use-cdn/cache/bootstrap/${bs3}/dist/js/bootstrap.js
 test/tmp/.use-cdn/cache/jquery/${jq3}/dist/jquery.js
-test/tmp/.use-cdn/meta
-`);
+test/tmp/.use-cdn/meta`);
     ({ stdout } = await execFile("find", [path.join(tmpdir, ".use-cdn/"),
                                           "-type", "l", "-printf", "%p %l\n"]));
-    expect(stdout).to.equal(`\
+    expect(stdout.split("\n").sort().join("\n")).to.equal(`
 test/tmp/.use-cdn/cache/bootstrap/3 ${bs3}
-test/tmp/.use-cdn/cache/jquery/latest ${jq3}
-`);
+test/tmp/.use-cdn/cache/jquery/latest ${jq3}`);
   });
 });
