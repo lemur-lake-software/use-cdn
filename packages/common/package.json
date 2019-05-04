@@ -22,6 +22,6 @@
     "fs-extra": "^7.0.1",
     "log4js": "^4.1.0",
     "require-reload": "^0.2.2",
-    "superagent": "^5.0.2"
+    "superagent": "^5.0.5"
   }
 }
