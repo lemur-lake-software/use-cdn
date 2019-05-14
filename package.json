@@ -33,7 +33,7 @@
     "eslint-config-lddubeau-base": "^3.0.3",
     "expect-rejection": "^1.1.0",
     "fs-extra": "^7.0.1",
-    "husky": "^2.2.0",
+    "husky": "^2.3.0",
     "link-parent-bin": "^1.0.0",
     "log4js": "^4.2.0",
     "mocha": "^6.1.4",
