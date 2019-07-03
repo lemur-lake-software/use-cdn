@@ -19,6 +19,7 @@
   "author": "Louis-Dominique <ldd@lddubeau.com>",
   "license": "MIT",
   "dependencies": {
+    "ajv": "^6.10.0",
     "fs-extra": "^8.1.0",
     "log4js": "^4.5.0",
     "require-reload": "^0.2.2",

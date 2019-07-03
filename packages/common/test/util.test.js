@@ -1,10 +1,76 @@
 "use strict";
 
 const { expect } = require("chai");
+const fs = require("fs-extra");
 
-const { applyOverride, isTag, __test } = require("../util");
+const { applyOverride, isTag, loadConfig, __test } = require("../util");
 
 describe("util", () => {
+  // The loadConfig tests must access the actual filesystem. mock-fs does not
+  // work for this because loadConfig uses require to load the configuration as
+  // a module. We also tried proxyquire but it intercepts only *direct*
+  // dependencies, but the configuration file is loaded through require-reload
+  // and so it is not direct.
+  describe("loadConfig", () => {
+    before(async () => {
+      // Make sure we don't overwrite something.
+      try {
+        await fs.access("./use-cdn.conf.js");
+        throw new Error("./use-cdn.conf.js already exists");
+      }
+      catch (ex) {
+        if (ex.code !== "ENOENT") {
+          throw ex;
+        }
+      }
+    });
+
+    afterEach(async () => {
+      // Clean up after each test.
+      await fs.unlink("./use-cdn.conf.js");
+    });
+
+    it("loads an empty array", async () => {
+      await fs.writeFile("./use-cdn.conf.js", "module.exports = [];");
+      loadConfig();
+    });
+
+    it("loads an array", async () => {
+      await fs.writeFile("./use-cdn.conf.js", `
+module.exports = [{
+  package: "jquery",
+  version: "latest",
+  files: [
+    "jquery.js",
+  ],
+}];
+`);
+      loadConfig();
+    });
+
+    it("fails on incorrect data", async () => {
+      await fs.writeFile("./use-cdn.conf.js", `
+module.exports = [{
+  package: "jquery",
+}];
+`);
+      expect(loadConfig).to.throw(Error);
+    });
+
+    it("reports bad file", async () => {
+      await fs.writeFile("./use-cdn.conf.js", `
+module.exports = [{
+  package: "jquery",
+  version: "latest",
+  files: [
+    1,
+  ]
+}];
+`);
+      expect(loadConfig).to.throw(Error, /value is not a file/);
+    });
+  });
+
   describe("isTag", () => {
     for (const x of [
       "1.2.3",

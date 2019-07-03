@@ -2,7 +2,9 @@
 
 const path = require("path");
 
+const Ajv = require("ajv");
 const reload = require("require-reload")(require);
+const configSchema = require("./config-schema");
 
 /**
  * Determine whether a string marks a tag (in the NPM sense of the term "tag")
@@ -78,6 +80,39 @@ function applyOverride(pkg, versionOrTag) {
   return override !== undefined ? override : versionOrTag;
 }
 
+const ajv = new Ajv();
+
+function validateUCType(schema, data) {
+  if (schema === "file") {
+    if (!["function", "string"].includes(typeof data)) {
+      validateUCType.errors = [{
+        keyword: "uc-type",
+        message: "value is not a file",
+        params: { data },
+      }];
+
+      return false;
+    }
+  }
+  else {
+    validateUCType.errors = [{
+      keyword: "uc-type",
+      message: "the value can only be 'file'",
+    }];
+
+    return false;
+  }
+
+  return true;
+}
+
+ajv.addKeyword("uc-type", {
+  validate: validateUCType,
+  errors: true,
+});
+
+const configValidator = ajv.compile(configSchema);
+
 /**
  * Load the configuration for use-cdn. This loads the file ``use-cdn.conf.js``
  * in the cwd of the current process.
@@ -86,7 +121,16 @@ function applyOverride(pkg, versionOrTag) {
  */
 function loadConfig() {
   // eslint-disable-next-line import/no-dynamic-require, global-require
-  return reload(path.resolve("./use-cdn.conf.js"));
+  const config = reload(path.resolve("./use-cdn.conf.js"));
+
+  if (!configValidator(config)) {
+    throw new Error(`the options passed to wed are not valid: ${
+                    ajv.errorsText(configValidator.errors, {
+                      dataVar: "options",
+                    })}`);
+  }
+
+  return config;
 }
 
 exports.isTag = isTag;
