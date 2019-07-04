@@ -14,6 +14,11 @@ class FakeLogger {
   }
 }
 
+const EMPTY = {
+  cdns: {},
+  packages: [],
+};
+
 describe("UseCDN", () => {
   let logger;
 
@@ -64,20 +69,23 @@ describe("UseCDN", () => {
         scope = scope.get(url).reply(...responses[url]);
       }
 
-      const cdn = new UseCDN([{
-        package: "foo",
-        version: "1.0.0",
-        files: [
-          "a.js",
-          "b.js",
-        ],
-      }, {
-        package: "bar",
-        version: "latest",
-        files: [
-          version => (version === "1.0.0" ? "one.zero.zero.js" : "else.js"),
-        ],
-      }], logger);
+      const cdn = new UseCDN({
+        cdns: {},
+        packages: [{
+          package: "foo",
+          version: "1.0.0",
+          files: [
+            "a.js",
+            "b.js",
+          ],
+        }, {
+          package: "bar",
+          version: "latest",
+          files: [
+            version => (version === "1.0.0" ? "one.zero.zero.js" : "else.js"),
+          ],
+        }],
+      }, logger);
       await cdn.init();
       await cdn.resolve();
 
@@ -104,19 +112,19 @@ describe("UseCDN", () => {
 
   describe("#getSession", () => {
     it("throws if the object is not initialized", () => {
-      const cdn = new UseCDN([], logger);
+      const cdn = new UseCDN(EMPTY, logger);
       expect(() => cdn.getSession("unpkg"))
         .to.throw(Error, "the object has not been initialized");
     });
 
     it("returns the same session if called with same cdn", async () => {
-      const cdn = new UseCDN([], logger);
+      const cdn = new UseCDN(EMPTY, logger);
       await cdn.init();
       expect(cdn.getSession("unpkg")).to.equal(cdn.getSession("unpkg"));
     });
 
     it("throws if called with an unsupported cdn", async () => {
-      const cdn = new UseCDN([], logger);
+      const cdn = new UseCDN(EMPTY, logger);
       await cdn.init();
       expect(() => cdn.getSession("cdnjs"))
         .to.throw(Error, "unsupported cdn: cdnjs");

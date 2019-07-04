@@ -2,27 +2,34 @@
 
 const { applyOverride } = require("./util");
 const { WritableCache } = require("./caching");
-const { UnpkgSession } = require("./sessions/unpkg");
-
-const sessionFactories = {
-  unpkg: UnpkgSession,
-};
+const { sessionFactories } = require("./sessions/all");
 
 /**
- * @typedef {object} Resource
+ * @typedef {object} PackageConfig
  *
- * @property {string} package The package to fetch.
+ * @prop {string} package The package to fetch.
  *
- * @property {string} version The version of the package, or a distribution tag.
+ * @prop {string} version The version of the package, or a distribution tag.
  *
- * @property {Array<string|Function>} files An array specifying the files to get
- * from the package. When the array item is a function, it will be called with
- * the version number of the package. It must return a string which will be
+ * @prop {(string|Function)[]} files An array specifying the files to get from
+ * the package. When the array item is a function, it will be called with the
+ * version number of the package. It must return a string which will be
  * interpeted as a file name to fetch.
  */
 
 /**
- * @typedef {Array<Resource>} Config
+ * @typedef {object} CDNConfig
+ *
+ * @prop {string} url The URL at which this CDN resides.
+ */
+
+/**
+ * @typedef {object} Config
+ *
+ * @prop {Object.<string, CDNConfig>} cdns The configuration of each individual
+ * CDNs.
+ *
+ * @prop {PackageConfig[]} packages The packages to fetch.
  */
 
 /**
@@ -70,11 +77,11 @@ class UseCDN {
    */
   async resolve() {
     this.assertInitialized();
-    const { config } = this;
+    const { config: { packages } } = this;
     const promises = [];
-    for (const spec of config) {
-      const { package: pkg, files } = spec;
-      const session = this.getSession(spec.cdn);
+    for (const spec of packages) {
+      const { cdn, package: pkg, files } = spec;
+      const session = this.getSession(cdn);
 
       const version = applyOverride(pkg, spec.version);
       for (const pathToServe of files) {
@@ -109,7 +116,8 @@ class UseCDN {
         throw new Error(`unsupported cdn: ${cdn}`);
       }
       // eslint-disable-next-line new-cap
-      session = this.sessions[cdn] = new factory(this.logger, this.cache);
+      session = this.sessions[cdn] = new factory(this.config.cdns[cdn],
+                                                 this.logger, this.cache);
     }
 
     return session;

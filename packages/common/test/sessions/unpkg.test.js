@@ -41,7 +41,7 @@ describe("UnpkgSession", () => {
   describe("#constructor", () => {
     it("constructs", () => {
       // eslint-disable-next-line no-new
-      new UnpkgSession(logger, cache);
+      new UnpkgSession(undefined, logger, cache);
     });
   });
 
@@ -51,8 +51,8 @@ describe("UnpkgSession", () => {
     let session;
     let expectedPath;
 
-    function makeScope() {
-      scope = nock("https://unpkg.com")
+    function makeScope(url = "https://unpkg.com") {
+      scope = nock(url)
         .get("/foo@1.0.0")
         .reply(302, "", { location: "/foo@1.0.0/blah.js" })
         .get("/foo@1.0.0/dist/foo.js")
@@ -64,7 +64,7 @@ describe("UnpkgSession", () => {
     });
 
     beforeEach(() => {
-      session = new UnpkgSession(logger, cache);
+      session = new UnpkgSession(undefined, logger, cache);
     });
 
     it("calls `file` if it is a function", async () => {
@@ -155,6 +155,18 @@ describe("UnpkgSession", () => {
         scope.done();
       });
     });
+
+    describe("when ``url`` is used", () => {
+      beforeEach(() => {
+        session = new UnpkgSession({ url: "https://mirror" }, logger, cache);
+      });
+
+      it("takes ``url`` into account", async () => {
+        makeScope("https://mirror/");
+        expect(await session.resolve(...stockResource)).to.equal(expectedPath);
+        scope.done();
+      });
+    });
   });
 
   describe("#resolveToVersion", () => {
@@ -162,7 +174,7 @@ describe("UnpkgSession", () => {
     let session;
 
     beforeEach(() => {
-      session = new UnpkgSession(logger, cache);
+      session = new UnpkgSession(undefined, logger, cache);
     });
 
     describe("when passed a version", () => {
@@ -242,7 +254,7 @@ describe("UnpkgSession", () => {
             expect(await session.resolveToVersion("foo", "1.0.0"))
               .to.equal("1.0.0");
 
-            const session2 = new UnpkgSession(logger, cache);
+            const session2 = new UnpkgSession(undefined, logger, cache);
             expect(await session2.resolveToVersion("foo", "1.0.0"))
               .to.equal("1.0.0");
 
@@ -358,7 +370,7 @@ package: bar@3.3.3");
             expect(await session.resolveToVersion(...stockResource))
               .to.equal("1.0.0");
 
-            const session2 = new UnpkgSession(logger, cache);
+            const session2 = new UnpkgSession(undefined, logger, cache);
             expect(await session2.resolveToVersion(...stockResource))
               .to.equal("2.0.0");
 
@@ -421,17 +433,31 @@ package: bar@3.3.3");
 
   describe("#makePackageUrl", () => {
     it("makes a package URL", () => {
-      const session = new UnpkgSession(logger, cache);
+      const session = new UnpkgSession(undefined, logger, cache);
       expect(session.makePackageUrl("foo", "1.0.0"))
         .to.equal("https://unpkg.com/foo@1.0.0");
+    });
+
+    it("uses the ``url`` configuration option", () => {
+      const session = new UnpkgSession({ url: "https://mirror" },
+                                       logger, cache);
+      expect(session.makePackageUrl("foo", "1.0.0"))
+        .to.equal("https://mirror/foo@1.0.0");
     });
   });
 
   describe("#makeFileUrl", () => {
     it("makes a file URL", () => {
-      const session = new UnpkgSession(logger, cache);
+      const session = new UnpkgSession(undefined, logger, cache);
       expect(session.makeFileUrl("foo", "1.0.0", "dist/foo.js"))
         .to.equal("https://unpkg.com/foo@1.0.0/dist/foo.js");
+    });
+
+    it("uses the ``url`` configuration options", () => {
+      const session = new UnpkgSession({ url: "https://mirror/" },
+                                       logger, cache);
+      expect(session.makeFileUrl("foo", "1.0.0", "dist/foo.js"))
+        .to.equal("https://mirror/foo@1.0.0/dist/foo.js");
     });
   });
 });

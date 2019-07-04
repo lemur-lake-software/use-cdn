@@ -5,8 +5,6 @@ const { URL } = require("url");
 
 const superagent = require("superagent");
 
-const unpkgBase = "https://unpkg.com/";
-
 /**
  * This class models one session of access to the Unpkg CDN.
  *
@@ -17,12 +15,22 @@ const unpkgBase = "https://unpkg.com/";
  */
 class UnpkgSession {
   /**
+   * @param {CDNConfig} config The CDN configuration.
+   *
    * @param {object} logger The logger to use. It must be an object supporting
    * the log4js methods.
    *
    * @param {WritableCache} cache The cache to write to.
    */
-  constructor(logger, cache) {
+  constructor(config, logger, cache) {
+    this.config = config || {};
+    this.base = this.config.url || "https://unpkg.com/";
+
+    // This is crude but it work.
+    if (!this.base.endsWith("/")) {
+      this.base += "/";
+    }
+
     this.logger = logger;
     this.cache = cache;
     this.packageToResolved = Object.create(null);
@@ -137,7 +145,7 @@ package: ${location}`);
    */
   // eslint-disable-next-line class-methods-use-this
   makePackageUrl(pkg, version) {
-    return `${unpkgBase}${pkg}@${version}`;
+    return `${this.base}${pkg}@${version}`;
   }
 
   /**

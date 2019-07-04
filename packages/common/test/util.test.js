@@ -48,6 +48,47 @@ module.exports = [{
       loadConfig();
     });
 
+    it("loads an object", async () => {
+      await fs.writeFile("./use-cdn.conf.js", `
+module.exports = {
+  cdns: {
+    unpkg: {
+      url: "https://fnord",
+    },
+  },
+  packages: [{
+    package: "jquery",
+    version: "latest",
+    files: [
+      "jquery.js",
+    ],
+  }],
+};
+`);
+      loadConfig();
+    });
+
+    it("fails on unknown CDN in cdns", async () => {
+      await fs.writeFile("./use-cdn.conf.js", `
+module.exports = {
+  cdns: {
+    fnord: {
+      url: "https://fnord",
+    },
+  },
+  packages: [{
+    package: "jquery",
+    version: "latest",
+    files: [
+      "jquery.js",
+    ],
+  }],
+};
+`);
+      expect(loadConfig)
+        .to.throw(Error, /unknown CDN in the cdns configuration option: fnord/);
+    });
+
     it("fails on incorrect data", async () => {
       await fs.writeFile("./use-cdn.conf.js", `
 module.exports = [{

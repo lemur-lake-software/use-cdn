@@ -5,6 +5,7 @@ const path = require("path");
 const Ajv = require("ajv");
 const reload = require("require-reload")(require);
 const configSchema = require("./config-schema");
+const { sessionFactories } = require("./sessions/all");
 
 /**
  * Determine whether a string marks a tag (in the NPM sense of the term "tag")
@@ -121,13 +122,31 @@ const configValidator = ajv.compile(configSchema);
  */
 function loadConfig() {
   // eslint-disable-next-line import/no-dynamic-require, global-require
-  const config = reload(path.resolve("./use-cdn.conf.js"));
+  let config = reload(path.resolve("./use-cdn.conf.js"));
 
   if (!configValidator(config)) {
     throw new Error(`the options passed to wed are not valid: ${
                     ajv.errorsText(configValidator.errors, {
                       dataVar: "options",
                     })}`);
+  }
+
+  // Normalize config to the full object structure.
+  if (Array.isArray(config)) {
+    config = {
+      packages: config,
+    };
+  }
+
+  if (!config.cdns) {
+    config.cdns = {};
+  }
+  else {
+    for (const key in config.cdns) {
+      if (!(key in sessionFactories)) {
+        throw new Error(`unknown CDN in the cdns configuration option: ${key}`);
+      }
+    }
   }
 
   return config;

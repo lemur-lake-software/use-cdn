@@ -1,8 +1,28 @@
 # Configuration
 
 Create a ``use-cdn.conf.js`` file in the cwd of your test runner. (This often is
-the top directory of your project.) It must export an array of objects with the
-following options:
+the top directory of your project.) It must export an object with the following
+options:
+
+* ``cdns: object`` (optional): this object allows configuring the various CDNs
+  that you use in your configuration. A key of this object is the name of a CDN
+  and the values are objects that contain configuration settings. See ``CDN
+  Configuration`` below.
+
+* ``packages: object``: an array of package configuration. See ``Package
+  Configuration`` below.
+
+## CDN Configuration
+
+A CDN configuration may contain the following settings:
+
+* ``url: string`` (optional): you would use this to override the default URL
+  associated with the CDN. This may be useful if you want to use a mirror of the
+  CDN, for instance.
+
+## Package Configuration
+
+Each package configuration is an object with the following fields:
 
 * ``package: string``: the name of the package. The specific format is dependent
   on the CDN you use.
@@ -12,7 +32,47 @@ following options:
 
 * ``files``: a list of files to get from the CDN.
 
-Here is an example that uses the ``unpkg.com`` CDN (which is the default):
+## Configuration Examples
+
+Here is an example that uses the ``unpkg.com`` CDN (which is the default), but
+overrides the default URL to use ``https://mirror/``:
+
+```
+const semver = require("semver");
+
+module.exports = {
+  cdns: {
+    unpkg: {
+      url: "https://mirror/",
+    },
+  },
+  packages: [{
+    package: "jquery",
+    version: "latest",
+    files: [
+      "dist/jquery.js",
+    ],
+  }, {
+    package: "bootstrap",
+    version: "latest",
+    files: [
+      version => `dist/js/bootstrap.${semver.intersects(version, ">=4") ?
+"bundle." : ""}js`,
+      "dist/css/bootstrap.css",
+    ],
+  }],
+};
+```
+
+This configuration fetches the JavaScript for the latest version of jQuery and
+fetches the JavaScript and CSS for the latest version of Bootstrap. The
+configuration for Bootstrap shows how a function can be used. Bootstrap 4
+changed the name of the JavaScript file that should be loaded so the function
+tests the version number to determine which file to request.
+
+If you need a configuration that only contains the ``packages`` array, you can
+reduce the configuration exported by your file to just that array, as in the
+following example:
 
 ```
 const semver = require("semver");
@@ -33,12 +93,6 @@ module.exports = [{
   ],
 }];
 ```
-
-This configuration fetches the JavaScript for the latest version of jQuery and
-fetches the JavaScript and CSS for the latest version of Bootstrap. The
-configuration for Bootstrap shows how a function can be used. Bootstrap 4
-changed the name of the JavaScript file that should be loaded so the function
-tests the version number to determine which file to request.
 
 # CDNs Supported
 

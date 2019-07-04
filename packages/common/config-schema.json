@@ -16,6 +16,10 @@
           "description": "The package's version.",
           "type": "string"
         },
+        "cdn": {
+          "description": "The name of the cdn to use. If unspecified, use the default CDN.",
+          "type": "string"
+        },
         "files": {
           "description": "The files to get.",
           "type": "array",
@@ -26,10 +30,46 @@
       },
       "required": ["package", "version", "files"],
       "additionalProperties": false
+    },
+    "cdn": {
+      "description": "Settings for a cdn.",
+      "type": "object",
+      "properties": {
+        "url": {
+          "description": "The CDNs url. Use this to override the default URL. This may be useful if you want to use a mirror of a well-known CDN. If the URL you pass here does not end with a forward slash, one will be added.",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
     }
   },
-  "type": "array",
-  "items": {
-    "$ref": "#/definitions/package"
-  }
+  "oneOf": [{
+    "type": "array",
+    "items": {
+      "$ref": "#/definitions/package"
+    }
+  }, {
+    "type": "object",
+    "properties": {
+      "cdns": {
+        "description": "Configuration for cdns.",
+        "type": "object",
+        "patternProperties": {
+          "^.*$": {
+            "$ref": "#/definitions/cdn"
+          }
+        }
+      },
+      "packages": {
+        "type": "array",
+        "items": {
+          "items": {
+            "$ref": "#/definitions/package"
+          }
+        }
+      }
+    },
+    "required": ["packages"],
+    "additionalProperties": false
+  }]
 }

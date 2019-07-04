@@ -13,11 +13,11 @@ const { SyncReadableCache } = require("./caching");
  * @returns {Array<string>} The list of file names to serve from the cache.
  */
 function getFileList(logger) {
-  const config = loadConfig();
+  const { packages } = loadConfig();
   const cache = new SyncReadableCache();
 
   const add = [];
-  for (const spec of config) {
+  for (const spec of packages) {
     const { package: pkg, files } = spec;
     const version = applyOverride(pkg, spec.version);
 
