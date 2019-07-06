@@ -9,6 +9,7 @@ const mockFs = require("mock-fs");
 const { expectRejection } = require("expect-rejection");
 
 const { WritableCache } = require("../../caching");
+const { BaseVersionResolver } = require("../../version-resolvers/base");
 const { UnpkgSession } = require("../../sessions/unpkg");
 
 use(sinonChai);
@@ -22,6 +23,7 @@ class FakeLogger {
 describe("UnpkgSession", () => {
   let logger;
   let cache;
+  let scope;
 
   before(() => {
     logger = new FakeLogger();
@@ -41,13 +43,14 @@ describe("UnpkgSession", () => {
   describe("#constructor", () => {
     it("constructs", () => {
       // eslint-disable-next-line no-new
-      new UnpkgSession(undefined, logger, cache);
+      new UnpkgSession(undefined, logger, cache,
+                       new UnpkgSession.NativeResolver(undefined, logger,
+                                                       cache));
     });
   });
 
   describe("#resolve", () => {
     const stockResource = ["foo", "1.0.0", "dist/foo.js"];
-    let scope;
     let session;
     let expectedPath;
 
@@ -64,7 +67,10 @@ describe("UnpkgSession", () => {
     });
 
     beforeEach(() => {
-      session = new UnpkgSession(undefined, logger, cache);
+      session = new UnpkgSession(undefined, logger, cache,
+                                 new UnpkgSession.NativeResolver(undefined,
+                                                                 logger,
+                                                                 cache));
     });
 
     it("calls `file` if it is a function", async () => {
@@ -158,7 +164,10 @@ describe("UnpkgSession", () => {
 
     describe("when ``url`` is used", () => {
       beforeEach(() => {
-        session = new UnpkgSession({ url: "https://mirror" }, logger, cache);
+        session = new UnpkgSession({ url: "https://mirror" }, logger, cache,
+                                   new UnpkgSession.NativeResolver(
+                                     { url: "https://mirror" },
+                                     logger, cache));
       });
 
       it("takes ``url`` into account", async () => {
@@ -170,294 +179,221 @@ describe("UnpkgSession", () => {
   });
 
   describe("#resolveToVersion", () => {
-    let scope;
     let session;
+    let fakeResolver;
+
+    class FakeResolver extends BaseVersionResolver {
+      // eslint-disable-next-line class-methods-use-this
+      resolveToVersion() {}
+    }
 
     beforeEach(() => {
-      session = new UnpkgSession(undefined, logger, cache);
+      fakeResolver = new FakeResolver(undefined, logger, cache);
+      session = new UnpkgSession(undefined, logger, cache, fakeResolver);
     });
 
-    describe("when passed a version", () => {
-      describe("which exists", () => {
-        describe("has not been resolved by the session yet", () => {
-          describe("and resolves to itself", () => {
-            it("resolves", async () => {
-              scope = nock("https://unpkg.com")
-                .get("/foo@1.0.0")
-                .reply(302, "", { location: "/foo@1.0.0/blah.js" });
-              expect(await session.resolveToVersion("foo", "1.0.0"))
-                .to.equal("1.0.0");
-              scope.done();
-            });
-
-            it("resolves (with location absolute)", async () => {
-              scope = nock("https://unpkg.com")
-                .get("/foo@1.0.0")
-                .reply(302, "",
-                       { location: "https://unpkg.com/foo@1.0.0/blah.js" });
-              expect(await session.resolveToVersion("foo", "1.0.0"))
-                .to.equal("1.0.0");
-              scope.done();
-            });
-
-            it("does not record the version in the cache", async () => {
-              scope = nock("https://unpkg.com")
-                .get("/foo@1.0.0")
-                .reply(302, "", { location: "/foo@1.0.0/blah.js" });
-              expect(await session.resolveToVersion("foo", "1.0.0"))
-                .to.equal("1.0.0");
-              expect(await fs.exists(cache.makePackagePath("foo", "1.0.0")))
-                .to.be.false;
-              scope.done();
-            });
-          });
-
-          describe("and resolves to a new version", () => {
-            it("records the version in the cache", async () => {
-              scope = nock("https://unpkg.com")
-                .get("/foo@1")
-                .reply(302, "", { location: "/foo@1.2.3/blah.js" });
-              expect(await session.resolveToVersion("foo", "1"))
-                .to.equal("1.2.3");
-              expect(await fs.readlink(cache.makePackagePath("foo", "1")))
-                .to.be.equal("1.2.3");
-              scope.done();
-            });
-          });
-        });
-
-        describe("and has been resolved by the same session", () => {
-          it("resolves without accessing the network", async () => {
-            scope = nock("https://unpkg.com")
-              .get("/foo@1.0.0")
-              .reply(302, "", { location: "/foo@1.0.0/blah.js" });
-            // Put it in the session's memory cache.
-            expect(await session.resolveToVersion("foo", "1.0.0"))
-              .to.equal("1.0.0");
-            // Get it from the session's memory cache.
-            expect(await session.resolveToVersion("foo", "1.0.0"))
-              .to.equal("1.0.0");
-            // The call for scope.done will fail if there was not one and only
-            // one HTTP request.
-            scope.done();
-          });
-        });
-
-        describe("and has been resolved by a previous session", () => {
-          it("resolves through the network again", async () => {
-            scope = nock("https://unpkg.com")
-              .get("/foo@1.0.0")
-              .reply(302, "", { location: "/foo@1.0.0/blah.js" })
-              .get("/foo@1.0.0")
-              .reply(302, "", { location: "/foo@1.0.0/blah.js" });
-            // Put it in the cache.
-            expect(await session.resolveToVersion("foo", "1.0.0"))
-              .to.equal("1.0.0");
-
-            const session2 = new UnpkgSession(undefined, logger, cache);
-            expect(await session2.resolveToVersion("foo", "1.0.0"))
-              .to.equal("1.0.0");
-
-            scope.done();
-          });
-        });
-      });
-
-      describe("which does not exists", () => {
-        it("throws", async () => {
-          scope = nock("https://unpkg.com")
-            .get("/foo@1")
-            .reply(404, "");
-          await expectRejection(session.resolveToVersion("foo", "1"));
-          scope.done();
-        });
-      });
-
-      describe("throws on a response", () => {
-        it("with an empty version number", async () => {
-          scope = nock("https://unpkg.com")
-            .get("/foo@1")
-            .reply(302, "", { location: "/foo@" });
-          await expectRejection(session.resolveToVersion("foo", "1"),
-                                Error, "foo@1 resolves to something \
-without a version: foo@");
-          scope.done();
-        });
-
-        it("without a version number", async () => {
-          scope = nock("https://unpkg.com")
-            .get("/foo@1")
-            .reply(302, "", { location: "/foo" });
-          await expectRejection(session.resolveToVersion("foo", "1"),
-                                Error, "foo@1 resolves to something \
-without a version: foo");
-          scope.done();
-        });
-
-        it("which resolves to a different package", async () => {
-          scope = nock("https://unpkg.com")
-            .get("/foo@1")
-            .reply(302, "", { location: "/bar@3.3.3" });
-          await expectRejection(session.resolveToVersion("foo", "1"),
-                                Error, "foo@1 resolves to a different \
-package: bar@3.3.3");
-          scope.done();
-        });
-
-        it("which is not a 302 redirect", async () => {
-          scope = nock("https://unpkg.com")
-            .get("/foo@1")
-            .reply(200, "fnord");
-          await expectRejection(session.resolveToVersion("foo", "1"));
-          scope.done();
-        });
-      });
-    });
-
-    describe("when passed a tag", () => {
-      const stockResource = ["foo", "latest"];
-      let packagePath;
-
-      before(() => {
-        packagePath = cache.makePackagePath(...stockResource);
-      });
-
-      function makeScope() {
-        scope = nock("https://unpkg.com")
-          .get("/foo@latest")
-          .reply(302, "", { location: "/foo@1.0.0" });
-      }
-
-      describe("which exists", () => {
-        describe("has not been resolved by the session yet", () => {
-          it("resolves", async () => {
-            makeScope();
-            expect(await session.resolveToVersion(...stockResource))
-              .to.equal("1.0.0");
-            scope.done();
-          });
-
-          it("records the tag in the cache", async () => {
-            makeScope();
-            await session.resolveToVersion(...stockResource);
-            expect(await fs.readlink(packagePath)).to.equal("1.0.0");
-            scope.done();
-          });
-        });
-
-        describe("and has been resolved by the same session", () => {
-          it("resolves without accessing the network", async () => {
-            makeScope();
-            // Put it in the session's memory cache.
-            expect(await session.resolveToVersion(...stockResource))
-              .to.equal("1.0.0");
-            // Get it from the session's memory cache.
-            expect(await session.resolveToVersion(...stockResource))
-              .to.equal("1.0.0");
-            // The call for scope.done will fail if there was not one and only
-            // one HTTP request.
-            scope.done();
-          });
-        });
-
-        describe("and has been resolved by a previous session", () => {
-          it("resolves through the network again", async () => {
-            makeScope();
-            scope = scope
-              .get("/foo@latest")
-              .reply(302, "", { location: "/foo@2.0.0" });
-            // Put it in the cache.
-            expect(await session.resolveToVersion(...stockResource))
-              .to.equal("1.0.0");
-
-            const session2 = new UnpkgSession(undefined, logger, cache);
-            expect(await session2.resolveToVersion(...stockResource))
-              .to.equal("2.0.0");
-
-            scope.done();
-          });
-        });
-      });
-
-      describe("which does not exists", () => {
-        it("throws", async () => {
-          scope = nock("https://unpkg.com")
-            .get("/foo@latest")
-            .reply(404, "");
-          await expectRejection(session.resolveToVersion(...stockResource));
-          scope.done();
-        });
-      });
-
-      describe("throws on a response", () => {
-        it("with an empty version number", async () => {
-          scope = nock("https://unpkg.com")
-            .get("/foo@latest")
-            .reply(302, "", { location: "/foo@" });
-          await expectRejection(session.resolveToVersion(...stockResource),
-                                Error, "foo@latest resolves to something \
-without a version: foo@");
-          scope.done();
-        });
-
-        it("without a version number", async () => {
-          scope = nock("https://unpkg.com")
-            .get("/foo@latest")
-            .reply(302, "", { location: "/foo" });
-          await expectRejection(session.resolveToVersion(...stockResource),
-                                Error, "foo@latest resolves to something \
-without a version: foo");
-          scope.done();
-        });
-
-        it("which resolves to a different package", async () => {
-          scope = nock("https://unpkg.com")
-            .get("/foo@latest")
-            .reply(302, "", { location: "/bar@3.3.3" });
-          await expectRejection(session.resolveToVersion(...stockResource),
-                                Error, "foo@latest resolves to a different \
-package: bar@3.3.3");
-          scope.done();
-        });
-
-        it("which is not a 302 redirect", async () => {
-          scope = nock("https://unpkg.com")
-            .get("/foo@latest")
-            .reply(200, "fnord");
-          await expectRejection(session.resolveToVersion(...stockResource));
-          scope.done();
-        });
-      });
-    });
-  });
-
-  describe("#makePackageUrl", () => {
-    it("makes a package URL", () => {
-      const session = new UnpkgSession(undefined, logger, cache);
-      expect(session.makePackageUrl("foo", "1.0.0"))
-        .to.equal("https://unpkg.com/foo@1.0.0");
-    });
-
-    it("uses the ``url`` configuration option", () => {
-      const session = new UnpkgSession({ url: "https://mirror" },
-                                       logger, cache);
-      expect(session.makePackageUrl("foo", "1.0.0"))
-        .to.equal("https://mirror/foo@1.0.0");
+    it("calls resolver.resolveToVersion", async () => {
+      const stub = sinon.stub(fakeResolver, "resolveToVersion")
+            .returns(Promise.resolve("1"));
+      expect(await session.resolveToVersion("a", "b")).to.equal("1");
+      expect(stub).to.have.been.calledOnce;
+      expect(stub).to.have.been.calledWith("a", "b");
     });
   });
 
   describe("#makeFileUrl", () => {
     it("makes a file URL", () => {
-      const session = new UnpkgSession(undefined, logger, cache);
+      const session = new UnpkgSession(undefined, logger, cache,
+                                       new UnpkgSession.NativeResolver(
+                                         undefined, logger, cache));
       expect(session.makeFileUrl("foo", "1.0.0", "dist/foo.js"))
         .to.equal("https://unpkg.com/foo@1.0.0/dist/foo.js");
     });
 
     it("uses the ``url`` configuration options", () => {
       const session = new UnpkgSession({ url: "https://mirror/" },
-                                       logger, cache);
+                                       logger, cache,
+                                       new UnpkgSession.NativeResolver(
+                                         undefined,
+                                         logger, cache));
       expect(session.makeFileUrl("foo", "1.0.0", "dist/foo.js"))
         .to.equal("https://mirror/foo@1.0.0/dist/foo.js");
+    });
+  });
+});
+
+describe("UnpkgSession.NativeResolver", () => {
+  let logger;
+  let cache;
+
+  before(() => {
+    logger = new FakeLogger();
+  });
+
+  beforeEach(async () => {
+    mockFs();
+    cache = new WritableCache();
+
+    await cache.init();
+  });
+
+  afterEach(() => {
+    mockFs.restore();
+  });
+
+  describe("#constructor", () => {
+    it("constructs", () => {
+      // eslint-disable-next-line no-new
+      new UnpkgSession.NativeResolver(undefined, logger, cache);
+    });
+
+
+    describe("sets ``base``", () => {
+      it("to the default if no configuration was passed", () => {
+        const resolver = new UnpkgSession.NativeResolver(undefined, logger,
+                                                         cache);
+        expect(resolver).to.have.property("base").equal("https://unpkg.com/");
+      });
+
+      it("to the default if an empty configuration was passed", () => {
+        const resolver = new UnpkgSession.NativeResolver({}, logger, cache);
+        expect(resolver).to.have.property("base").equal("https://unpkg.com/");
+      });
+
+      describe("to the ``url`` setting", () => {
+        it("with a forward slash appended, if it did not end with one", () => {
+          const resolver =
+                new UnpkgSession.NativeResolver({ url: "foo" }, logger, cache);
+          expect(resolver).to.have.property("base").equal("foo/");
+        });
+
+        it("as is, if did end with a forward slash", () => {
+          const resolver =
+                new UnpkgSession.NativeResolver({ url: "foo/" }, logger, cache);
+          expect(resolver).to.have.property("base").equal("foo/");
+        });
+      });
+    });
+  });
+
+  describe("#fetchVersion", () => {
+    let resolver;
+    let scope;
+
+    function makeNock(url = "https://unpkg.com") {
+      scope = nock(url);
+    }
+
+    beforeEach(() => {
+      resolver = new UnpkgSession.NativeResolver(undefined, logger, cache);
+    });
+
+    describe("when passed a version", () => {
+      beforeEach(() => {
+        makeNock();
+      });
+
+      it("which exists, resolves", async () => {
+        scope = scope
+          .get("/foo@1.0.0")
+          .reply(302, "", { location: "/foo@1.0.0/blah.js" });
+        expect(await resolver.resolveToVersion("foo", "1.0.0"))
+          .to.equal("1.0.0");
+        scope.done();
+      });
+
+      it("which exists, resolves (with location absolute)", async () => {
+        scope = scope
+          .get("/foo@1.0.0")
+          .reply(302, "", { location: "https://unpkg.com/foo@1.0.0/blah.js" });
+        expect(await resolver.resolveToVersion("foo", "1.0.0"))
+          .to.equal("1.0.0");
+        scope.done();
+      });
+
+      it("which does not exist, throws", async () => {
+        scope = scope
+          .get("/foo@1")
+          .reply(404, "");
+        await expectRejection(resolver.fetchVersion("foo", "1"));
+        scope.done();
+      });
+    });
+
+    describe("when passed a tag", () => {
+      beforeEach(() => {
+        makeNock();
+      });
+
+      it("which exists, resolves", async () => {
+        scope = scope
+          .get("/foo@latest")
+          .reply(302, "", { location: "/foo@1.0.0" });
+        expect(await resolver.fetchVersion("foo", "latest"))
+          .to.equal("1.0.0");
+        scope.done();
+      });
+
+      it("which does not exist, throws", async () => {
+        scope = scope
+          .get("/foo@nonexistent")
+          .reply(404);
+        await expectRejection(resolver.fetchVersion("foo", "nonexistent"));
+        scope.done();
+      });
+    });
+
+    describe("throws on a response", () => {
+      beforeEach(() => {
+        makeNock();
+        scope = scope.get("/foo@1");
+      });
+
+      it("with an empty version number", async () => {
+        scope = scope.reply(302, "", { location: "/foo@" });
+        await expectRejection(resolver.resolveToVersion("foo", "1"),
+                              Error, "foo@1 resolves to something \
+without a version: foo@");
+        scope.done();
+      });
+
+      it("without a version number", async () => {
+        scope = scope.reply(302, "", { location: "/foo" });
+        await expectRejection(resolver.resolveToVersion("foo", "1"),
+                              Error, "foo@1 resolves to something \
+without a version: foo");
+        scope.done();
+      });
+
+      it("which resolves to a different package", async () => {
+        scope = scope.reply(302, "", { location: "/bar@3.3.3" });
+        await expectRejection(resolver.resolveToVersion("foo", "1"),
+                              Error, "foo@1 resolves to a different \
+package: bar@3.3.3");
+        scope.done();
+      });
+
+      it("which is not a 302 redirect", async () => {
+        scope = scope.reply(200, "fnord");
+        await expectRejection(resolver.resolveToVersion("foo", "1"));
+        scope.done();
+      });
+    });
+  });
+
+  describe("#makePackageUrl", () => {
+    it("makes a package URL", () => {
+      const resolver = new UnpkgSession.NativeResolver(undefined, logger,
+                                                       cache);
+      expect(resolver.makePackageUrl("foo", "1.0.0"))
+        .to.equal("https://unpkg.com/foo@1.0.0");
+    });
+
+    it("uses the ``url`` configuration option", () => {
+      const resolver = new UnpkgSession.NativeResolver(
+        { url: "https://mirror" }, logger, cache);
+      expect(resolver.makePackageUrl("foo", "1.0.0"))
+        .to.equal("https://mirror/foo@1.0.0");
     });
   });
 });

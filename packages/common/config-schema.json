@@ -36,7 +36,22 @@
       "type": "object",
       "properties": {
         "url": {
-          "description": "The CDNs url. Use this to override the default URL. This may be useful if you want to use a mirror of a well-known CDN. If the URL you pass here does not end with a forward slash, one will be added.",
+          "description": "The CDN's url. Use this to override the default URL. This may be useful if you want to use a mirror of a well-known CDN. If the URL you pass here does not end with a forward slash, one will be added.",
+          "type": "string"
+        },
+        "resolver": {
+          "description": "The name of the resolver to use.",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "version-resolver": {
+      "description": "Settings for a version resolver.",
+      "type": "object",
+      "properties": {
+        "url": {
+          "description": "The resolver's url. Use this to override the default URL. This may be useful if you want to use a mirror of a well-known resolver. If the URL you pass here does not end with a forward slash, one will be added.",
           "type": "string"
         }
       },
@@ -57,6 +72,15 @@
         "patternProperties": {
           "^.*$": {
             "$ref": "#/definitions/cdn"
+          }
+        }
+      },
+      "resolvers": {
+        "description": "Configuration for resolvers.",
+        "type": "object",
+        "patternProperties": {
+          "^.*$": {
+            "$ref": "#/definitions/version-resolver"
           }
         }
       },

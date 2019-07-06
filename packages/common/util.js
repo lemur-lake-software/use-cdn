@@ -6,6 +6,7 @@ const Ajv = require("ajv");
 const reload = require("require-reload")(require);
 const configSchema = require("./config-schema");
 const { sessionFactories } = require("./sessions/all");
+const { resolverFactories } = require("./version-resolvers/all");
 
 /**
  * Determine whether a string marks a tag (in the NPM sense of the term "tag")
@@ -84,6 +85,10 @@ function applyOverride(pkg, versionOrTag) {
 const ajv = new Ajv();
 
 function validateUCType(schema, data) {
+  // We do not cover the else branch of this test because that's a case that
+  // should never happen. (If the schema were to cause the else to be taken,
+  // then schema would be wrong and would have to be fixed.)
+  /* istanbul ignore else  */
   if (schema === "file") {
     if (!["function", "string"].includes(typeof data)) {
       validateUCType.errors = [{
@@ -145,6 +150,25 @@ function loadConfig() {
     for (const key in config.cdns) {
       if (!(key in sessionFactories)) {
         throw new Error(`unknown CDN in the cdns configuration option: ${key}`);
+      }
+    }
+  }
+
+  if (!config.resolvers) {
+    config.resolvers = {};
+  }
+  else {
+    // eslint-disable-next-line guard-for-in
+    for (const key in config.resolvers) {
+      let found = key in resolverFactories;
+      if (!found) {
+        const session = sessionFactories[key];
+        found = session && session.NativeResolver;
+      }
+
+      if (!found) {
+        throw new Error(`unknown resolver in the resolvers configuration \
+option: ${key}`);
       }
     }
   }

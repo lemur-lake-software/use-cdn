@@ -25,9 +25,9 @@
   "author": "Louis-Dominique <ldd@lddubeau.com>",
   "license": "MIT",
   "devDependencies": {
-    "ajv": "^6.10.0",
     "@commitlint/cli": "^8.0.0",
     "@commitlint/config-angular": "^8.0.0",
+    "ajv": "^6.10.0",
     "chai": "^4.2.0",
     "conventional-changelog-cli": "^2.0.21",
     "eslint": "^5.16.0",
@@ -41,6 +41,7 @@
     "mock-fs": "^4.10.1",
     "monist": "^1.2.0",
     "nock": "^10.0.6",
+    "npm-pick-manifest": "^2.2.3",
     "nyc": "^14.1.1",
     "renovate-config-lddubeau": "^1.0.0",
     "require-reload": "^0.2.2",

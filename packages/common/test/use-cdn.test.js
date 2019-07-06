@@ -7,6 +7,9 @@ const mockFs = require("mock-fs");
 const { expectRejection } = require("expect-rejection");
 
 const { UseCDN } = require("../use-cdn");
+const { NPMVersionResolver } = require("../version-resolvers/npm");
+const { UnpkgSession: { NativeResolver: UnpkgVersionResolver } } =
+      require("../sessions/unpkg");
 
 class FakeLogger {
   // eslint-disable-next-line class-methods-use-this
@@ -15,7 +18,12 @@ class FakeLogger {
 }
 
 const EMPTY = {
-  cdns: {},
+  cdns: {
+    unpkg: {
+      resolver: "native",
+    },
+  },
+  resolvers: {},
   packages: [],
 };
 
@@ -70,7 +78,12 @@ describe("UseCDN", () => {
       }
 
       const cdn = new UseCDN({
-        cdns: {},
+        cdns: {
+          unpkg: {
+            resolver: "native",
+          },
+        },
+        resolvers: {},
         packages: [{
           package: "foo",
           version: "1.0.0",
@@ -128,6 +141,79 @@ describe("UseCDN", () => {
       await cdn.init();
       expect(() => cdn.getSession("cdnjs"))
         .to.throw(Error, "unsupported cdn: cdnjs");
+    });
+
+    it("throws if with a resolver having a CDN name", async () => {
+      const cdn = new UseCDN({
+        cdns: {
+          unpkg: {
+            resolver: "unpkg",
+          },
+        },
+        resolvers: {},
+        packages: [],
+      }, logger);
+      await cdn.init();
+      expect(() => cdn.getSession("unpkg"))
+        .to.throw(Error, `you may not use a session name as a resolver name, to
+specify the resolver native to a session, use "native"`);
+    });
+
+    it("creates a CND with the right resolver", async () => {
+      const cdn = new UseCDN({
+        cdns: {},
+        resolvers: {},
+        packages: [],
+      }, logger);
+      await cdn.init();
+      const session = cdn.getSession("unpkg");
+      expect(session).to.have.nested.property("resolver")
+        .instanceOf(NPMVersionResolver);
+    });
+
+    it("creates a native resolver", async () => {
+      const cdn = new UseCDN({
+        cdns: {
+          unpkg: {
+            resolver: "native",
+          },
+        },
+        resolvers: {},
+        packages: [],
+      }, logger);
+      await cdn.init();
+      const session = cdn.getSession("unpkg");
+      expect(session).to.have.property("resolver")
+        .instanceOf(UnpkgVersionResolver);
+    });
+  });
+
+  describe("#getVersionResolver", () => {
+    it("throws if the object is not initialized", () => {
+      const cdn = new UseCDN(EMPTY, logger);
+      expect(() => cdn.getVersionResolver("foo"))
+        .to.throw(Error, "the object has not been initialized");
+    });
+
+    it("returns the same resolver if called with same name", async () => {
+      const cdn = new UseCDN(EMPTY, logger);
+      await cdn.init();
+      expect(cdn.getVersionResolver("npm")).to
+        .equal(cdn.getVersionResolver("npm"));
+    });
+
+    it("throws if called with an unsupported resolver", async () => {
+      const cdn = new UseCDN(EMPTY, logger);
+      await cdn.init();
+      expect(() => cdn.getVersionResolver("cdnjs"))
+        .to.throw(Error, "unsupported resolver: cdnjs");
+    });
+
+    it("creates a native resolver", async () => {
+      const cdn = new UseCDN(EMPTY, logger);
+      await cdn.init();
+      expect(cdn.getVersionResolver("unpkg")).to.be
+        .instanceOf(UnpkgVersionResolver);
     });
   });
 });

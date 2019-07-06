@@ -22,6 +22,7 @@
     "ajv": "^6.10.0",
     "fs-extra": "^8.1.0",
     "log4js": "^4.5.0",
+    "npm-pick-manifest": "^2.2.3",
     "require-reload": "^0.2.2",
     "superagent": "^5.1.0"
   }

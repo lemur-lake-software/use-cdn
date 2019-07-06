@@ -1,0 +1,5378 @@
+{
+   "description" : "JavaScript library for DOM operations",
+   "name" : "jquery",
+   "dist-tags" : {
+      "beta" : "3.4.1",
+      "latest" : "3.4.1"
+   },
+   "_id" : "jquery",
+   "license" : "MIT",
+   "_rev" : "640-c747cd5ff761a32cb9ea8f7268c90997",
+   "bugs" : {
+      "url" : "https://github.com/jquery/jquery/issues"
+   },
+   "time" : {
+      "2.1.2" : "2014-12-17T14:14:28.184Z",
+      "1.6.3" : "2011-09-12T19:05:34.373Z",
+      "3.3.1" : "2018-01-20T17:27:11.928Z",
+      "3.0.0-rc1" : "2016-05-20T19:13:48.387Z",
+      "3.3.0" : "2018-01-19T19:03:52.616Z",
+      "2.1.1-beta1" : "2014-03-24T17:05:07.581Z",
+      "2.2.2" : "2016-03-17T17:52:26.967Z",
+      "1.12.1" : "2016-02-22T19:08:05.212Z",
+      "3.0.0" : "2016-06-09T18:33:13.420Z",
+      "1.11.1" : "2014-05-01T18:05:32.863Z",
+      "1.8.3" : "2012-12-01T00:03:02.297Z",
+      "1.11.1-beta1" : "2014-03-24T17:25:14.236Z",
+      "1.9.1" : "2014-07-17T22:01:17.886Z",
+      "1.11.1-rc2" : "2014-04-21T21:12:52.817Z",
+      "3.2.0" : "2017-03-16T21:30:56.342Z",
+      "2.1.0" : "2014-01-23T21:12:47.772Z",
+      "1.11.2" : "2014-12-17T16:07:07.647Z",
+      "3.1.1" : "2016-09-22T22:32:49.360Z",
+      "2.2.1" : "2016-02-22T19:12:09.116Z",
+      "2.1.3" : "2014-12-18T15:18:38.205Z",
+      "1.6.2" : "2011-07-06T16:13:21.519Z",
+      "3.2.1" : "2017-03-20T19:02:13.508Z",
+      "2.1.1" : "2014-05-01T17:15:20.164Z",
+      "2.2.3" : "2016-04-05T19:27:17.929Z",
+      "3.1.0" : "2016-07-07T21:46:05.554Z",
+      "2.2.0" : "2016-01-08T20:03:43.280Z",
+      "created" : "2011-03-19T07:19:56.392Z",
+      "1.11.0-pre" : "2014-01-16T20:38:42.912Z",
+      "3.0.0-alpha1" : "2015-07-13T19:26:37.913Z",
+      "1.8.2" : "2012-11-11T22:43:58.910Z",
+      "2.1.0-rc1" : "2014-01-17T22:47:16.391Z",
+      "3.0.0-beta1" : "2016-01-14T23:09:43.368Z",
+      "2.1.0-beta2" : "2013-11-15T16:34:48.859Z",
+      "1.11.0-beta3" : "2014-01-06T19:57:22.387Z",
+      "2.1.1-rc1" : "2014-04-18T15:29:41.423Z",
+      "1.11.0-rc1" : "2014-01-16T21:08:36.924Z",
+      "1.12.2" : "2016-03-17T17:45:59.810Z",
+      "1.7.3" : "2012-07-01T16:11:53.194Z",
+      "2.1.4" : "2015-04-28T16:17:13.648Z",
+      "1.11.0" : "2014-01-23T21:07:07.184Z",
+      "modified" : "2019-05-01T21:19:44.206Z",
+      "2.2.4" : "2016-05-20T17:26:07.921Z",
+      "1.11.3" : "2015-04-28T16:22:06.378Z",
+      "1.12.3" : "2016-04-05T19:21:37.716Z",
+      "1.5.1" : "2011-03-19T07:19:56.956Z",
+      "1.12.0" : "2016-01-08T19:58:05.265Z",
+      "1.12.4" : "2016-05-20T17:19:07.375Z",
+      "1.7.2" : "2012-05-01T11:14:09.090Z",
+      "1.11.1-rc1" : "2014-04-18T15:40:23.931Z",
+      "3.4.1" : "2019-05-01T21:19:38.408Z",
+      "3.4.0" : "2019-04-10T19:53:06.430Z",
+      "2.1.1-rc2" : "2014-04-21T20:52:06.866Z",
+      "2.1.0-beta3" : "2013-12-20T22:53:28.426Z"
+   },
+   "readmeFilename" : "README.md",
+   "repository" : {
+      "type" : "git",
+      "url" : "git+https://github.com/jquery/jquery.git"
+   },
+   "keywords" : [
+      "jquery",
+      "javascript",
+      "browser",
+      "library"
+   ],
+   "author" : {
+      "name" : "JS Foundation and other contributors",
+      "url" : "https://github.com/jquery/jquery/blob/3.4.1/AUTHORS.txt"
+   },
+   "versions" : {
+      "3.3.1" : {
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "browser",
+            "library"
+         ],
+         "version" : "3.3.1",
+         "repository" : {
+            "url" : "git+https://github.com/jquery/jquery.git",
+            "type" : "git"
+         },
+         "commitplease" : {
+            "nohook" : true,
+            "ticketPattern" : "^((Closes|Fixes) ([a-zA-Z]{2,}-)[0-9]+)|^(Refs? [^#])",
+            "markerPattern" : "^((clos|fix|resolv)(e[sd]|ing))|^(refs?)",
+            "components" : [
+               "Docs",
+               "Tests",
+               "Build",
+               "Support",
+               "Release",
+               "Core",
+               "Ajax",
+               "Attributes",
+               "Callbacks",
+               "CSS",
+               "Data",
+               "Deferred",
+               "Deprecated",
+               "Dimensions",
+               "Effects",
+               "Event",
+               "Manipulation",
+               "Offset",
+               "Queue",
+               "Selector",
+               "Serialize",
+               "Traversing",
+               "Wrap"
+            ]
+         },
+         "_npmUser" : {
+            "name" : "timmywil",
+            "email" : "4timmywil@gmail.com"
+         },
+         "license" : "MIT",
+         "bugs" : {
+            "url" : "https://github.com/jquery/jquery/issues"
+         },
+         "_id" : "jquery@3.3.1",
+         "_npmVersion" : "5.6.0",
+         "dependencies" : {},
+         "dist" : {
+            "shasum" : "958ce29e81c9790f31be7792df5d4d95fc57fbca",
+            "integrity" : "sha512-Ubldcmxp5np52/ENotGxlLe6aGMvmF4R8S6tZjsP6Knsaxd/xp3Zrh50cG93lR6nPXyUFwzN3ZSOQI0wRJNdGg==",
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-3.3.1.tgz"
+         },
+         "name" : "jquery",
+         "description" : "JavaScript library for DOM operations",
+         "devDependencies" : {
+            "uglify-js" : "3.3.4",
+            "grunt-contrib-watch" : "1.0.0",
+            "grunt-npmcopy" : "0.1.0",
+            "core-js" : "2.4.1",
+            "grunt-jsonlint" : "1.1.0",
+            "grunt-newer" : "1.3.0",
+            "testswarm" : "1.1.0",
+            "sizzle" : "2.3.3",
+            "commitplease" : "2.7.10",
+            "grunt-eslint" : "20.0.0",
+            "grunt-karma" : "2.0.0",
+            "grunt-babel" : "7.0.0",
+            "karma" : "1.7.0",
+            "promises-aplus-tests" : "2.1.2",
+            "eslint-config-jquery" : "1.0.1",
+            "karma-firefox-launcher" : "1.0.1",
+            "qunit-assert-step" : "1.0.3",
+            "husky" : "0.14.3",
+            "karma-browserstack-launcher" : "1.3.0",
+            "grunt" : "1.0.1",
+            "requirejs" : "2.3.3",
+            "karma-qunit" : "1.2.1",
+            "sinon" : "2.3.7",
+            "karma-chrome-launcher" : "2.2.0",
+            "babel-core" : "7.0.0-beta.0",
+            "raw-body" : "2.2.0",
+            "grunt-contrib-uglify" : "3.0.1",
+            "jsdom" : "5.6.1",
+            "babel-plugin-transform-es2015-for-of" : "7.0.0-beta.0",
+            "load-grunt-tasks" : "3.5.2",
+            "gzip-js" : "0.3.2",
+            "grunt-compare-size" : "0.4.2",
+            "q" : "1.5.0",
+            "grunt-git-authors" : "3.2.0",
+            "insight" : "0.8.4",
+            "strip-json-comments" : "2.0.1",
+            "grunt-cli" : "1.2.0",
+            "native-promise-only" : "0.8.1",
+            "qunitjs" : "1.23.1"
+         },
+         "scripts" : {
+            "commitmsg" : "node node_modules/commitplease",
+            "test:browser" : "grunt && grunt karma:main",
+            "jenkins" : "npm run test:browserless",
+            "precommit" : "grunt lint:newer qunit_fixture",
+            "test" : "grunt && grunt test:slow && grunt karma:main",
+            "test:browserless" : "grunt && grunt test:slow",
+            "start" : "grunt watch",
+            "build" : "npm install && grunt"
+         },
+         "_nodeVersion" : "9.3.0",
+         "title" : "jQuery",
+         "main" : "dist/jquery.js",
+         "homepage" : "https://jquery.com",
+         "directories" : {},
+         "maintainers" : [
+            {
+               "name" : "dmethvin",
+               "email" : "dave.methvin@gmail.com"
+            },
+            {
+               "name" : "mgol",
+               "email" : "m.goleb@gmail.com"
+            },
+            {
+               "name" : "scott.gonzalez",
+               "email" : "scott.gonzalez@gmail.com"
+            },
+            {
+               "email" : "4timmywil@gmail.com",
+               "name" : "timmywil"
+            }
+         ],
+         "gitHead" : "9e8ec3d10fad04748176144f108d7355662ae75e",
+         "author" : {
+            "url" : "https://github.com/jquery/jquery/blob/3.3.1/AUTHORS.txt",
+            "name" : "JS Foundation and other contributors"
+         },
+         "_npmOperationalInternal" : {
+            "host" : "s3://npm-registry-packages",
+            "tmp" : "tmp/jquery-3.3.1.tgz_1516469230473_0.5458589680492878"
+         }
+      },
+      "2.1.2" : {
+         "_from" : ".",
+         "gitHead" : "a04f5ff9795fd6292117563623db44cf3f875868",
+         "maintainers" : [
+            {
+               "email" : "dave.methvin@gmail.com",
+               "name" : "dmethvin"
+            },
+            {
+               "name" : "scott.gonzalez",
+               "email" : "scott.gonzalez@gmail.com"
+            },
+            {
+               "email" : "m.goleb@gmail.com",
+               "name" : "m_gol"
+            },
+            {
+               "email" : "timmywillisn@gmail.com",
+               "name" : "timmywil"
+            }
+         ],
+         "main" : "dist/jquery.js",
+         "title" : "jQuery",
+         "scripts" : {
+            "start" : "grunt watch",
+            "test" : "grunt",
+            "build" : "npm install && grunt"
+         },
+         "description" : "JavaScript library for DOM operations",
+         "dist" : {
+            "shasum" : "b68f154cb2ea4731924883e9fe20ec199d1dc1e2",
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-2.1.2.tgz"
+         },
+         "dependencies" : {},
+         "_npmVersion" : "1.4.28",
+         "_id" : "jquery@2.1.2",
+         "_npmUser" : {
+            "name" : "dmethvin",
+            "email" : "dave.methvin@gmail.com"
+         },
+         "repository" : {
+            "type" : "git",
+            "url" : "https://github.com/jquery/jquery.git"
+         },
+         "author" : {
+            "url" : "https://github.com/jquery/jquery/blob/2.1.2/AUTHORS.txt",
+            "name" : "jQuery Foundation and other contributors"
+         },
+         "directories" : {},
+         "homepage" : "http://jquery.com",
+         "licenses" : [
+            {
+               "type" : "MIT",
+               "url" : "https://github.com/jquery/jquery/blob/2.1.2/MIT-LICENSE.txt"
+            }
+         ],
+         "devDependencies" : {
+            "requirejs" : "2.1.10",
+            "grunt" : "0.4.2",
+            "grunt-cli" : "0.1.13",
+            "grunt-git-authors" : "1.2.0",
+            "grunt-bowercopy" : "0.7.1",
+            "grunt-compare-size" : "0.4.0",
+            "gzip-js" : "0.3.2",
+            "commitplease" : "1.7.0",
+            "testswarm" : "1.1.0",
+            "load-grunt-tasks" : "0.3.0",
+            "grunt-jsonlint" : "1.0.4",
+            "grunt-jscs-checker" : "0.4.1",
+            "grunt-contrib-uglify" : "0.3.2",
+            "grunt-contrib-watch" : "0.5.3",
+            "grunt-contrib-jshint" : "0.8.0"
+         },
+         "name" : "jquery",
+         "bugs" : {
+            "url" : "http://bugs.jquery.com"
+         },
+         "_shasum" : "b68f154cb2ea4731924883e9fe20ec199d1dc1e2",
+         "version" : "2.1.2",
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "browser",
+            "library"
+         ]
+      },
+      "1.6.3" : {
+         "main" : "./node-jquery.js",
+         "maintainers" : [
+            {
+               "name" : "coolaj86",
+               "email" : "coolaj86@gmail.com"
+            }
+         ],
+         "engines" : {
+            "node" : "*"
+         },
+         "contributors" : [],
+         "_npmJsonOpts" : {
+            "file" : "/Users/coolaj86/.npm/jquery/1.6.3/package/package.json",
+            "wscript" : false,
+            "contributors" : false,
+            "serverjs" : false
+         },
+         "lib" : ".",
+         "_npmVersion" : "1.0.22",
+         "url" : "http://jquery.com",
+         "_id" : "jquery@1.6.3",
+         "_engineSupported" : true,
+         "scripts" : {},
+         "description" : "jQuery: The Write Less, Do More, JavaScript Library (packaged for Node.JS)",
+         "dist" : {
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-1.6.3.tgz",
+            "shasum" : "e1f732fa7e718a6adb3ec20ae0eb2a64fd95ef01"
+         },
+         "dependencies" : {
+            "jsdom" : ">=0.2.0",
+            "htmlparser" : ">= 1.7.3"
+         },
+         "_nodeVersion" : "v0.4.8",
+         "directories" : {},
+         "deprecated" : "Versions of the jquery npm package older than 1.9.0 are patched versions that don't work in web browsers. Please upgrade to >=1.11.0.",
+         "author" : {
+            "name" : "John Resig",
+            "email" : "jeresig@gmail.com"
+         },
+         "version" : "1.6.3",
+         "keywords" : [
+            "util",
+            "dom",
+            "jquery"
+         ],
+         "devDependencies" : {},
+         "_defaultsLoaded" : true,
+         "name" : "jquery"
+      },
+      "3.0.0-rc1" : {
+         "directories" : {},
+         "homepage" : "https://jquery.com",
+         "_nodeVersion" : "0.10.45",
+         "author" : {
+            "url" : "https://github.com/jquery/jquery/blob/3.0.0-rc1/AUTHORS.txt",
+            "name" : "jQuery Foundation and other contributors"
+         },
+         "bugs" : {
+            "url" : "https://github.com/jquery/jquery/issues"
+         },
+         "_shasum" : "d69fc540b0a56be13e8aecde5a8766ade7a44f8e",
+         "version" : "3.0.0-rc1",
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "browser",
+            "library"
+         ],
+         "devDependencies" : {
+            "gzip-js" : "0.3.2",
+            "grunt-compare-size" : "0.4.2",
+            "q" : "1.4.1",
+            "insight" : "0.8.1",
+            "strip-json-comments" : "2.0.1",
+            "grunt-cli" : "1.2.0",
+            "native-promise-only" : "0.8.1",
+            "qunitjs" : "1.23.1",
+            "grunt-git-authors" : "3.2.0",
+            "sinon" : "1.17.3",
+            "grunt-jscs" : "2.8.0",
+            "cross-spawn" : "2.2.3",
+            "jsdom" : "5.6.1",
+            "grunt-contrib-uglify" : "1.0.1",
+            "load-grunt-tasks" : "3.5.0",
+            "qunit-assert-step" : "1.0.3",
+            "husky" : "0.11.4",
+            "requirejs" : "2.2.0",
+            "grunt" : "1.0.1",
+            "grunt-contrib-watch" : "1.0.0",
+            "grunt-contrib-jshint" : "1.0.0",
+            "grunt-npmcopy" : "0.1.0",
+            "grunt-jsonlint" : "1.0.7",
+            "core-js" : "2.2.2",
+            "commitplease" : "2.3.1",
+            "sizzle" : "2.3.0",
+            "grunt-babel" : "6.0.0",
+            "babel-preset-es2015" : "6.6.0",
+            "testswarm" : "1.1.0",
+            "grunt-newer" : "1.2.0",
+            "promises-aplus-tests" : "2.1.1"
+         },
+         "name" : "jquery",
+         "maintainers" : [
+            {
+               "email" : "dave.methvin@gmail.com",
+               "name" : "dmethvin"
+            },
+            {
+               "email" : "scott.gonzalez@gmail.com",
+               "name" : "scott.gonzalez"
+            },
+            {
+               "name" : "m_gol",
+               "email" : "m.goleb@gmail.com"
+            },
+            {
+               "name" : "timmywil",
+               "email" : "timmywillisn@gmail.com"
+            }
+         ],
+         "main" : "dist/jquery.js",
+         "title" : "jQuery",
+         "_npmOperationalInternal" : {
+            "tmp" : "tmp/jquery-3.0.0-rc1.tgz_1463771627380_0.12211154378019273",
+            "host" : "packages-16-east.internal.npmjs.com"
+         },
+         "_from" : ".",
+         "gitHead" : "e503a93188dc4b5b42e2340f805f2d90b404bc50",
+         "license" : "MIT",
+         "_npmUser" : {
+            "name" : "timmywil",
+            "email" : "timmywillisn@gmail.com"
+         },
+         "commitplease" : {
+            "components" : [
+               "Docs",
+               "Tests",
+               "Build",
+               "Support",
+               "Release",
+               "Core",
+               "Ajax",
+               "Attributes",
+               "Callbacks",
+               "CSS",
+               "Data",
+               "Deferred",
+               "Deprecated",
+               "Dimensions",
+               "Effects",
+               "Event",
+               "Manipulation",
+               "Offset",
+               "Queue",
+               "Selector",
+               "Serialize",
+               "Traversing",
+               "Wrap"
+            ]
+         },
+         "repository" : {
+            "url" : "git+https://github.com/jquery/jquery.git",
+            "type" : "git"
+         },
+         "scripts" : {
+            "build" : "npm install && grunt",
+            "test" : "grunt && grunt test",
+            "precommit" : "grunt precommit_lint",
+            "start" : "grunt watch"
+         },
+         "description" : "JavaScript library for DOM operations",
+         "dist" : {
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-3.0.0-rc1.tgz",
+            "shasum" : "d69fc540b0a56be13e8aecde5a8766ade7a44f8e"
+         },
+         "dependencies" : {},
+         "_npmVersion" : "2.15.1",
+         "_id" : "jquery@3.0.0-rc1"
+      },
+      "2.1.4" : {
+         "name" : "jquery",
+         "devDependencies" : {
+            "grunt-compare-size" : "0.4.0",
+            "grunt-bowercopy" : "0.7.1",
+            "gzip-js" : "0.3.2",
+            "grunt" : "0.4.2",
+            "requirejs" : "2.1.10",
+            "grunt-git-authors" : "1.2.0",
+            "grunt-cli" : "0.1.13",
+            "grunt-contrib-uglify" : "0.3.2",
+            "grunt-jscs-checker" : "0.4.1",
+            "grunt-jsonlint" : "1.0.4",
+            "jsdom" : "1.5.0",
+            "grunt-contrib-watch" : "0.5.3",
+            "grunt-contrib-jshint" : "0.8.0",
+            "load-grunt-tasks" : "0.3.0",
+            "testswarm" : "1.1.0",
+            "commitplease" : "2.0.0"
+         },
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "browser",
+            "library"
+         ],
+         "version" : "2.1.4",
+         "_shasum" : "228bde698a0c61431dc2630a6a154f15890d2317",
+         "bugs" : {
+            "url" : "http://bugs.jquery.com"
+         },
+         "author" : {
+            "url" : "https://github.com/jquery/jquery/blob/2.1.4/AUTHORS.txt",
+            "name" : "jQuery Foundation and other contributors"
+         },
+         "_nodeVersion" : "0.12.2",
+         "licenses" : [
+            {
+               "url" : "https://github.com/jquery/jquery/blob/2.1.4/MIT-LICENSE.txt",
+               "type" : "MIT"
+            }
+         ],
+         "homepage" : "http://jquery.com",
+         "directories" : {},
+         "_id" : "jquery@2.1.4",
+         "_npmVersion" : "2.7.4",
+         "dependencies" : {},
+         "dist" : {
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-2.1.4.tgz",
+            "shasum" : "228bde698a0c61431dc2630a6a154f15890d2317"
+         },
+         "description" : "JavaScript library for DOM operations",
+         "scripts" : {
+            "start" : "grunt watch",
+            "build" : "npm install && grunt",
+            "test" : "grunt"
+         },
+         "repository" : {
+            "url" : "https://github.com/jquery/jquery.git",
+            "type" : "git"
+         },
+         "_npmUser" : {
+            "name" : "timmywil",
+            "email" : "timmywillisn@gmail.com"
+         },
+         "gitHead" : "7751e69b615c6eca6f783a81e292a55725af6b85",
+         "_from" : ".",
+         "title" : "jQuery",
+         "main" : "dist/jquery.js",
+         "maintainers" : [
+            {
+               "name" : "dmethvin",
+               "email" : "dave.methvin@gmail.com"
+            },
+            {
+               "name" : "scott.gonzalez",
+               "email" : "scott.gonzalez@gmail.com"
+            },
+            {
+               "email" : "m.goleb@gmail.com",
+               "name" : "m_gol"
+            },
+            {
+               "name" : "timmywil",
+               "email" : "timmywillisn@gmail.com"
+            }
+         ]
+      },
+      "1.11.0" : {
+         "dependencies" : {},
+         "name" : "jquery",
+         "dist" : {
+            "shasum" : "c67ceee19b403650d682adcf39d5c9009814d949",
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-1.11.0.tgz"
+         },
+         "description" : "JavaScript library for DOM operations",
+         "devDependencies" : {
+            "load-grunt-tasks" : "0.2.0",
+            "testswarm" : "1.1.0",
+            "grunt-jsonlint" : "1.0.4",
+            "grunt-contrib-uglify" : "0.2.7",
+            "grunt-jscs-checker" : "0.2.6",
+            "grunt-contrib-watch" : "0.5.3",
+            "grunt-contrib-jshint" : "0.7.2",
+            "requirejs" : "2.1.9",
+            "shelljs" : "0.2.6",
+            "grunt" : "0.4.2",
+            "grunt-cli" : "0.1.11",
+            "grunt-git-authors" : "1.2.0",
+            "archiver" : "0.4.10",
+            "grunt-bowercopy" : "0.5.0",
+            "grunt-compare-size" : "0.4.0",
+            "gzip-js" : "0.3.2"
+         },
+         "scripts" : {
+            "start" : "grunt watch",
+            "build" : "npm install && grunt",
+            "test" : "grunt"
+         },
+         "_id" : "jquery@1.11.0",
+         "_npmVersion" : "1.3.21",
+         "_npmUser" : {
+            "name" : "jquery",
+            "email" : "npm@jquery.org"
+         },
+         "bugs" : {
+            "url" : "http://bugs.jquery.com"
+         },
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "library"
+         ],
+         "version" : "1.11.0",
+         "repository" : {
+            "type" : "git",
+            "url" : "https://github.com/jquery/jquery.git"
+         },
+         "_from" : ".",
+         "author" : {
+            "url" : "https://github.com/jquery/jquery/blob/1.11.0/AUTHORS.txt",
+            "name" : "jQuery Foundation and other contributors"
+         },
+         "homepage" : "http://jquery.com",
+         "directories" : {},
+         "maintainers" : [
+            {
+               "email" : "npm@jquery.org",
+               "name" : "jquery"
+            }
+         ],
+         "title" : "jQuery",
+         "licenses" : [
+            {
+               "url" : "https://github.com/jquery/jquery/blob/1.11.0/MIT-LICENSE.txt",
+               "type" : "MIT"
+            }
+         ],
+         "main" : "dist/jquery.js"
+      },
+      "1.7.3" : {
+         "licenses" : [
+            {
+               "type" : "MIT",
+               "url" : "https://github.com/coolaj86/node-jquery/blob/master/LICENSE-MIT"
+            }
+         ],
+         "main" : "lib/node-jquery",
+         "homepage" : "https://github.com/coolaj86/node-jquery",
+         "directories" : {},
+         "maintainers" : [
+            {
+               "email" : "coolaj86@gmail.com",
+               "name" : "coolaj86"
+            },
+            {
+               "email" : "treasonx@gmail.com",
+               "name" : "treasonx"
+            }
+         ],
+         "engines" : {
+            "node" : ">=0.6"
+         },
+         "deprecated" : "Versions of the jquery npm package older than 1.9.0 are patched versions that don't work in web browsers. Please upgrade to >=1.11.0.",
+         "author" : {
+            "name" : "James Morrin",
+            "email" : "treasonx@gmail.com"
+         },
+         "keywords" : [
+            "util",
+            "dom",
+            "jquery"
+         ],
+         "version" : "1.7.3",
+         "repository" : {
+            "type" : "git",
+            "url" : "git://github.com/coolaj86/node-jquery.git"
+         },
+         "bugs" : {
+            "url" : "https://github.com/coolaj86/node-jquery/issues"
+         },
+         "_id" : "jquery@1.7.3",
+         "url" : "http://jquery.com",
+         "dependencies" : {
+            "navigator" : "~1.0.1",
+            "jsdom" : "~0.2.14",
+            "htmlparser" : "1.7.6",
+            "location" : "0.0.1",
+            "xmlhttprequest" : "~1.4.2"
+         },
+         "dist" : {
+            "shasum" : "e3d00a71612ac7e9b554b438e0987d0272ddba94",
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-1.7.3.tgz"
+         },
+         "name" : "jquery",
+         "description" : "jQuery: The Write Less, Do More, JavaScript Library (packaged for Node.JS)",
+         "scripts" : {
+            "test" : "grunt test"
+         },
+         "devDependencies" : {
+            "grunt" : "~0.3.8",
+            "nodeunit" : "~0.7.4"
+         }
+      },
+      "3.3.0" : {
+         "main" : "dist/jquery.js",
+         "_nodeVersion" : "9.3.0",
+         "title" : "jQuery",
+         "maintainers" : [
+            {
+               "name" : "dmethvin",
+               "email" : "dave.methvin@gmail.com"
+            },
+            {
+               "email" : "m.goleb@gmail.com",
+               "name" : "mgol"
+            },
+            {
+               "name" : "scott.gonzalez",
+               "email" : "scott.gonzalez@gmail.com"
+            },
+            {
+               "email" : "4timmywil@gmail.com",
+               "name" : "timmywil"
+            }
+         ],
+         "homepage" : "https://jquery.com",
+         "directories" : {},
+         "gitHead" : "9a8a1c63930edc9fb6fab9e75b3eee578762b8a5",
+         "_npmOperationalInternal" : {
+            "host" : "s3://npm-registry-packages",
+            "tmp" : "tmp/jquery-3.3.0.tgz_1516388631205_0.827812286792323"
+         },
+         "author" : {
+            "url" : "https://github.com/jquery/jquery/blob/3.3.0/AUTHORS.txt",
+            "name" : "JS Foundation and other contributors"
+         },
+         "version" : "3.3.0",
+         "repository" : {
+            "type" : "git",
+            "url" : "git+https://github.com/jquery/jquery.git"
+         },
+         "commitplease" : {
+            "markerPattern" : "^((clos|fix|resolv)(e[sd]|ing))|^(refs?)",
+            "components" : [
+               "Docs",
+               "Tests",
+               "Build",
+               "Support",
+               "Release",
+               "Core",
+               "Ajax",
+               "Attributes",
+               "Callbacks",
+               "CSS",
+               "Data",
+               "Deferred",
+               "Deprecated",
+               "Dimensions",
+               "Effects",
+               "Event",
+               "Manipulation",
+               "Offset",
+               "Queue",
+               "Selector",
+               "Serialize",
+               "Traversing",
+               "Wrap"
+            ],
+            "ticketPattern" : "^((Closes|Fixes) ([a-zA-Z]{2,}-)[0-9]+)|^(Refs? [^#])",
+            "nohook" : true
+         },
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "browser",
+            "library"
+         ],
+         "license" : "MIT",
+         "bugs" : {
+            "url" : "https://github.com/jquery/jquery/issues"
+         },
+         "_npmUser" : {
+            "name" : "timmywil",
+            "email" : "4timmywil@gmail.com"
+         },
+         "_npmVersion" : "5.6.0",
+         "_id" : "jquery@3.3.0",
+         "description" : "JavaScript library for DOM operations",
+         "scripts" : {
+            "jenkins" : "npm run test:browserless",
+            "test:browser" : "grunt && grunt karma:main",
+            "commitmsg" : "node node_modules/commitplease",
+            "precommit" : "grunt lint:newer qunit_fixture",
+            "test" : "grunt && grunt test:slow && grunt karma:main",
+            "test:browserless" : "grunt && grunt test:slow",
+            "start" : "grunt watch",
+            "build" : "npm install && grunt"
+         },
+         "devDependencies" : {
+            "testswarm" : "1.1.0",
+            "grunt-newer" : "1.3.0",
+            "commitplease" : "2.7.10",
+            "sizzle" : "2.3.3",
+            "grunt-karma" : "2.0.0",
+            "grunt-eslint" : "20.0.0",
+            "grunt-babel" : "7.0.0",
+            "karma" : "1.7.0",
+            "promises-aplus-tests" : "2.1.2",
+            "eslint-config-jquery" : "1.0.1",
+            "uglify-js" : "3.3.4",
+            "grunt-contrib-watch" : "1.0.0",
+            "grunt-npmcopy" : "0.1.0",
+            "core-js" : "2.4.1",
+            "grunt-jsonlint" : "1.1.0",
+            "husky" : "0.14.3",
+            "karma-browserstack-launcher" : "1.3.0",
+            "grunt" : "1.0.1",
+            "requirejs" : "2.3.3",
+            "karma-qunit" : "1.2.1",
+            "karma-firefox-launcher" : "1.0.1",
+            "qunit-assert-step" : "1.0.3",
+            "load-grunt-tasks" : "3.5.2",
+            "karma-chrome-launcher" : "2.2.0",
+            "sinon" : "2.3.7",
+            "babel-core" : "7.0.0-beta.0",
+            "grunt-contrib-uglify" : "3.0.1",
+            "raw-body" : "2.2.0",
+            "babel-plugin-transform-es2015-for-of" : "7.0.0-beta.0",
+            "jsdom" : "5.6.1",
+            "grunt-git-authors" : "3.2.0",
+            "insight" : "0.8.4",
+            "strip-json-comments" : "2.0.1",
+            "grunt-cli" : "1.2.0",
+            "native-promise-only" : "0.8.1",
+            "qunitjs" : "1.23.1",
+            "gzip-js" : "0.3.2",
+            "grunt-compare-size" : "0.4.2",
+            "q" : "1.5.0"
+         },
+         "dependencies" : {
+            "archiver" : "1.3.0",
+            "shelljs" : "0.7.7",
+            "chalk" : "1.1.3",
+            "npm" : "4.4.1"
+         },
+         "name" : "jquery",
+         "dist" : {
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-3.3.0.tgz",
+            "integrity" : "sha512-1SmQFTqu24RtvnvLN/D1RFIsOBGqLQYsGJgZxejd69Rw9ACBJvSgppA+A+wBcXgASwRSoX1aDN1I5ZNIrFC6Xw==",
+            "shasum" : "06004bc2d0204ce92822a794ee8efb50283bb9ff"
+         }
+      },
+      "2.2.4" : {
+         "gitHead" : "c0185ab7c75aab88762c5aae780b9d83b80eda72",
+         "_from" : ".",
+         "_npmOperationalInternal" : {
+            "tmp" : "tmp/jquery-2.2.4.tgz_1463765166836_0.5834389675874263",
+            "host" : "packages-16-east.internal.npmjs.com"
+         },
+         "title" : "jQuery",
+         "main" : "dist/jquery.js",
+         "maintainers" : [
+            {
+               "name" : "dmethvin",
+               "email" : "dave.methvin@gmail.com"
+            },
+            {
+               "name" : "scott.gonzalez",
+               "email" : "scott.gonzalez@gmail.com"
+            },
+            {
+               "name" : "m_gol",
+               "email" : "m.goleb@gmail.com"
+            },
+            {
+               "email" : "timmywillisn@gmail.com",
+               "name" : "timmywil"
+            }
+         ],
+         "_id" : "jquery@2.2.4",
+         "_npmVersion" : "2.15.1",
+         "dist" : {
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-2.2.4.tgz",
+            "shasum" : "2c89d6889b5eac522a7eea32c14521559c6cbf02"
+         },
+         "dependencies" : {},
+         "scripts" : {
+            "start" : "grunt watch",
+            "test" : "grunt && grunt test",
+            "build" : "npm install && grunt"
+         },
+         "description" : "JavaScript library for DOM operations",
+         "repository" : {
+            "url" : "git+https://github.com/jquery/jquery.git",
+            "type" : "git"
+         },
+         "commitplease" : {
+            "components" : [
+               "Docs",
+               "Tests",
+               "Build",
+               "Release",
+               "Core",
+               "Ajax",
+               "Attributes",
+               "Callbacks",
+               "CSS",
+               "Data",
+               "Deferred",
+               "Deprecated",
+               "Dimensions",
+               "Effects",
+               "Event",
+               "Manipulation",
+               "Offset",
+               "Queue",
+               "Selector",
+               "Serialize",
+               "Traversing",
+               "Wrap"
+            ]
+         },
+         "_npmUser" : {
+            "email" : "timmywillisn@gmail.com",
+            "name" : "timmywil"
+         },
+         "license" : "MIT",
+         "author" : {
+            "name" : "jQuery Foundation and other contributors",
+            "url" : "https://github.com/jquery/jquery/blob/2.2.4/AUTHORS.txt"
+         },
+         "_nodeVersion" : "0.10.45",
+         "directories" : {},
+         "homepage" : "http://jquery.com",
+         "name" : "jquery",
+         "devDependencies" : {
+            "load-grunt-tasks" : "1.0.0",
+            "grunt-jscs" : "2.1.0",
+            "sinon" : "1.10.3",
+            "grunt-contrib-uglify" : "0.9.2",
+            "jsdom" : "5.6.1",
+            "grunt-git-authors" : "2.0.1",
+            "qunitjs" : "1.17.1",
+            "strip-json-comments" : "1.0.3",
+            "grunt-cli" : "0.1.13",
+            "gzip-js" : "0.3.2",
+            "grunt-compare-size" : "0.4.0",
+            "win-spawn" : "2.0.0",
+            "testswarm" : "1.1.0",
+            "grunt-babel" : "5.0.1",
+            "sizzle" : "2.2.1",
+            "commitplease" : "2.0.0",
+            "grunt-npmcopy" : "0.1.0",
+            "grunt-contrib-watch" : "0.6.1",
+            "grunt-contrib-jshint" : "0.11.2",
+            "core-js" : "0.9.17",
+            "grunt-jsonlint" : "1.0.4",
+            "grunt" : "0.4.5",
+            "requirejs" : "2.1.17",
+            "qunit-assert-step" : "1.0.3"
+         },
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "browser",
+            "library"
+         ],
+         "version" : "2.2.4",
+         "bugs" : {
+            "url" : "https://github.com/jquery/jquery/issues"
+         },
+         "_shasum" : "2c89d6889b5eac522a7eea32c14521559c6cbf02"
+      },
+      "2.1.1-beta1" : {
+         "repository" : {
+            "type" : "git",
+            "url" : "https://github.com/jquery/jquery.git"
+         },
+         "version" : "2.1.1-beta1",
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "library"
+         ],
+         "bugs" : {
+            "url" : "http://bugs.jquery.com"
+         },
+         "_npmUser" : {
+            "email" : "m.goleb@gmail.com",
+            "name" : "m_gol"
+         },
+         "_npmVersion" : "1.4.6",
+         "_id" : "jquery@2.1.1-beta1",
+         "scripts" : {
+            "start" : "grunt watch",
+            "build" : "npm install && grunt",
+            "test" : "grunt"
+         },
+         "devDependencies" : {
+            "gzip-js" : "0.3.2",
+            "grunt-compare-size" : "0.4.0",
+            "grunt-bowercopy" : "0.7.1",
+            "grunt-git-authors" : "1.2.0",
+            "grunt-cli" : "0.1.13",
+            "grunt" : "0.4.2",
+            "requirejs" : "2.1.10",
+            "grunt-contrib-jshint" : "0.8.0",
+            "grunt-contrib-watch" : "0.5.3",
+            "grunt-contrib-uglify" : "0.3.2",
+            "grunt-jscs-checker" : "0.3.2",
+            "grunt-jsonlint" : "1.0.4",
+            "load-grunt-tasks" : "0.3.0",
+            "testswarm" : "1.1.0",
+            "commitplease" : "1.7.0"
+         },
+         "description" : "JavaScript library for DOM operations",
+         "name" : "jquery",
+         "dist" : {
+            "shasum" : "6306c8ea1d104775f3ef8f5c26f0a32acd710a11",
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-2.1.1-beta1.tgz"
+         },
+         "dependencies" : {},
+         "main" : "dist/jquery.js",
+         "licenses" : [
+            {
+               "url" : "https://github.com/jquery/jquery/blob/2.1.1-beta1/MIT-LICENSE.txt",
+               "type" : "MIT"
+            }
+         ],
+         "title" : "jQuery",
+         "maintainers" : [
+            {
+               "email" : "npm@jquery.com",
+               "name" : "jquery"
+            },
+            {
+               "name" : "dmethvin",
+               "email" : "dave.methvin@gmail.com"
+            },
+            {
+               "email" : "scott.gonzalez@gmail.com",
+               "name" : "scott.gonzalez"
+            },
+            {
+               "email" : "m.goleb@gmail.com",
+               "name" : "m_gol"
+            }
+         ],
+         "directories" : {},
+         "homepage" : "http://jquery.com",
+         "author" : {
+            "url" : "https://github.com/jquery/jquery/blob/2.1.1-beta1/AUTHORS.txt",
+            "name" : "jQuery Foundation and other contributors"
+         },
+         "_from" : "."
+      },
+      "2.2.2" : {
+         "_npmOperationalInternal" : {
+            "host" : "packages-12-west.internal.npmjs.com",
+            "tmp" : "tmp/jquery-2.2.2.tgz_1458237146417_0.4190880397800356"
+         },
+         "_from" : ".",
+         "gitHead" : "086d381cd2f3b4b8b0af85ecb2c9593a61e5b4bd",
+         "maintainers" : [
+            {
+               "email" : "dave.methvin@gmail.com",
+               "name" : "dmethvin"
+            },
+            {
+               "email" : "scott.gonzalez@gmail.com",
+               "name" : "scott.gonzalez"
+            },
+            {
+               "email" : "m.goleb@gmail.com",
+               "name" : "m_gol"
+            },
+            {
+               "name" : "timmywil",
+               "email" : "timmywillisn@gmail.com"
+            }
+         ],
+         "main" : "dist/jquery.js",
+         "title" : "jQuery",
+         "scripts" : {
+            "start" : "grunt watch",
+            "build" : "npm install && grunt",
+            "test" : "grunt && grunt test"
+         },
+         "description" : "JavaScript library for DOM operations",
+         "dist" : {
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-2.2.2.tgz",
+            "shasum" : "3e302dc61eb329a21e9efac937d731f061134c59"
+         },
+         "dependencies" : {},
+         "_npmVersion" : "3.7.3",
+         "_id" : "jquery@2.2.2",
+         "license" : "MIT",
+         "_npmUser" : {
+            "name" : "timmywil",
+            "email" : "timmywillisn@gmail.com"
+         },
+         "repository" : {
+            "type" : "git",
+            "url" : "git+https://github.com/jquery/jquery.git"
+         },
+         "commitplease" : {
+            "components" : [
+               "Docs",
+               "Tests",
+               "Build",
+               "Release",
+               "Core",
+               "Ajax",
+               "Attributes",
+               "Callbacks",
+               "CSS",
+               "Data",
+               "Deferred",
+               "Deprecated",
+               "Dimensions",
+               "Effects",
+               "Event",
+               "Manipulation",
+               "Offset",
+               "Queue",
+               "Selector",
+               "Serialize",
+               "Traversing",
+               "Wrap"
+            ]
+         },
+         "author" : {
+            "name" : "jQuery Foundation and other contributors",
+            "url" : "https://github.com/jquery/jquery/blob/2.2.2/AUTHORS.txt"
+         },
+         "directories" : {},
+         "homepage" : "http://jquery.com",
+         "_nodeVersion" : "5.8.0",
+         "devDependencies" : {
+            "sizzle" : "2.2.1",
+            "commitplease" : "2.0.0",
+            "grunt-babel" : "5.0.1",
+            "testswarm" : "1.1.0",
+            "grunt-jsonlint" : "1.0.4",
+            "core-js" : "0.9.17",
+            "grunt-contrib-jshint" : "0.11.2",
+            "grunt-contrib-watch" : "0.6.1",
+            "grunt-npmcopy" : "0.1.0",
+            "requirejs" : "2.1.17",
+            "grunt" : "0.4.5",
+            "qunit-assert-step" : "1.0.3",
+            "load-grunt-tasks" : "1.0.0",
+            "jsdom" : "5.6.1",
+            "grunt-contrib-uglify" : "0.9.2",
+            "sinon" : "1.10.3",
+            "grunt-jscs" : "2.1.0",
+            "strip-json-comments" : "1.0.3",
+            "grunt-cli" : "0.1.13",
+            "qunitjs" : "1.17.1",
+            "grunt-git-authors" : "2.0.1",
+            "win-spawn" : "2.0.0",
+            "grunt-compare-size" : "0.4.0",
+            "gzip-js" : "0.3.2"
+         },
+         "name" : "jquery",
+         "bugs" : {
+            "url" : "https://github.com/jquery/jquery/issues"
+         },
+         "_shasum" : "3e302dc61eb329a21e9efac937d731f061134c59",
+         "version" : "2.2.2",
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "browser",
+            "library"
+         ]
+      },
+      "1.11.3" : {
+         "homepage" : "http://jquery.com",
+         "directories" : {},
+         "_nodeVersion" : "0.12.2",
+         "licenses" : [
+            {
+               "type" : "MIT",
+               "url" : "https://github.com/jquery/jquery/blob/1.11.3/MIT-LICENSE.txt"
+            }
+         ],
+         "author" : {
+            "name" : "jQuery Foundation and other contributors",
+            "url" : "https://github.com/jquery/jquery/blob/1.11.3/AUTHORS.txt"
+         },
+         "bugs" : {
+            "url" : "http://bugs.jquery.com"
+         },
+         "_shasum" : "dd8b74278b27102d29df63eae28308a8cfa1b583",
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "browser",
+            "library"
+         ],
+         "version" : "1.11.3",
+         "name" : "jquery",
+         "devDependencies" : {
+            "grunt-compare-size" : "0.4.0",
+            "grunt-bowercopy" : "0.7.1",
+            "gzip-js" : "0.3.2",
+            "grunt" : "0.4.2",
+            "requirejs" : "2.1.10",
+            "grunt-git-authors" : "1.2.0",
+            "grunt-cli" : "0.1.13",
+            "grunt-contrib-uglify" : "0.3.2",
+            "grunt-jscs-checker" : "0.4.1",
+            "grunt-jsonlint" : "1.0.4",
+            "grunt-contrib-watch" : "0.5.3",
+            "grunt-contrib-jshint" : "0.8.0",
+            "load-grunt-tasks" : "0.3.0",
+            "testswarm" : "1.1.0",
+            "commitplease" : "2.0.0"
+         },
+         "maintainers" : [
+            {
+               "email" : "dave.methvin@gmail.com",
+               "name" : "dmethvin"
+            },
+            {
+               "name" : "scott.gonzalez",
+               "email" : "scott.gonzalez@gmail.com"
+            },
+            {
+               "email" : "m.goleb@gmail.com",
+               "name" : "m_gol"
+            },
+            {
+               "email" : "timmywillisn@gmail.com",
+               "name" : "timmywil"
+            }
+         ],
+         "title" : "jQuery",
+         "main" : "dist/jquery.js",
+         "_from" : ".",
+         "gitHead" : "1472290917f17af05e98007136096784f9051fab",
+         "_npmUser" : {
+            "name" : "timmywil",
+            "email" : "timmywillisn@gmail.com"
+         },
+         "repository" : {
+            "type" : "git",
+            "url" : "https://github.com/jquery/jquery.git"
+         },
+         "dependencies" : {},
+         "dist" : {
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-1.11.3.tgz",
+            "shasum" : "dd8b74278b27102d29df63eae28308a8cfa1b583"
+         },
+         "description" : "JavaScript library for DOM operations",
+         "scripts" : {
+            "build" : "npm install && grunt",
+            "test" : "grunt",
+            "start" : "grunt watch"
+         },
+         "_id" : "jquery@1.11.3",
+         "_npmVersion" : "2.7.4"
+      },
+      "1.12.1" : {
+         "author" : {
+            "url" : "https://github.com/jquery/jquery/blob/1.12-stable/AUTHORS.txt",
+            "name" : "jQuery Foundation and other contributors"
+         },
+         "directories" : {},
+         "homepage" : "http://jquery.com",
+         "_nodeVersion" : "0.10.42",
+         "devDependencies" : {
+            "requirejs" : "2.1.17",
+            "grunt" : "0.4.5",
+            "npm" : "2.1.12",
+            "qunit-assert-step" : "1.0.3",
+            "grunt-babel" : "5.0.1",
+            "commitplease" : "2.0.0",
+            "sizzle" : "2.2.1",
+            "testswarm" : "1.1.0",
+            "grunt-jsonlint" : "1.0.4",
+            "core-js" : "0.9.17",
+            "grunt-npmcopy" : "0.1.0",
+            "grunt-contrib-watch" : "0.6.1",
+            "grunt-contrib-jshint" : "0.11.2",
+            "qunitjs" : "1.17.1",
+            "grunt-cli" : "0.1.13",
+            "strip-json-comments" : "1.0.3",
+            "grunt-git-authors" : "2.0.1",
+            "win-spawn" : "2.0.0",
+            "grunt-compare-size" : "0.4.0",
+            "gzip-js" : "0.3.2",
+            "load-grunt-tasks" : "1.0.0",
+            "jsdom" : "5.6.1",
+            "grunt-contrib-uglify" : "0.9.2",
+            "grunt-jscs" : "2.1.0",
+            "sinon" : "1.12.2"
+         },
+         "name" : "jquery",
+         "bugs" : {
+            "url" : "https://github.com/jquery/jquery/issues"
+         },
+         "_shasum" : "9cc34ce4780d4ceb90c44328f071064f01960c18",
+         "version" : "1.12.1",
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "browser",
+            "library"
+         ],
+         "_npmOperationalInternal" : {
+            "host" : "packages-5-east.internal.npmjs.com",
+            "tmp" : "tmp/jquery-1.12.1.tgz_1456168080336_0.4474994211923331"
+         },
+         "_from" : ".",
+         "gitHead" : "56ead6ffbf8560c521e7e94518d35db42b19f5f3",
+         "maintainers" : [
+            {
+               "email" : "dave.methvin@gmail.com",
+               "name" : "dmethvin"
+            },
+            {
+               "email" : "scott.gonzalez@gmail.com",
+               "name" : "scott.gonzalez"
+            },
+            {
+               "email" : "m.goleb@gmail.com",
+               "name" : "m_gol"
+            },
+            {
+               "email" : "timmywillisn@gmail.com",
+               "name" : "timmywil"
+            }
+         ],
+         "main" : "dist/jquery.js",
+         "title" : "jQuery",
+         "scripts" : {
+            "test" : "grunt && grunt test",
+            "build" : "npm install && grunt",
+            "start" : "grunt watch"
+         },
+         "description" : "JavaScript library for DOM operations",
+         "dist" : {
+            "shasum" : "9cc34ce4780d4ceb90c44328f071064f01960c18",
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-1.12.1.tgz"
+         },
+         "dependencies" : {},
+         "_npmVersion" : "2.14.19",
+         "_id" : "jquery@1.12.1",
+         "license" : "MIT",
+         "_npmUser" : {
+            "email" : "timmywillisn@gmail.com",
+            "name" : "timmywil"
+         },
+         "repository" : {
+            "url" : "git+https://github.com/jquery/jquery.git",
+            "type" : "git"
+         },
+         "commitplease" : {
+            "components" : [
+               "Docs",
+               "Tests",
+               "Build",
+               "Release",
+               "Core",
+               "Ajax",
+               "Attributes",
+               "Callbacks",
+               "CSS",
+               "Data",
+               "Deferred",
+               "Deprecated",
+               "Dimensions",
+               "Effects",
+               "Event",
+               "Manipulation",
+               "Offset",
+               "Queue",
+               "Selector",
+               "Serialize",
+               "Traversing",
+               "Wrap"
+            ]
+         }
+      },
+      "1.12.3" : {
+         "main" : "dist/jquery.js",
+         "title" : "jQuery",
+         "maintainers" : [
+            {
+               "email" : "dave.methvin@gmail.com",
+               "name" : "dmethvin"
+            },
+            {
+               "name" : "scott.gonzalez",
+               "email" : "scott.gonzalez@gmail.com"
+            },
+            {
+               "email" : "m.goleb@gmail.com",
+               "name" : "m_gol"
+            },
+            {
+               "email" : "timmywillisn@gmail.com",
+               "name" : "timmywil"
+            }
+         ],
+         "gitHead" : "3a43d7e563314bf32970b773dd31ecf2b90813dd",
+         "_npmOperationalInternal" : {
+            "tmp" : "tmp/jquery-1.12.3.tgz_1459884094815_0.5328964435029775",
+            "host" : "packages-12-west.internal.npmjs.com"
+         },
+         "_from" : ".",
+         "repository" : {
+            "url" : "git+https://github.com/jquery/jquery.git",
+            "type" : "git"
+         },
+         "commitplease" : {
+            "components" : [
+               "Docs",
+               "Tests",
+               "Build",
+               "Release",
+               "Core",
+               "Ajax",
+               "Attributes",
+               "Callbacks",
+               "CSS",
+               "Data",
+               "Deferred",
+               "Deprecated",
+               "Dimensions",
+               "Effects",
+               "Event",
+               "Manipulation",
+               "Offset",
+               "Queue",
+               "Selector",
+               "Serialize",
+               "Traversing",
+               "Wrap"
+            ]
+         },
+         "license" : "MIT",
+         "_npmUser" : {
+            "name" : "timmywil",
+            "email" : "timmywillisn@gmail.com"
+         },
+         "_npmVersion" : "3.7.3",
+         "_id" : "jquery@1.12.3",
+         "description" : "JavaScript library for DOM operations",
+         "scripts" : {
+            "start" : "grunt watch",
+            "build" : "npm install && grunt",
+            "test" : "grunt && grunt test"
+         },
+         "dependencies" : {},
+         "dist" : {
+            "shasum" : "1298b88b908e7c7f7501eb8c1a61f1ac8337b531",
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-1.12.3.tgz"
+         },
+         "_nodeVersion" : "5.8.0",
+         "homepage" : "http://jquery.com",
+         "directories" : {},
+         "author" : {
+            "url" : "https://github.com/jquery/jquery/blob/1.12-stable/AUTHORS.txt",
+            "name" : "jQuery Foundation and other contributors"
+         },
+         "version" : "1.12.3",
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "browser",
+            "library"
+         ],
+         "_shasum" : "1298b88b908e7c7f7501eb8c1a61f1ac8337b531",
+         "bugs" : {
+            "url" : "https://github.com/jquery/jquery/issues"
+         },
+         "devDependencies" : {
+            "npm" : "2.1.12",
+            "grunt" : "0.4.5",
+            "requirejs" : "2.1.17",
+            "qunit-assert-step" : "1.0.3",
+            "testswarm" : "1.1.0",
+            "grunt-babel" : "5.0.1",
+            "commitplease" : "2.0.0",
+            "sizzle" : "2.2.1",
+            "grunt-npmcopy" : "0.1.0",
+            "grunt-contrib-watch" : "0.6.1",
+            "grunt-contrib-jshint" : "0.11.2",
+            "core-js" : "0.9.17",
+            "grunt-jsonlint" : "1.0.4",
+            "grunt-git-authors" : "2.0.1",
+            "qunitjs" : "1.17.1",
+            "grunt-cli" : "0.1.13",
+            "strip-json-comments" : "1.0.3",
+            "gzip-js" : "0.3.2",
+            "grunt-compare-size" : "0.4.0",
+            "win-spawn" : "2.0.0",
+            "load-grunt-tasks" : "1.0.0",
+            "grunt-jscs" : "2.1.0",
+            "sinon" : "1.12.2",
+            "grunt-contrib-uglify" : "0.9.2",
+            "jsdom" : "5.6.1"
+         },
+         "name" : "jquery"
+      },
+      "3.0.0" : {
+         "license" : "MIT",
+         "_npmUser" : {
+            "email" : "timmywillisn@gmail.com",
+            "name" : "timmywil"
+         },
+         "repository" : {
+            "type" : "git",
+            "url" : "git+https://github.com/jquery/jquery.git"
+         },
+         "commitplease" : {
+            "components" : [
+               "Docs",
+               "Tests",
+               "Build",
+               "Support",
+               "Release",
+               "Core",
+               "Ajax",
+               "Attributes",
+               "Callbacks",
+               "CSS",
+               "Data",
+               "Deferred",
+               "Deprecated",
+               "Dimensions",
+               "Effects",
+               "Event",
+               "Manipulation",
+               "Offset",
+               "Queue",
+               "Selector",
+               "Serialize",
+               "Traversing",
+               "Wrap"
+            ]
+         },
+         "description" : "JavaScript library for DOM operations",
+         "scripts" : {
+            "precommit" : "grunt precommit_lint",
+            "start" : "grunt watch",
+            "build" : "npm install && grunt",
+            "test" : "grunt && grunt test"
+         },
+         "dependencies" : {},
+         "dist" : {
+            "shasum" : "95a2a9541291a9f819e016f85ba247116d03e4ab",
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-3.0.0.tgz"
+         },
+         "_npmVersion" : "2.15.1",
+         "_id" : "jquery@3.0.0",
+         "maintainers" : [
+            {
+               "name" : "dmethvin",
+               "email" : "dave.methvin@gmail.com"
+            },
+            {
+               "email" : "scott.gonzalez@gmail.com",
+               "name" : "scott.gonzalez"
+            },
+            {
+               "email" : "m.goleb@gmail.com",
+               "name" : "m_gol"
+            },
+            {
+               "email" : "timmywillisn@gmail.com",
+               "name" : "timmywil"
+            }
+         ],
+         "main" : "dist/jquery.js",
+         "title" : "jQuery",
+         "_npmOperationalInternal" : {
+            "tmp" : "tmp/jquery-3.0.0.tgz_1465497191024_0.9057256667874753",
+            "host" : "packages-16-east.internal.npmjs.com"
+         },
+         "_from" : ".",
+         "gitHead" : "0078f86be166a8747819d5d1516776a662cb69df",
+         "bugs" : {
+            "url" : "https://github.com/jquery/jquery/issues"
+         },
+         "_shasum" : "95a2a9541291a9f819e016f85ba247116d03e4ab",
+         "version" : "3.0.0",
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "browser",
+            "library"
+         ],
+         "devDependencies" : {
+            "grunt-newer" : "1.2.0",
+            "testswarm" : "1.1.0",
+            "babel-preset-es2015" : "6.6.0",
+            "commitplease" : "2.3.1",
+            "sizzle" : "2.3.0",
+            "grunt-babel" : "6.0.0",
+            "promises-aplus-tests" : "2.1.1",
+            "grunt-contrib-jshint" : "1.0.0",
+            "grunt-contrib-watch" : "1.0.0",
+            "grunt-npmcopy" : "0.1.0",
+            "core-js" : "2.2.2",
+            "grunt-jsonlint" : "1.0.7",
+            "husky" : "0.11.4",
+            "grunt" : "1.0.1",
+            "requirejs" : "2.2.0",
+            "qunit-assert-step" : "1.0.3",
+            "load-grunt-tasks" : "3.5.0",
+            "cross-spawn" : "2.2.3",
+            "sinon" : "1.17.3",
+            "grunt-jscs" : "2.8.0",
+            "grunt-contrib-uglify" : "1.0.1",
+            "jsdom" : "5.6.1",
+            "grunt-git-authors" : "3.2.0",
+            "strip-json-comments" : "2.0.1",
+            "insight" : "0.8.1",
+            "grunt-cli" : "1.2.0",
+            "native-promise-only" : "0.8.1",
+            "qunitjs" : "1.23.1",
+            "gzip-js" : "0.3.2",
+            "grunt-compare-size" : "0.4.2",
+            "q" : "1.4.1"
+         },
+         "name" : "jquery",
+         "homepage" : "https://jquery.com",
+         "directories" : {},
+         "_nodeVersion" : "0.10.45",
+         "author" : {
+            "name" : "jQuery Foundation and other contributors",
+            "url" : "https://github.com/jquery/jquery/blob/3.0.0/AUTHORS.txt"
+         }
+      },
+      "1.11.1" : {
+         "_id" : "jquery@1.11.1",
+         "_npmVersion" : "1.2.25",
+         "dist" : {
+            "shasum" : "b6ec928590112ebed69e1e49cbfd0025ccd60ddb",
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-1.11.1.tgz"
+         },
+         "name" : "jquery",
+         "dependencies" : {},
+         "devDependencies" : {
+            "grunt-git-authors" : "1.2.0",
+            "grunt-cli" : "0.1.13",
+            "grunt" : "0.4.2",
+            "requirejs" : "2.1.10",
+            "gzip-js" : "0.3.2",
+            "grunt-compare-size" : "0.4.0",
+            "grunt-bowercopy" : "0.7.1",
+            "testswarm" : "1.1.0",
+            "load-grunt-tasks" : "0.3.0",
+            "commitplease" : "1.7.0",
+            "grunt-contrib-jshint" : "0.8.0",
+            "grunt-contrib-watch" : "0.5.3",
+            "grunt-jscs-checker" : "0.4.1",
+            "grunt-contrib-uglify" : "0.3.2",
+            "grunt-jsonlint" : "1.0.4"
+         },
+         "scripts" : {
+            "test" : "grunt",
+            "build" : "npm install && grunt",
+            "start" : "grunt watch"
+         },
+         "description" : "JavaScript library for DOM operations",
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "browser",
+            "library"
+         ],
+         "repository" : {
+            "url" : "https://github.com/jquery/jquery.git",
+            "type" : "git"
+         },
+         "version" : "1.11.1",
+         "_npmUser" : {
+            "name" : "dmethvin",
+            "email" : "dave.methvin@gmail.com"
+         },
+         "bugs" : {
+            "url" : "http://bugs.jquery.com"
+         },
+         "author" : {
+            "name" : "jQuery Foundation and other contributors",
+            "url" : "https://github.com/jquery/jquery/blob/1.11.1/AUTHORS.txt"
+         },
+         "_from" : ".",
+         "title" : "jQuery",
+         "main" : "dist/jquery.js",
+         "licenses" : [
+            {
+               "url" : "https://github.com/jquery/jquery/blob/1.11.1/MIT-LICENSE.txt",
+               "type" : "MIT"
+            }
+         ],
+         "directories" : {},
+         "homepage" : "http://jquery.com",
+         "maintainers" : [
+            {
+               "email" : "dave.methvin@gmail.com",
+               "name" : "dmethvin"
+            },
+            {
+               "name" : "scott.gonzalez",
+               "email" : "scott.gonzalez@gmail.com"
+            },
+            {
+               "name" : "m_gol",
+               "email" : "m.goleb@gmail.com"
+            }
+         ]
+      },
+      "1.8.3" : {
+         "author" : {
+            "name" : "James Morrin",
+            "email" : "treasonx@gmail.com"
+         },
+         "deprecated" : "Versions of the jquery npm package older than 1.9.0 are patched versions that don't work in web browsers. Please upgrade to >=1.11.0.",
+         "maintainers" : [
+            {
+               "name" : "coolaj86",
+               "email" : "coolaj86@gmail.com"
+            },
+            {
+               "name" : "treasonx",
+               "email" : "treasonx@gmail.com"
+            }
+         ],
+         "engines" : {
+            "node" : ">=0.6"
+         },
+         "homepage" : "https://github.com/coolaj86/node-jquery",
+         "directories" : {},
+         "licenses" : [
+            {
+               "url" : "https://github.com/coolaj86/node-jquery/blob/master/LICENSE-MIT",
+               "type" : "MIT"
+            }
+         ],
+         "main" : "lib/node-jquery",
+         "description" : "jQuery: The Write Less, Do More, JavaScript Library (packaged for Node.JS)",
+         "devDependencies" : {
+            "nodeunit" : "~0.7.4",
+            "grunt" : "~0.3.8"
+         },
+         "scripts" : {
+            "test" : "grunt test"
+         },
+         "dependencies" : {
+            "navigator" : "~1.0.1",
+            "xmlhttprequest" : "~1.4.2",
+            "location" : "0.0.1",
+            "contextify" : "~0.1.3",
+            "jsdom" : "~0.2.14",
+            "htmlparser" : "1.7.6"
+         },
+         "name" : "jquery",
+         "dist" : {
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-1.8.3.tgz",
+            "shasum" : "cfa2941c05a83d966f21347f759a6d15281c60cc"
+         },
+         "url" : "http://jquery.com",
+         "_npmVersion" : "1.1.61",
+         "_id" : "jquery@1.8.3",
+         "bugs" : {
+            "url" : "https://github.com/coolaj86/node-jquery/issues"
+         },
+         "_npmUser" : {
+            "email" : "treasonx@gmail.com",
+            "name" : "treasonx"
+         },
+         "version" : "1.8.3",
+         "repository" : {
+            "url" : "git://github.com/coolaj86/node-jquery.git",
+            "type" : "git"
+         },
+         "keywords" : [
+            "util",
+            "dom",
+            "jquery"
+         ]
+      },
+      "1.9.1" : {
+         "_from" : ".",
+         "author" : {
+            "name" : "jQuery Foundation and other contributors",
+            "url" : "https://github.com/jquery/jquery/blob/master/AUTHORS.txt"
+         },
+         "gitHead" : "d71f6a53927ad02d728503385d15539b73d21ac8",
+         "maintainers" : [
+            {
+               "email" : "dave.methvin@gmail.com",
+               "name" : "dmethvin"
+            },
+            {
+               "email" : "scott.gonzalez@gmail.com",
+               "name" : "scott.gonzalez"
+            },
+            {
+               "name" : "m_gol",
+               "email" : "m.goleb@gmail.com"
+            },
+            {
+               "name" : "timmywil",
+               "email" : "timmywillisn@gmail.com"
+            }
+         ],
+         "homepage" : "http://jquery.com",
+         "directories" : {},
+         "licenses" : [
+            {
+               "url" : "https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt",
+               "type" : "MIT"
+            }
+         ],
+         "title" : "jQuery",
+         "description" : "JavaScript library for DOM operations",
+         "devDependencies" : {
+            "grunt-update-submodules" : "~0.2.0",
+            "grunt-git-authors" : "~1.1.0",
+            "testswarm" : "0.2.2",
+            "grunt" : "~0.4.0",
+            "grunt-contrib-watch" : "~0.1.1",
+            "grunt-contrib-jshint" : "~0.1.1",
+            "grunt-contrib-uglify" : "~0.1.1",
+            "grunt-compare-size" : "~0.3.0"
+         },
+         "scripts" : {
+            "test" : "grunt"
+         },
+         "dependencies" : {},
+         "name" : "jquery",
+         "dist" : {
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-1.9.1.tgz",
+            "shasum" : "e4cd4835faaefbade535857613c0fc3ff2adaf34"
+         },
+         "_npmVersion" : "1.5.0-alpha-1",
+         "_id" : "jquery@1.9.1",
+         "bugs" : {
+            "url" : "http://bugs.jquery.com"
+         },
+         "_shasum" : "e4cd4835faaefbade535857613c0fc3ff2adaf34",
+         "_npmUser" : {
+            "name" : "timmywil",
+            "email" : "timmywillisn@gmail.com"
+         },
+         "version" : "1.9.1",
+         "repository" : {
+            "url" : "https://github.com/jquery/jquery.git",
+            "type" : "git"
+         },
+         "keywords" : []
+      },
+      "1.11.1-beta1" : {
+         "_from" : ".",
+         "author" : {
+            "url" : "https://github.com/jquery/jquery/blob/1.11.1-beta1/AUTHORS.txt",
+            "name" : "jQuery Foundation and other contributors"
+         },
+         "licenses" : [
+            {
+               "type" : "MIT",
+               "url" : "https://github.com/jquery/jquery/blob/1.11.1-beta1/MIT-LICENSE.txt"
+            }
+         ],
+         "main" : "dist/jquery.js",
+         "title" : "jQuery",
+         "maintainers" : [
+            {
+               "name" : "jquery",
+               "email" : "npm@jquery.com"
+            },
+            {
+               "email" : "dave.methvin@gmail.com",
+               "name" : "dmethvin"
+            },
+            {
+               "email" : "scott.gonzalez@gmail.com",
+               "name" : "scott.gonzalez"
+            },
+            {
+               "email" : "m.goleb@gmail.com",
+               "name" : "m_gol"
+            }
+         ],
+         "homepage" : "http://jquery.com",
+         "directories" : {},
+         "_npmVersion" : "1.4.6",
+         "_id" : "jquery@1.11.1-beta1",
+         "description" : "JavaScript library for DOM operations",
+         "scripts" : {
+            "start" : "grunt watch",
+            "test" : "grunt",
+            "build" : "npm install && grunt"
+         },
+         "devDependencies" : {
+            "gzip-js" : "0.3.2",
+            "grunt-bowercopy" : "0.7.1",
+            "grunt-compare-size" : "0.4.0",
+            "grunt-cli" : "0.1.13",
+            "grunt-git-authors" : "1.2.0",
+            "requirejs" : "2.1.10",
+            "grunt" : "0.4.2",
+            "grunt-contrib-watch" : "0.5.3",
+            "grunt-contrib-jshint" : "0.8.0",
+            "grunt-jsonlint" : "1.0.4",
+            "grunt-jscs-checker" : "0.3.2",
+            "grunt-contrib-uglify" : "0.3.2",
+            "commitplease" : "1.7.0",
+            "testswarm" : "1.1.0",
+            "load-grunt-tasks" : "0.3.0"
+         },
+         "dependencies" : {},
+         "name" : "jquery",
+         "dist" : {
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-1.11.1-beta1.tgz",
+            "shasum" : "c7eacde5e1ae06e029f1cd1b2dd444953a33e843"
+         },
+         "version" : "1.11.1-beta1",
+         "repository" : {
+            "type" : "git",
+            "url" : "https://github.com/jquery/jquery.git"
+         },
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "library"
+         ],
+         "bugs" : {
+            "url" : "http://bugs.jquery.com"
+         },
+         "_npmUser" : {
+            "email" : "m.goleb@gmail.com",
+            "name" : "m_gol"
+         }
+      },
+      "1.5.1" : {
+         "_engineSupported" : true,
+         "_id" : "jquery@1.5.1",
+         "url" : "jquery.com",
+         "_npmVersion" : "0.3.15",
+         "dependencies" : {
+            "jsdom" : "=0.1.20",
+            "htmlparser" : ">= 1.7.3"
+         },
+         "dist" : {
+            "shasum" : "2ae2d661e906c1a01e044a71bb5b2743942183e5",
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-1.5.1.tgz"
+         },
+         "name" : "jquery",
+         "description" : "jQuery: The Write Less, Do More, JavaScript Library",
+         "_defaultsLoaded" : true,
+         "keywords" : [
+            "util",
+            "dom",
+            "jquery"
+         ],
+         "version" : "1.5.1",
+         "lib" : "lib",
+         "contributors" : [],
+         "deprecated" : "Versions of the jquery npm package older than 1.9.0 are patched versions that don't work in web browsers. Please upgrade to >=1.11.0.",
+         "author" : {
+            "name" : "John Resig",
+            "email" : "jeresig@gmail.com"
+         },
+         "_nodeVersion" : "v0.4.2",
+         "main" : "./dist/node-jquery.js",
+         "directories" : {
+            "lib" : "./lib"
+         },
+         "files" : [
+            ""
+         ],
+         "engines" : {
+            "node" : "*"
+         }
+      },
+      "1.11.1-rc2" : {
+         "author" : {
+            "name" : "jQuery Foundation and other contributors",
+            "url" : "https://github.com/jquery/jquery/blob/1.11.1-rc2/AUTHORS.txt"
+         },
+         "_from" : ".",
+         "title" : "jQuery",
+         "main" : "dist/jquery.js",
+         "licenses" : [
+            {
+               "url" : "https://github.com/jquery/jquery/blob/1.11.1-rc2/MIT-LICENSE.txt",
+               "type" : "MIT"
+            }
+         ],
+         "directories" : {},
+         "homepage" : "http://jquery.com",
+         "maintainers" : [
+            {
+               "email" : "dave.methvin@gmail.com",
+               "name" : "dmethvin"
+            },
+            {
+               "email" : "scott.gonzalez@gmail.com",
+               "name" : "scott.gonzalez"
+            },
+            {
+               "name" : "m_gol",
+               "email" : "m.goleb@gmail.com"
+            }
+         ],
+         "_id" : "jquery@1.11.1-rc2",
+         "_npmVersion" : "1.2.25",
+         "name" : "jquery",
+         "dist" : {
+            "shasum" : "a4ef3edde0864d8524c5e72f59c459fd7a9ebd17",
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-1.11.1-rc2.tgz"
+         },
+         "dependencies" : {},
+         "scripts" : {
+            "start" : "grunt watch",
+            "test" : "grunt",
+            "build" : "npm install && grunt"
+         },
+         "devDependencies" : {
+            "grunt-contrib-jshint" : "0.8.0",
+            "grunt-contrib-watch" : "0.5.3",
+            "grunt-jsonlint" : "1.0.4",
+            "grunt-jscs-checker" : "0.4.1",
+            "grunt-contrib-uglify" : "0.3.2",
+            "commitplease" : "1.7.0",
+            "testswarm" : "1.1.0",
+            "load-grunt-tasks" : "0.3.0",
+            "gzip-js" : "0.3.2",
+            "grunt-bowercopy" : "0.7.1",
+            "grunt-compare-size" : "0.4.0",
+            "grunt-cli" : "0.1.13",
+            "grunt-git-authors" : "1.2.0",
+            "requirejs" : "2.1.10",
+            "grunt" : "0.4.2"
+         },
+         "description" : "JavaScript library for DOM operations",
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "library"
+         ],
+         "repository" : {
+            "url" : "https://github.com/jquery/jquery.git",
+            "type" : "git"
+         },
+         "version" : "1.11.1-rc2",
+         "_npmUser" : {
+            "email" : "dave.methvin@gmail.com",
+            "name" : "dmethvin"
+         },
+         "bugs" : {
+            "url" : "http://bugs.jquery.com"
+         }
+      },
+      "1.12.0" : {
+         "_id" : "jquery@1.12.0",
+         "_npmVersion" : "3.3.12",
+         "dist" : {
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-1.12.0.tgz",
+            "shasum" : "44653be4e3e4628b106bf2141dfd10fbca6021ef"
+         },
+         "dependencies" : {},
+         "scripts" : {
+            "start" : "grunt watch",
+            "test" : "grunt && grunt test",
+            "build" : "npm install && grunt"
+         },
+         "description" : "JavaScript library for DOM operations",
+         "repository" : {
+            "url" : "git+https://github.com/jquery/jquery.git",
+            "type" : "git"
+         },
+         "commitplease" : {
+            "components" : [
+               "Docs",
+               "Tests",
+               "Build",
+               "Release",
+               "Core",
+               "Ajax",
+               "Attributes",
+               "Callbacks",
+               "CSS",
+               "Data",
+               "Deferred",
+               "Deprecated",
+               "Dimensions",
+               "Effects",
+               "Event",
+               "Manipulation",
+               "Offset",
+               "Queue",
+               "Selector",
+               "Serialize",
+               "Traversing",
+               "Wrap"
+            ]
+         },
+         "_npmUser" : {
+            "name" : "timmywil",
+            "email" : "timmywillisn@gmail.com"
+         },
+         "license" : "MIT",
+         "gitHead" : "efbdc6e3f0fa3d3cd4d3d8bfa37990b707f7c2e1",
+         "_from" : ".",
+         "title" : "jQuery",
+         "main" : "dist/jquery.js",
+         "maintainers" : [
+            {
+               "name" : "dmethvin",
+               "email" : "dave.methvin@gmail.com"
+            },
+            {
+               "email" : "scott.gonzalez@gmail.com",
+               "name" : "scott.gonzalez"
+            },
+            {
+               "name" : "m_gol",
+               "email" : "m.goleb@gmail.com"
+            },
+            {
+               "name" : "timmywil",
+               "email" : "timmywillisn@gmail.com"
+            }
+         ],
+         "name" : "jquery",
+         "devDependencies" : {
+            "load-grunt-tasks" : "1.0.0",
+            "grunt-jscs" : "2.1.0",
+            "sinon" : "1.12.2",
+            "jsdom" : "5.6.1",
+            "grunt-contrib-uglify" : "0.9.2",
+            "qunitjs" : "1.17.1",
+            "grunt-cli" : "0.1.13",
+            "strip-json-comments" : "1.0.3",
+            "grunt-git-authors" : "2.0.1",
+            "gzip-js" : "0.3.2",
+            "win-spawn" : "2.0.0",
+            "grunt-compare-size" : "0.4.0",
+            "grunt-babel" : "5.0.1",
+            "commitplease" : "2.0.0",
+            "sizzle" : "2.2.1",
+            "testswarm" : "1.1.0",
+            "grunt-npmcopy" : "0.1.0",
+            "grunt-contrib-jshint" : "0.11.2",
+            "grunt-contrib-watch" : "0.6.1",
+            "grunt-jsonlint" : "1.0.4",
+            "core-js" : "0.9.17",
+            "npm" : "2.1.12",
+            "requirejs" : "2.1.17",
+            "grunt" : "0.4.5",
+            "qunit-assert-step" : "1.0.3"
+         },
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "browser",
+            "library"
+         ],
+         "version" : "1.12.0",
+         "bugs" : {
+            "url" : "https://github.com/jquery/jquery/issues"
+         },
+         "_shasum" : "44653be4e3e4628b106bf2141dfd10fbca6021ef",
+         "author" : {
+            "url" : "https://github.com/jquery/jquery/blob/1.12-stable/AUTHORS.txt",
+            "name" : "jQuery Foundation and other contributors"
+         },
+         "_nodeVersion" : "5.2.0",
+         "directories" : {},
+         "homepage" : "http://jquery.com"
+      },
+      "1.12.4" : {
+         "directories" : {},
+         "homepage" : "http://jquery.com",
+         "_nodeVersion" : "0.10.45",
+         "author" : {
+            "url" : "https://github.com/jquery/jquery/blob/1.12-stable/AUTHORS.txt",
+            "name" : "jQuery Foundation and other contributors"
+         },
+         "bugs" : {
+            "url" : "https://github.com/jquery/jquery/issues"
+         },
+         "_shasum" : "01e1dfba290fe73deba77ceeacb0f9ba2fec9e0c",
+         "version" : "1.12.4",
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "browser",
+            "library"
+         ],
+         "devDependencies" : {
+            "load-grunt-tasks" : "1.0.0",
+            "jsdom" : "5.6.1",
+            "grunt-contrib-uglify" : "0.9.2",
+            "grunt-jscs" : "2.1.0",
+            "sinon" : "1.12.2",
+            "qunitjs" : "1.17.1",
+            "strip-json-comments" : "1.0.3",
+            "grunt-cli" : "0.1.13",
+            "grunt-git-authors" : "2.0.1",
+            "win-spawn" : "2.0.0",
+            "grunt-compare-size" : "0.4.0",
+            "gzip-js" : "0.3.2",
+            "grunt-babel" : "5.0.1",
+            "sizzle" : "2.2.1",
+            "commitplease" : "2.0.0",
+            "testswarm" : "1.1.0",
+            "grunt-jsonlint" : "1.0.4",
+            "core-js" : "0.9.17",
+            "grunt-npmcopy" : "0.1.0",
+            "grunt-contrib-jshint" : "0.11.2",
+            "grunt-contrib-watch" : "0.6.1",
+            "requirejs" : "2.1.17",
+            "grunt" : "0.4.5",
+            "npm" : "2.1.12",
+            "qunit-assert-step" : "1.0.3"
+         },
+         "name" : "jquery",
+         "maintainers" : [
+            {
+               "email" : "dave.methvin@gmail.com",
+               "name" : "dmethvin"
+            },
+            {
+               "name" : "scott.gonzalez",
+               "email" : "scott.gonzalez@gmail.com"
+            },
+            {
+               "name" : "m_gol",
+               "email" : "m.goleb@gmail.com"
+            },
+            {
+               "name" : "timmywil",
+               "email" : "timmywillisn@gmail.com"
+            }
+         ],
+         "main" : "dist/jquery.js",
+         "title" : "jQuery",
+         "_npmOperationalInternal" : {
+            "tmp" : "tmp/jquery-1.12.4.tgz_1463764744844_0.4810373710934073",
+            "host" : "packages-12-west.internal.npmjs.com"
+         },
+         "_from" : ".",
+         "gitHead" : "5e89585e0121e72ff47de177c5ef604f3089a53d",
+         "license" : "MIT",
+         "_npmUser" : {
+            "name" : "timmywil",
+            "email" : "timmywillisn@gmail.com"
+         },
+         "commitplease" : {
+            "components" : [
+               "Docs",
+               "Tests",
+               "Build",
+               "Release",
+               "Core",
+               "Ajax",
+               "Attributes",
+               "Callbacks",
+               "CSS",
+               "Data",
+               "Deferred",
+               "Deprecated",
+               "Dimensions",
+               "Effects",
+               "Event",
+               "Manipulation",
+               "Offset",
+               "Queue",
+               "Selector",
+               "Serialize",
+               "Traversing",
+               "Wrap"
+            ]
+         },
+         "repository" : {
+            "type" : "git",
+            "url" : "git+https://github.com/jquery/jquery.git"
+         },
+         "scripts" : {
+            "test" : "grunt && grunt test",
+            "build" : "npm install && grunt",
+            "start" : "grunt watch"
+         },
+         "description" : "JavaScript library for DOM operations",
+         "dist" : {
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-1.12.4.tgz",
+            "shasum" : "01e1dfba290fe73deba77ceeacb0f9ba2fec9e0c"
+         },
+         "dependencies" : {},
+         "_npmVersion" : "2.15.1",
+         "_id" : "jquery@1.12.4"
+      },
+      "1.7.2" : {
+         "directories" : {},
+         "homepage" : "https://github.com/coolaj86/node-jquery",
+         "_nodeVersion" : "v0.6.14",
+         "licenses" : [
+            {
+               "type" : "MIT",
+               "url" : "https://github.com/coolaj86/node-jquery/blob/master/LICENSE-MIT"
+            }
+         ],
+         "author" : {
+            "email" : "treasonx@gmail.com",
+            "name" : "James Morrin"
+         },
+         "deprecated" : "Versions of the jquery npm package older than 1.9.0 are patched versions that don't work in web browsers. Please upgrade to >=1.11.0.",
+         "bugs" : {
+            "url" : "https://github.com/coolaj86/node-jquery/issues"
+         },
+         "keywords" : [
+            "util",
+            "dom",
+            "jquery"
+         ],
+         "version" : "1.7.2",
+         "name" : "jquery",
+         "devDependencies" : {
+            "grunt" : "~0.3.8",
+            "nodeunit" : "~0.7.4"
+         },
+         "_defaultsLoaded" : true,
+         "engines" : {
+            "node" : "0.6"
+         },
+         "maintainers" : [
+            {
+               "email" : "coolaj86@gmail.com",
+               "name" : "coolaj86"
+            },
+            {
+               "name" : "treasonx",
+               "email" : "treasonx@gmail.com"
+            }
+         ],
+         "optionalDependencies" : {},
+         "main" : "lib/node-jquery",
+         "_npmUser" : {
+            "name" : "treasonx",
+            "email" : "treasonx@gmail.com"
+         },
+         "repository" : {
+            "type" : "git",
+            "url" : "git://github.com/coolaj86/node-jquery.git"
+         },
+         "dist" : {
+            "shasum" : "a93746763aca75a34df4c16395b0826310d0eaf2",
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-1.7.2.tgz"
+         },
+         "dependencies" : {
+            "jsdom" : "~0.2.14",
+            "htmlparser" : "1.7.6",
+            "xmlhttprequest" : "~1.3.0"
+         },
+         "scripts" : {
+            "test" : "grunt test"
+         },
+         "description" : "jQuery: The Write Less, Do More, JavaScript Library (packaged for Node.JS)",
+         "_id" : "jquery@1.7.2",
+         "_engineSupported" : true,
+         "url" : "http://jquery.com",
+         "_npmVersion" : "1.1.12"
+      },
+      "3.2.0" : {
+         "maintainers" : [
+            {
+               "name" : "dmethvin",
+               "email" : "dave.methvin@gmail.com"
+            },
+            {
+               "name" : "mgol",
+               "email" : "m.goleb@gmail.com"
+            },
+            {
+               "name" : "scott.gonzalez",
+               "email" : "scott.gonzalez@gmail.com"
+            },
+            {
+               "email" : "4timmywil@gmail.com",
+               "name" : "timmywil"
+            }
+         ],
+         "main" : "dist/jquery.js",
+         "title" : "jQuery",
+         "_npmOperationalInternal" : {
+            "host" : "packages-18-east.internal.npmjs.com",
+            "tmp" : "tmp/jquery-3.2.0.tgz_1489699855733_0.5328386940527707"
+         },
+         "_from" : ".",
+         "gitHead" : "a81259fff4ea0c7b4cd98f04050c829640395a31",
+         "license" : "MIT",
+         "_npmUser" : {
+            "email" : "4timmywil@gmail.com",
+            "name" : "timmywil"
+         },
+         "repository" : {
+            "type" : "git",
+            "url" : "git+https://github.com/jquery/jquery.git"
+         },
+         "commitplease" : {
+            "ticketPattern" : "^((Closes|Fixes) ([a-zA-Z]{2,}-)[0-9]+)|^(Refs? [^#])",
+            "components" : [
+               "Docs",
+               "Tests",
+               "Build",
+               "Support",
+               "Release",
+               "Core",
+               "Ajax",
+               "Attributes",
+               "Callbacks",
+               "CSS",
+               "Data",
+               "Deferred",
+               "Deprecated",
+               "Dimensions",
+               "Effects",
+               "Event",
+               "Manipulation",
+               "Offset",
+               "Queue",
+               "Selector",
+               "Serialize",
+               "Traversing",
+               "Wrap"
+            ],
+            "markerPattern" : "^((clos|fix|resolv)(e[sd]|ing))|^(refs?)",
+            "nohook" : true
+         },
+         "description" : "JavaScript library for DOM operations",
+         "scripts" : {
+            "precommit" : "grunt lint:newer",
+            "start" : "grunt watch",
+            "commitmsg" : "node node_modules/commitplease",
+            "build" : "npm install && grunt",
+            "test" : "grunt && grunt test:slow"
+         },
+         "dependencies" : {},
+         "dist" : {
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-3.2.0.tgz",
+            "shasum" : "3bdbba66e1eee0785532dddadb0e0d2521ca584b"
+         },
+         "_npmVersion" : "4.1.2",
+         "_id" : "jquery@3.2.0",
+         "homepage" : "https://jquery.com",
+         "directories" : {},
+         "_nodeVersion" : "7.7.3",
+         "author" : {
+            "name" : "JS Foundation and other contributors",
+            "url" : "https://github.com/jquery/jquery/blob/3.2.0/AUTHORS.txt"
+         },
+         "_shasum" : "3bdbba66e1eee0785532dddadb0e0d2521ca584b",
+         "bugs" : {
+            "url" : "https://github.com/jquery/jquery/issues"
+         },
+         "version" : "3.2.0",
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "browser",
+            "library"
+         ],
+         "devDependencies" : {
+            "grunt-npmcopy" : "0.1.0",
+            "grunt-contrib-watch" : "1.0.0",
+            "core-js" : "2.2.2",
+            "grunt-jsonlint" : "1.0.7",
+            "testswarm" : "1.1.0",
+            "babel-preset-es2015" : "6.6.0",
+            "grunt-newer" : "1.2.0",
+            "grunt-babel" : "6.0.0",
+            "grunt-eslint" : "19.0.0",
+            "commitplease" : "2.6.1",
+            "sizzle" : "2.3.3",
+            "eslint-config-jquery" : "1.0.0",
+            "promises-aplus-tests" : "2.1.2",
+            "qunit-assert-step" : "1.0.3",
+            "husky" : "0.11.4",
+            "grunt" : "1.0.1",
+            "requirejs" : "2.2.0",
+            "cross-spawn" : "2.2.3",
+            "sinon" : "1.17.3",
+            "grunt-contrib-uglify" : "1.0.1",
+            "jsdom" : "5.6.1",
+            "load-grunt-tasks" : "3.5.0",
+            "gzip-js" : "0.3.2",
+            "q" : "1.4.1",
+            "grunt-compare-size" : "0.4.2",
+            "grunt-git-authors" : "3.2.0",
+            "native-promise-only" : "0.8.1",
+            "qunitjs" : "1.23.1",
+            "strip-json-comments" : "2.0.1",
+            "insight" : "0.8.1",
+            "grunt-cli" : "1.2.0"
+         },
+         "name" : "jquery"
+      },
+      "1.11.2" : {
+         "repository" : {
+            "type" : "git",
+            "url" : "https://github.com/jquery/jquery.git"
+         },
+         "_npmUser" : {
+            "email" : "dave.methvin@gmail.com",
+            "name" : "dmethvin"
+         },
+         "_id" : "jquery@1.11.2",
+         "_npmVersion" : "1.4.28",
+         "dependencies" : {},
+         "dist" : {
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-1.11.2.tgz",
+            "shasum" : "30ab26857211c37caa83da0f6903155fe49bb72d"
+         },
+         "description" : "JavaScript library for DOM operations",
+         "scripts" : {
+            "start" : "grunt watch",
+            "test" : "grunt",
+            "build" : "npm install && grunt"
+         },
+         "title" : "jQuery",
+         "main" : "dist/jquery.js",
+         "maintainers" : [
+            {
+               "email" : "dave.methvin@gmail.com",
+               "name" : "dmethvin"
+            },
+            {
+               "email" : "scott.gonzalez@gmail.com",
+               "name" : "scott.gonzalez"
+            },
+            {
+               "email" : "m.goleb@gmail.com",
+               "name" : "m_gol"
+            },
+            {
+               "name" : "timmywil",
+               "email" : "timmywillisn@gmail.com"
+            }
+         ],
+         "gitHead" : "9690801db01709bfbff5f977d07fb7cc14472908",
+         "_from" : ".",
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "browser",
+            "library"
+         ],
+         "version" : "1.11.2",
+         "_shasum" : "30ab26857211c37caa83da0f6903155fe49bb72d",
+         "bugs" : {
+            "url" : "http://bugs.jquery.com"
+         },
+         "name" : "jquery",
+         "devDependencies" : {
+            "grunt" : "0.4.2",
+            "requirejs" : "2.1.10",
+            "grunt-git-authors" : "1.2.0",
+            "grunt-cli" : "0.1.13",
+            "grunt-compare-size" : "0.4.0",
+            "grunt-bowercopy" : "0.7.1",
+            "gzip-js" : "0.3.2",
+            "load-grunt-tasks" : "0.3.0",
+            "testswarm" : "1.1.0",
+            "commitplease" : "2.0.0",
+            "grunt-contrib-uglify" : "0.3.2",
+            "grunt-jscs-checker" : "0.4.1",
+            "grunt-jsonlint" : "1.0.4",
+            "grunt-contrib-jshint" : "0.8.0",
+            "grunt-contrib-watch" : "0.5.3"
+         },
+         "licenses" : [
+            {
+               "url" : "https://github.com/jquery/jquery/blob/1.11.2/MIT-LICENSE.txt",
+               "type" : "MIT"
+            }
+         ],
+         "homepage" : "http://jquery.com",
+         "directories" : {},
+         "author" : {
+            "name" : "jQuery Foundation and other contributors",
+            "url" : "https://github.com/jquery/jquery/blob/1.11.2/AUTHORS.txt"
+         }
+      },
+      "2.1.0" : {
+         "bugs" : {
+            "url" : "http://bugs.jquery.com"
+         },
+         "_npmUser" : {
+            "name" : "jquery",
+            "email" : "npm@jquery.org"
+         },
+         "version" : "2.1.0",
+         "repository" : {
+            "type" : "git",
+            "url" : "https://github.com/jquery/jquery.git"
+         },
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "library"
+         ],
+         "description" : "JavaScript library for DOM operations",
+         "devDependencies" : {
+            "grunt-contrib-uglify" : "0.2.7",
+            "grunt-jscs-checker" : "0.2.6",
+            "grunt-jsonlint" : "1.0.4",
+            "grunt-contrib-jshint" : "0.7.2",
+            "grunt-contrib-watch" : "0.5.3",
+            "load-grunt-tasks" : "0.2.0",
+            "testswarm" : "1.1.0",
+            "grunt-compare-size" : "0.4.0",
+            "grunt-bowercopy" : "0.5.0",
+            "archiver" : "0.4.10",
+            "gzip-js" : "0.3.2",
+            "shelljs" : "0.2.6",
+            "grunt" : "0.4.2",
+            "requirejs" : "2.1.9",
+            "grunt-git-authors" : "1.2.0",
+            "grunt-cli" : "0.1.11"
+         },
+         "scripts" : {
+            "start" : "grunt watch",
+            "test" : "grunt",
+            "build" : "npm install && grunt"
+         },
+         "dependencies" : {},
+         "dist" : {
+            "shasum" : "1c9a8c971d2b53dae10d72e16cbb5a1df16a4ace",
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-2.1.0.tgz"
+         },
+         "name" : "jquery",
+         "_npmVersion" : "1.3.21",
+         "_id" : "jquery@2.1.0",
+         "maintainers" : [
+            {
+               "email" : "npm@jquery.org",
+               "name" : "jquery"
+            }
+         ],
+         "homepage" : "http://jquery.com",
+         "directories" : {},
+         "licenses" : [
+            {
+               "type" : "MIT",
+               "url" : "https://github.com/jquery/jquery/blob/2.1.0/MIT-LICENSE.txt"
+            }
+         ],
+         "main" : "dist/jquery.js",
+         "title" : "jQuery",
+         "_from" : ".",
+         "author" : {
+            "name" : "jQuery Foundation and other contributors",
+            "url" : "https://github.com/jquery/jquery/blob/2.1.0/AUTHORS.txt"
+         }
+      },
+      "3.1.1" : {
+         "_nodeVersion" : "6.6.0",
+         "homepage" : "https://jquery.com",
+         "directories" : {},
+         "author" : {
+            "url" : "https://github.com/jquery/jquery/blob/3.1.1/AUTHORS.txt",
+            "name" : "jQuery Foundation and other contributors"
+         },
+         "version" : "3.1.1",
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "browser",
+            "library"
+         ],
+         "bugs" : {
+            "url" : "https://github.com/jquery/jquery/issues"
+         },
+         "_shasum" : "347c1c21c7e004115e0a4da32cece041fad3c8a3",
+         "devDependencies" : {
+            "grunt-git-authors" : "3.2.0",
+            "strip-json-comments" : "2.0.1",
+            "grunt-cli" : "1.2.0",
+            "insight" : "0.8.1",
+            "qunitjs" : "1.23.1",
+            "native-promise-only" : "0.8.1",
+            "gzip-js" : "0.3.2",
+            "grunt-compare-size" : "0.4.2",
+            "q" : "1.4.1",
+            "load-grunt-tasks" : "3.5.0",
+            "cross-spawn" : "2.2.3",
+            "sinon" : "1.17.3",
+            "grunt-contrib-uglify" : "1.0.1",
+            "jsdom" : "5.6.1",
+            "husky" : "0.11.4",
+            "grunt" : "1.0.1",
+            "requirejs" : "2.2.0",
+            "qunit-assert-step" : "1.0.3",
+            "testswarm" : "1.1.0",
+            "babel-preset-es2015" : "6.6.0",
+            "grunt-newer" : "1.2.0",
+            "commitplease" : "2.6.1",
+            "sizzle" : "2.3.3",
+            "grunt-eslint" : "19.0.0",
+            "grunt-babel" : "6.0.0",
+            "promises-aplus-tests" : "2.1.2",
+            "eslint-config-jquery" : "1.0.0",
+            "grunt-contrib-watch" : "1.0.0",
+            "grunt-npmcopy" : "0.1.0",
+            "core-js" : "2.2.2",
+            "grunt-jsonlint" : "1.0.7"
+         },
+         "name" : "jquery",
+         "main" : "dist/jquery.js",
+         "title" : "jQuery",
+         "maintainers" : [
+            {
+               "email" : "dave.methvin@gmail.com",
+               "name" : "dmethvin"
+            },
+            {
+               "email" : "scott.gonzalez@gmail.com",
+               "name" : "scott.gonzalez"
+            },
+            {
+               "name" : "m_gol",
+               "email" : "m.goleb@gmail.com"
+            },
+            {
+               "name" : "timmywil",
+               "email" : "timmywillisn@gmail.com"
+            }
+         ],
+         "gitHead" : "1b30f3ad466ebf2714d47eda34dbd7fdf6849fe3",
+         "_npmOperationalInternal" : {
+            "host" : "packages-12-west.internal.npmjs.com",
+            "tmp" : "tmp/jquery-3.1.1.tgz_1474583566957_0.15473420196212828"
+         },
+         "_from" : ".",
+         "commitplease" : {
+            "ticketPattern" : "^((Closes|Fixes) ([a-zA-Z]{2,}-)[0-9]+)|(Refs? [^#])",
+            "markerPattern" : "^((clos|fix|resolv)(e[sd]|ing))|(refs?)",
+            "components" : [
+               "Docs",
+               "Tests",
+               "Build",
+               "Support",
+               "Release",
+               "Core",
+               "Ajax",
+               "Attributes",
+               "Callbacks",
+               "CSS",
+               "Data",
+               "Deferred",
+               "Deprecated",
+               "Dimensions",
+               "Effects",
+               "Event",
+               "Manipulation",
+               "Offset",
+               "Queue",
+               "Selector",
+               "Serialize",
+               "Traversing",
+               "Wrap"
+            ],
+            "nohook" : true
+         },
+         "repository" : {
+            "type" : "git",
+            "url" : "git+https://github.com/jquery/jquery.git"
+         },
+         "license" : "MIT",
+         "_npmUser" : {
+            "name" : "timmywil",
+            "email" : "4timmywil@gmail.com"
+         },
+         "_npmVersion" : "3.10.3",
+         "_id" : "jquery@3.1.1",
+         "description" : "JavaScript library for DOM operations",
+         "scripts" : {
+            "build" : "npm install && grunt",
+            "test" : "grunt && grunt test:slow",
+            "precommit" : "grunt lint:newer",
+            "commitmsg" : "node node_modules/commitplease",
+            "start" : "grunt watch"
+         },
+         "dependencies" : {},
+         "dist" : {
+            "shasum" : "347c1c21c7e004115e0a4da32cece041fad3c8a3",
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-3.1.1.tgz"
+         }
+      },
+      "2.1.3" : {
+         "gitHead" : "8f2a9d9272d6ed7f32d3a484740ab342c02541e0",
+         "_from" : ".",
+         "title" : "jQuery",
+         "main" : "dist/jquery.js",
+         "maintainers" : [
+            {
+               "name" : "dmethvin",
+               "email" : "dave.methvin@gmail.com"
+            },
+            {
+               "email" : "scott.gonzalez@gmail.com",
+               "name" : "scott.gonzalez"
+            },
+            {
+               "name" : "m_gol",
+               "email" : "m.goleb@gmail.com"
+            },
+            {
+               "email" : "timmywillisn@gmail.com",
+               "name" : "timmywil"
+            }
+         ],
+         "_id" : "jquery@2.1.3",
+         "_npmVersion" : "2.1.14",
+         "dependencies" : {},
+         "dist" : {
+            "shasum" : "6ec55204673d505d39432c5bf5cfad10e1dbad2e",
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-2.1.3.tgz"
+         },
+         "description" : "JavaScript library for DOM operations",
+         "scripts" : {
+            "test" : "grunt",
+            "build" : "npm install && grunt",
+            "start" : "grunt watch"
+         },
+         "repository" : {
+            "type" : "git",
+            "url" : "https://github.com/jquery/jquery.git"
+         },
+         "_npmUser" : {
+            "name" : "m_gol",
+            "email" : "m.goleb@gmail.com"
+         },
+         "author" : {
+            "url" : "https://github.com/jquery/jquery/blob/2.1.3/AUTHORS.txt",
+            "name" : "jQuery Foundation and other contributors"
+         },
+         "_nodeVersion" : "0.11.14",
+         "licenses" : [
+            {
+               "type" : "MIT",
+               "url" : "https://github.com/jquery/jquery/blob/2.1.3/MIT-LICENSE.txt"
+            }
+         ],
+         "homepage" : "http://jquery.com",
+         "directories" : {},
+         "name" : "jquery",
+         "devDependencies" : {
+            "gzip-js" : "0.3.2",
+            "grunt-compare-size" : "0.4.0",
+            "grunt-bowercopy" : "0.7.1",
+            "grunt-git-authors" : "1.2.0",
+            "grunt-cli" : "0.1.13",
+            "grunt" : "0.4.2",
+            "requirejs" : "2.1.10",
+            "grunt-contrib-watch" : "0.5.3",
+            "grunt-contrib-jshint" : "0.8.0",
+            "grunt-contrib-uglify" : "0.3.2",
+            "grunt-jscs-checker" : "0.4.1",
+            "grunt-jsonlint" : "1.0.4",
+            "jsdom" : "1.5.0",
+            "load-grunt-tasks" : "0.3.0",
+            "testswarm" : "1.1.0",
+            "commitplease" : "2.0.0"
+         },
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "browser",
+            "library"
+         ],
+         "version" : "2.1.3",
+         "_shasum" : "6ec55204673d505d39432c5bf5cfad10e1dbad2e",
+         "bugs" : {
+            "url" : "http://bugs.jquery.com"
+         }
+      },
+      "1.6.2" : {
+         "main" : "./dist/node-jquery.js",
+         "engines" : {
+            "node" : "*"
+         },
+         "contributors" : [],
+         "_npmJsonOpts" : {
+            "file" : "/Users/coolaj86/.npm/jquery/1.6.2/package/package.json",
+            "wscript" : false,
+            "contributors" : false,
+            "serverjs" : false
+         },
+         "lib" : "lib",
+         "url" : "jquery.com",
+         "_npmVersion" : "1.0.15",
+         "_id" : "jquery@1.6.2",
+         "_engineSupported" : true,
+         "scripts" : {},
+         "description" : "jQuery: The Write Less, Do More, JavaScript Library",
+         "dist" : {
+            "shasum" : "01757a4c5beea29e8ae697527c3131abbe997a28",
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-1.6.2.tgz"
+         },
+         "dependencies" : {
+            "jsdom" : ">=0.2.0",
+            "htmlparser" : ">= 1.7.3"
+         },
+         "_nodeVersion" : "v0.4.8",
+         "directories" : {},
+         "deprecated" : "Versions of the jquery npm package older than 1.9.0 are patched versions that don't work in web browsers. Please upgrade to >=1.11.0.",
+         "author" : {
+            "name" : "John Resig",
+            "email" : "jeresig@gmail.com"
+         },
+         "version" : "1.6.2",
+         "keywords" : [
+            "util",
+            "dom",
+            "jquery"
+         ],
+         "devDependencies" : {},
+         "_defaultsLoaded" : true,
+         "name" : "jquery"
+      },
+      "2.2.1" : {
+         "gitHead" : "788eaba2f83e7b7445c7a83a50c81c0704423874",
+         "_from" : ".",
+         "_npmOperationalInternal" : {
+            "tmp" : "tmp/jquery-2.2.1.tgz_1456168325917_0.42471840139478445",
+            "host" : "packages-9-west.internal.npmjs.com"
+         },
+         "title" : "jQuery",
+         "main" : "dist/jquery.js",
+         "maintainers" : [
+            {
+               "name" : "dmethvin",
+               "email" : "dave.methvin@gmail.com"
+            },
+            {
+               "name" : "scott.gonzalez",
+               "email" : "scott.gonzalez@gmail.com"
+            },
+            {
+               "name" : "m_gol",
+               "email" : "m.goleb@gmail.com"
+            },
+            {
+               "email" : "timmywillisn@gmail.com",
+               "name" : "timmywil"
+            }
+         ],
+         "_id" : "jquery@2.2.1",
+         "_npmVersion" : "2.14.19",
+         "dependencies" : {},
+         "dist" : {
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-2.2.1.tgz",
+            "shasum" : "3c3e16854ad3d2ac44ac65021b17426d22ad803f"
+         },
+         "description" : "JavaScript library for DOM operations",
+         "scripts" : {
+            "start" : "grunt watch",
+            "test" : "grunt && grunt test",
+            "build" : "npm install && grunt"
+         },
+         "repository" : {
+            "type" : "git",
+            "url" : "git+https://github.com/jquery/jquery.git"
+         },
+         "commitplease" : {
+            "components" : [
+               "Docs",
+               "Tests",
+               "Build",
+               "Release",
+               "Core",
+               "Ajax",
+               "Attributes",
+               "Callbacks",
+               "CSS",
+               "Data",
+               "Deferred",
+               "Deprecated",
+               "Dimensions",
+               "Effects",
+               "Event",
+               "Manipulation",
+               "Offset",
+               "Queue",
+               "Selector",
+               "Serialize",
+               "Traversing",
+               "Wrap"
+            ]
+         },
+         "_npmUser" : {
+            "email" : "timmywillisn@gmail.com",
+            "name" : "timmywil"
+         },
+         "license" : "MIT",
+         "author" : {
+            "name" : "jQuery Foundation and other contributors",
+            "url" : "https://github.com/jquery/jquery/blob/2.2.1/AUTHORS.txt"
+         },
+         "_nodeVersion" : "0.10.42",
+         "homepage" : "http://jquery.com",
+         "directories" : {},
+         "name" : "jquery",
+         "devDependencies" : {
+            "grunt-contrib-uglify" : "0.9.2",
+            "jsdom" : "5.6.1",
+            "sinon" : "1.10.3",
+            "grunt-jscs" : "2.1.0",
+            "load-grunt-tasks" : "1.0.0",
+            "grunt-compare-size" : "0.4.0",
+            "win-spawn" : "2.0.0",
+            "gzip-js" : "0.3.2",
+            "grunt-git-authors" : "2.0.1",
+            "grunt-cli" : "0.1.13",
+            "strip-json-comments" : "1.0.3",
+            "qunitjs" : "1.17.1",
+            "core-js" : "0.9.17",
+            "grunt-jsonlint" : "1.0.4",
+            "grunt-contrib-jshint" : "0.11.2",
+            "grunt-contrib-watch" : "0.6.1",
+            "grunt-npmcopy" : "0.1.0",
+            "testswarm" : "1.1.0",
+            "commitplease" : "2.0.0",
+            "sizzle" : "2.2.1",
+            "grunt-babel" : "5.0.1",
+            "qunit-assert-step" : "1.0.3",
+            "grunt" : "0.4.5",
+            "requirejs" : "2.1.17"
+         },
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "browser",
+            "library"
+         ],
+         "version" : "2.2.1",
+         "bugs" : {
+            "url" : "https://github.com/jquery/jquery/issues"
+         },
+         "_shasum" : "3c3e16854ad3d2ac44ac65021b17426d22ad803f"
+      },
+      "1.11.1-rc1" : {
+         "_npmUser" : {
+            "email" : "m.goleb@gmail.com",
+            "name" : "m_gol"
+         },
+         "bugs" : {
+            "url" : "http://bugs.jquery.com"
+         },
+         "_shasum" : "666a7df02488b48732d96e8ab9bdd34f61dd4238",
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "library"
+         ],
+         "version" : "1.11.1-rc1",
+         "repository" : {
+            "url" : "https://github.com/jquery/jquery.git",
+            "type" : "git"
+         },
+         "dependencies" : {},
+         "dist" : {
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-1.11.1-rc1.tgz",
+            "shasum" : "666a7df02488b48732d96e8ab9bdd34f61dd4238"
+         },
+         "name" : "jquery",
+         "description" : "JavaScript library for DOM operations",
+         "devDependencies" : {
+            "gzip-js" : "0.3.2",
+            "grunt-compare-size" : "0.4.0",
+            "grunt-bowercopy" : "0.7.1",
+            "grunt-git-authors" : "1.2.0",
+            "grunt-cli" : "0.1.13",
+            "grunt" : "0.4.2",
+            "requirejs" : "2.1.10",
+            "grunt-contrib-jshint" : "0.8.0",
+            "grunt-contrib-watch" : "0.5.3",
+            "grunt-jscs-checker" : "0.4.1",
+            "grunt-contrib-uglify" : "0.3.2",
+            "grunt-jsonlint" : "1.0.4",
+            "testswarm" : "1.1.0",
+            "load-grunt-tasks" : "0.3.0",
+            "commitplease" : "1.7.0"
+         },
+         "scripts" : {
+            "start" : "grunt watch",
+            "test" : "grunt",
+            "build" : "npm install && grunt"
+         },
+         "_id" : "jquery@1.11.1-rc1",
+         "_npmVersion" : "1.4.7",
+         "homepage" : "http://jquery.com",
+         "directories" : {},
+         "maintainers" : [
+            {
+               "name" : "dmethvin",
+               "email" : "dave.methvin@gmail.com"
+            },
+            {
+               "name" : "scott.gonzalez",
+               "email" : "scott.gonzalez@gmail.com"
+            },
+            {
+               "email" : "m.goleb@gmail.com",
+               "name" : "m_gol"
+            }
+         ],
+         "title" : "jQuery",
+         "licenses" : [
+            {
+               "type" : "MIT",
+               "url" : "https://github.com/jquery/jquery/blob/1.11.1-rc1/MIT-LICENSE.txt"
+            }
+         ],
+         "main" : "dist/jquery.js",
+         "_from" : ".",
+         "author" : {
+            "name" : "jQuery Foundation and other contributors",
+            "url" : "https://github.com/jquery/jquery/blob/1.11.1-rc1/AUTHORS.txt"
+         }
+      },
+      "3.2.1" : {
+         "_from" : ".",
+         "_npmOperationalInternal" : {
+            "tmp" : "tmp/jquery-3.2.1.tgz_1490036530067_0.19497186387889087",
+            "host" : "packages-12-west.internal.npmjs.com"
+         },
+         "gitHead" : "77d2a51d0520d2ee44173afdf4e40a9201f5964e",
+         "maintainers" : [
+            {
+               "email" : "dave.methvin@gmail.com",
+               "name" : "dmethvin"
+            },
+            {
+               "email" : "m.goleb@gmail.com",
+               "name" : "mgol"
+            },
+            {
+               "email" : "scott.gonzalez@gmail.com",
+               "name" : "scott.gonzalez"
+            },
+            {
+               "email" : "4timmywil@gmail.com",
+               "name" : "timmywil"
+            }
+         ],
+         "title" : "jQuery",
+         "main" : "dist/jquery.js",
+         "dependencies" : {},
+         "dist" : {
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-3.2.1.tgz",
+            "shasum" : "5c4d9de652af6cd0a770154a631bba12b015c787"
+         },
+         "description" : "JavaScript library for DOM operations",
+         "scripts" : {
+            "test" : "grunt && grunt test:slow",
+            "build" : "npm install && grunt",
+            "precommit" : "grunt lint:newer",
+            "commitmsg" : "node node_modules/commitplease",
+            "start" : "grunt watch"
+         },
+         "_id" : "jquery@3.2.1",
+         "_npmVersion" : "4.4.4",
+         "_npmUser" : {
+            "name" : "timmywil",
+            "email" : "4timmywil@gmail.com"
+         },
+         "license" : "MIT",
+         "repository" : {
+            "type" : "git",
+            "url" : "git+https://github.com/jquery/jquery.git"
+         },
+         "commitplease" : {
+            "nohook" : true,
+            "components" : [
+               "Docs",
+               "Tests",
+               "Build",
+               "Support",
+               "Release",
+               "Core",
+               "Ajax",
+               "Attributes",
+               "Callbacks",
+               "CSS",
+               "Data",
+               "Deferred",
+               "Deprecated",
+               "Dimensions",
+               "Effects",
+               "Event",
+               "Manipulation",
+               "Offset",
+               "Queue",
+               "Selector",
+               "Serialize",
+               "Traversing",
+               "Wrap"
+            ],
+            "markerPattern" : "^((clos|fix|resolv)(e[sd]|ing))|^(refs?)",
+            "ticketPattern" : "^((Closes|Fixes) ([a-zA-Z]{2,}-)[0-9]+)|^(Refs? [^#])"
+         },
+         "author" : {
+            "name" : "JS Foundation and other contributors",
+            "url" : "https://github.com/jquery/jquery/blob/3.2.1/AUTHORS.txt"
+         },
+         "homepage" : "https://jquery.com",
+         "directories" : {},
+         "_nodeVersion" : "7.7.3",
+         "name" : "jquery",
+         "devDependencies" : {
+            "gzip-js" : "0.3.2",
+            "q" : "1.4.1",
+            "grunt-compare-size" : "0.4.2",
+            "native-promise-only" : "0.8.1",
+            "qunitjs" : "1.23.1",
+            "grunt-cli" : "1.2.0",
+            "strip-json-comments" : "2.0.1",
+            "insight" : "0.8.1",
+            "grunt-git-authors" : "3.2.0",
+            "sinon" : "1.17.3",
+            "cross-spawn" : "2.2.3",
+            "jsdom" : "5.6.1",
+            "grunt-contrib-uglify" : "1.0.1",
+            "load-grunt-tasks" : "3.5.0",
+            "qunit-assert-step" : "1.0.3",
+            "husky" : "0.11.4",
+            "requirejs" : "2.2.0",
+            "grunt" : "1.0.1",
+            "grunt-npmcopy" : "0.1.0",
+            "grunt-contrib-watch" : "1.0.0",
+            "grunt-jsonlint" : "1.0.7",
+            "core-js" : "2.2.2",
+            "grunt-eslint" : "19.0.0",
+            "grunt-babel" : "6.0.0",
+            "sizzle" : "2.3.3",
+            "commitplease" : "2.6.1",
+            "babel-preset-es2015" : "6.6.0",
+            "testswarm" : "1.1.0",
+            "grunt-newer" : "1.2.0",
+            "eslint-config-jquery" : "1.0.0",
+            "promises-aplus-tests" : "2.1.2"
+         },
+         "_shasum" : "5c4d9de652af6cd0a770154a631bba12b015c787",
+         "bugs" : {
+            "url" : "https://github.com/jquery/jquery/issues"
+         },
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "browser",
+            "library"
+         ],
+         "version" : "3.2.1"
+      },
+      "2.2.3" : {
+         "_npmVersion" : "3.7.3",
+         "_id" : "jquery@2.2.3",
+         "description" : "JavaScript library for DOM operations",
+         "scripts" : {
+            "start" : "grunt watch",
+            "build" : "npm install && grunt",
+            "test" : "grunt && grunt test"
+         },
+         "dependencies" : {},
+         "dist" : {
+            "shasum" : "45e07e4190334de36c9e1a64b43b1f1373d91758",
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-2.2.3.tgz"
+         },
+         "commitplease" : {
+            "components" : [
+               "Docs",
+               "Tests",
+               "Build",
+               "Release",
+               "Core",
+               "Ajax",
+               "Attributes",
+               "Callbacks",
+               "CSS",
+               "Data",
+               "Deferred",
+               "Deprecated",
+               "Dimensions",
+               "Effects",
+               "Event",
+               "Manipulation",
+               "Offset",
+               "Queue",
+               "Selector",
+               "Serialize",
+               "Traversing",
+               "Wrap"
+            ]
+         },
+         "repository" : {
+            "url" : "git+https://github.com/jquery/jquery.git",
+            "type" : "git"
+         },
+         "license" : "MIT",
+         "_npmUser" : {
+            "email" : "timmywillisn@gmail.com",
+            "name" : "timmywil"
+         },
+         "gitHead" : "af22a351b2ea5801ffb1695abb3bb34d5bed9198",
+         "_npmOperationalInternal" : {
+            "tmp" : "tmp/jquery-2.2.3.tgz_1459884434885_0.992488760035485",
+            "host" : "packages-12-west.internal.npmjs.com"
+         },
+         "_from" : ".",
+         "main" : "dist/jquery.js",
+         "title" : "jQuery",
+         "maintainers" : [
+            {
+               "email" : "dave.methvin@gmail.com",
+               "name" : "dmethvin"
+            },
+            {
+               "name" : "scott.gonzalez",
+               "email" : "scott.gonzalez@gmail.com"
+            },
+            {
+               "name" : "m_gol",
+               "email" : "m.goleb@gmail.com"
+            },
+            {
+               "name" : "timmywil",
+               "email" : "timmywillisn@gmail.com"
+            }
+         ],
+         "devDependencies" : {
+            "jsdom" : "5.6.1",
+            "grunt-contrib-uglify" : "0.9.2",
+            "grunt-jscs" : "2.1.0",
+            "sinon" : "1.10.3",
+            "load-grunt-tasks" : "1.0.0",
+            "win-spawn" : "2.0.0",
+            "grunt-compare-size" : "0.4.0",
+            "gzip-js" : "0.3.2",
+            "qunitjs" : "1.17.1",
+            "strip-json-comments" : "1.0.3",
+            "grunt-cli" : "0.1.13",
+            "grunt-git-authors" : "2.0.1",
+            "grunt-jsonlint" : "1.0.4",
+            "core-js" : "0.9.17",
+            "grunt-npmcopy" : "0.1.0",
+            "grunt-contrib-watch" : "0.6.1",
+            "grunt-contrib-jshint" : "0.11.2",
+            "grunt-babel" : "5.0.1",
+            "sizzle" : "2.2.1",
+            "commitplease" : "2.0.0",
+            "testswarm" : "1.1.0",
+            "qunit-assert-step" : "1.0.3",
+            "requirejs" : "2.1.17",
+            "grunt" : "0.4.5"
+         },
+         "name" : "jquery",
+         "version" : "2.2.3",
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "browser",
+            "library"
+         ],
+         "bugs" : {
+            "url" : "https://github.com/jquery/jquery/issues"
+         },
+         "_shasum" : "45e07e4190334de36c9e1a64b43b1f1373d91758",
+         "author" : {
+            "url" : "https://github.com/jquery/jquery/blob/2.2.3/AUTHORS.txt",
+            "name" : "jQuery Foundation and other contributors"
+         },
+         "_nodeVersion" : "5.8.0",
+         "homepage" : "http://jquery.com",
+         "directories" : {}
+      },
+      "2.1.1" : {
+         "_from" : ".",
+         "author" : {
+            "name" : "jQuery Foundation and other contributors",
+            "url" : "https://github.com/jquery/jquery/blob/2.1.1/AUTHORS.txt"
+         },
+         "maintainers" : [
+            {
+               "name" : "dmethvin",
+               "email" : "dave.methvin@gmail.com"
+            },
+            {
+               "name" : "scott.gonzalez",
+               "email" : "scott.gonzalez@gmail.com"
+            },
+            {
+               "email" : "m.goleb@gmail.com",
+               "name" : "m_gol"
+            }
+         ],
+         "homepage" : "http://jquery.com",
+         "directories" : {},
+         "licenses" : [
+            {
+               "url" : "https://github.com/jquery/jquery/blob/2.1.1/MIT-LICENSE.txt",
+               "type" : "MIT"
+            }
+         ],
+         "main" : "dist/jquery.js",
+         "title" : "jQuery",
+         "description" : "JavaScript library for DOM operations",
+         "scripts" : {
+            "start" : "grunt watch",
+            "test" : "grunt",
+            "build" : "npm install && grunt"
+         },
+         "devDependencies" : {
+            "requirejs" : "2.1.10",
+            "grunt" : "0.4.2",
+            "grunt-cli" : "0.1.13",
+            "grunt-git-authors" : "1.2.0",
+            "grunt-bowercopy" : "0.7.1",
+            "grunt-compare-size" : "0.4.0",
+            "gzip-js" : "0.3.2",
+            "commitplease" : "1.7.0",
+            "testswarm" : "1.1.0",
+            "load-grunt-tasks" : "0.3.0",
+            "grunt-jsonlint" : "1.0.4",
+            "grunt-jscs-checker" : "0.4.1",
+            "grunt-contrib-uglify" : "0.3.2",
+            "grunt-contrib-watch" : "0.5.3",
+            "grunt-contrib-jshint" : "0.8.0"
+         },
+         "dependencies" : {},
+         "name" : "jquery",
+         "dist" : {
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-2.1.1.tgz",
+            "shasum" : "828fc60f50f7ee5983363ef4eb01c5f70af4bd5b"
+         },
+         "_npmVersion" : "1.2.25",
+         "_id" : "jquery@2.1.1",
+         "bugs" : {
+            "url" : "http://bugs.jquery.com"
+         },
+         "_npmUser" : {
+            "name" : "dmethvin",
+            "email" : "dave.methvin@gmail.com"
+         },
+         "version" : "2.1.1",
+         "repository" : {
+            "url" : "https://github.com/jquery/jquery.git",
+            "type" : "git"
+         },
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "browser",
+            "library"
+         ]
+      },
+      "3.1.0" : {
+         "commitplease" : {
+            "components" : [
+               "Docs",
+               "Tests",
+               "Build",
+               "Support",
+               "Release",
+               "Core",
+               "Ajax",
+               "Attributes",
+               "Callbacks",
+               "CSS",
+               "Data",
+               "Deferred",
+               "Deprecated",
+               "Dimensions",
+               "Effects",
+               "Event",
+               "Manipulation",
+               "Offset",
+               "Queue",
+               "Selector",
+               "Serialize",
+               "Traversing",
+               "Wrap"
+            ]
+         },
+         "repository" : {
+            "type" : "git",
+            "url" : "git+https://github.com/jquery/jquery.git"
+         },
+         "_npmUser" : {
+            "name" : "timmywil",
+            "email" : "timmywillisn@gmail.com"
+         },
+         "license" : "MIT",
+         "_id" : "jquery@3.1.0",
+         "_npmVersion" : "2.15.8",
+         "dist" : {
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-3.1.0.tgz",
+            "shasum" : "129f6f1ae94b18f09010b008d0d6011e40613d7f"
+         },
+         "dependencies" : {},
+         "scripts" : {
+            "start" : "grunt watch",
+            "precommit" : "grunt precommit_lint",
+            "build" : "npm install && grunt",
+            "test" : "grunt && grunt test"
+         },
+         "description" : "JavaScript library for DOM operations",
+         "title" : "jQuery",
+         "main" : "dist/jquery.js",
+         "maintainers" : [
+            {
+               "email" : "dave.methvin@gmail.com",
+               "name" : "dmethvin"
+            },
+            {
+               "name" : "scott.gonzalez",
+               "email" : "scott.gonzalez@gmail.com"
+            },
+            {
+               "email" : "m.goleb@gmail.com",
+               "name" : "m_gol"
+            },
+            {
+               "name" : "timmywil",
+               "email" : "timmywillisn@gmail.com"
+            }
+         ],
+         "gitHead" : "6f02bc382c0529d3b4f68f6b2ad21876642dbbfe",
+         "_from" : ".",
+         "_npmOperationalInternal" : {
+            "host" : "packages-16-east.internal.npmjs.com",
+            "tmp" : "tmp/jquery-3.1.0.tgz_1467927964329_0.882518710102886"
+         },
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "browser",
+            "library"
+         ],
+         "version" : "3.1.0",
+         "_shasum" : "129f6f1ae94b18f09010b008d0d6011e40613d7f",
+         "bugs" : {
+            "url" : "https://github.com/jquery/jquery/issues"
+         },
+         "name" : "jquery",
+         "devDependencies" : {
+            "jsdom" : "5.6.1",
+            "grunt-contrib-uglify" : "1.0.1",
+            "sinon" : "1.17.3",
+            "cross-spawn" : "2.2.3",
+            "load-grunt-tasks" : "3.5.0",
+            "q" : "1.4.1",
+            "grunt-compare-size" : "0.4.2",
+            "gzip-js" : "0.3.2",
+            "native-promise-only" : "0.8.1",
+            "qunitjs" : "1.23.1",
+            "grunt-cli" : "1.2.0",
+            "strip-json-comments" : "2.0.1",
+            "insight" : "0.8.1",
+            "grunt-git-authors" : "3.2.0",
+            "grunt-jsonlint" : "1.0.7",
+            "core-js" : "2.2.2",
+            "grunt-npmcopy" : "0.1.0",
+            "grunt-contrib-watch" : "1.0.0",
+            "eslint-config-jquery" : "0.1.6",
+            "promises-aplus-tests" : "2.1.1",
+            "grunt-eslint" : "18.1.0",
+            "grunt-babel" : "6.0.0",
+            "sizzle" : "2.3.0",
+            "commitplease" : "2.3.1",
+            "testswarm" : "1.1.0",
+            "grunt-newer" : "1.2.0",
+            "babel-preset-es2015" : "6.6.0",
+            "qunit-assert-step" : "1.0.3",
+            "requirejs" : "2.2.0",
+            "grunt" : "1.0.1",
+            "husky" : "0.11.4"
+         },
+         "_nodeVersion" : "4.4.7",
+         "directories" : {},
+         "homepage" : "https://jquery.com",
+         "author" : {
+            "url" : "https://github.com/jquery/jquery/blob/3.1.0/AUTHORS.txt",
+            "name" : "jQuery Foundation and other contributors"
+         }
+      },
+      "3.0.0-alpha1" : {
+         "author" : {
+            "url" : "https://github.com/jquery/jquery/blob/3.0.0-alpha1/AUTHORS.txt",
+            "name" : "jQuery Foundation and other contributors"
+         },
+         "_nodeVersion" : "0.12.7",
+         "homepage" : "http://jquery.com",
+         "directories" : {},
+         "name" : "jquery",
+         "devDependencies" : {
+            "load-grunt-tasks" : "1.0.0",
+            "sinon" : "1.10.3",
+            "grunt-contrib-uglify" : "0.7.0",
+            "grunt-cli" : "0.1.13",
+            "qunitjs" : "1.17.1",
+            "native-promise-only" : "0.7.8-a",
+            "grunt-git-authors" : "2.0.1",
+            "gzip-js" : "0.3.2",
+            "win-spawn" : "2.0.0",
+            "grunt-compare-size" : "0.4.0",
+            "q" : "1.1.2",
+            "sizzle" : "2.2.0",
+            "commitplease" : "2.0.0",
+            "grunt-babel" : "5.0.1",
+            "testswarm" : "1.1.0",
+            "promises-aplus-tests" : "2.1.0",
+            "grunt-contrib-watch" : "0.6.1",
+            "grunt-contrib-jshint" : "0.11.2",
+            "grunt-npmcopy" : "0.1.0",
+            "grunt-jsonlint" : "1.0.4",
+            "grunt-jscs-checker" : "0.8.1",
+            "core-js" : "0.9.17",
+            "requirejs" : "2.1.17",
+            "grunt" : "0.4.5"
+         },
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "browser",
+            "library"
+         ],
+         "version" : "3.0.0-alpha1",
+         "_shasum" : "3493d672266e21c2dffb2714f935448edebe3c62",
+         "bugs" : {
+            "url" : "https://github.com/jquery/jquery/issues"
+         },
+         "gitHead" : "2c92869b752bb8e0fe74c3183f40f3f58b7b906d",
+         "_from" : ".",
+         "title" : "jQuery",
+         "main" : "dist/jquery.js",
+         "maintainers" : [
+            {
+               "name" : "dmethvin",
+               "email" : "dave.methvin@gmail.com"
+            },
+            {
+               "email" : "scott.gonzalez@gmail.com",
+               "name" : "scott.gonzalez"
+            },
+            {
+               "name" : "m_gol",
+               "email" : "m.goleb@gmail.com"
+            },
+            {
+               "name" : "timmywil",
+               "email" : "timmywillisn@gmail.com"
+            }
+         ],
+         "_id" : "jquery@3.0.0-alpha1",
+         "_npmVersion" : "2.11.3",
+         "dependencies" : {},
+         "dist" : {
+            "shasum" : "3493d672266e21c2dffb2714f935448edebe3c62",
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-3.0.0-alpha1.tgz"
+         },
+         "description" : "JavaScript library for DOM operations",
+         "scripts" : {
+            "start" : "grunt watch",
+            "build" : "npm install && grunt",
+            "test" : "grunt && grunt test"
+         },
+         "jsdomVersions" : {
+            "iojs" : "5.3.0",
+            "node" : "3.1.2"
+         },
+         "commitplease" : {
+            "components" : [
+               "Docs",
+               "Tests",
+               "Build",
+               "Release",
+               "Core",
+               "Ajax",
+               "Attributes",
+               "Callbacks",
+               "CSS",
+               "Data",
+               "Deferred",
+               "Dimensions",
+               "Effects",
+               "Event",
+               "Manipulation",
+               "Offset",
+               "Queue",
+               "Selector",
+               "Serialize",
+               "Traversing",
+               "Wrap"
+            ]
+         },
+         "repository" : {
+            "type" : "git",
+            "url" : "git+https://github.com/jquery/jquery.git"
+         },
+         "_npmUser" : {
+            "name" : "timmywil",
+            "email" : "timmywillisn@gmail.com"
+         },
+         "license" : "MIT"
+      },
+      "2.2.0" : {
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "browser",
+            "library"
+         ],
+         "version" : "2.2.0",
+         "bugs" : {
+            "url" : "https://github.com/jquery/jquery/issues"
+         },
+         "_shasum" : "d0e84ebbf199da51bf7ec39307f19b35754e9cba",
+         "name" : "jquery",
+         "devDependencies" : {
+            "grunt-contrib-watch" : "0.6.1",
+            "grunt-contrib-jshint" : "0.11.2",
+            "grunt-npmcopy" : "0.1.0",
+            "core-js" : "0.9.17",
+            "grunt-jsonlint" : "1.0.4",
+            "testswarm" : "1.1.0",
+            "sizzle" : "2.2.1",
+            "commitplease" : "2.0.0",
+            "grunt-babel" : "5.0.1",
+            "qunit-assert-step" : "1.0.3",
+            "grunt" : "0.4.5",
+            "requirejs" : "2.1.17",
+            "sinon" : "1.10.3",
+            "grunt-jscs" : "2.1.0",
+            "grunt-contrib-uglify" : "0.9.2",
+            "jsdom" : "5.6.1",
+            "load-grunt-tasks" : "1.0.0",
+            "gzip-js" : "0.3.2",
+            "grunt-compare-size" : "0.4.0",
+            "win-spawn" : "2.0.0",
+            "grunt-git-authors" : "2.0.1",
+            "strip-json-comments" : "1.0.3",
+            "grunt-cli" : "0.1.13",
+            "qunitjs" : "1.17.1"
+         },
+         "_nodeVersion" : "5.2.0",
+         "homepage" : "http://jquery.com",
+         "directories" : {},
+         "author" : {
+            "url" : "https://github.com/jquery/jquery/blob/2.2.0/AUTHORS.txt",
+            "name" : "jQuery Foundation and other contributors"
+         },
+         "repository" : {
+            "url" : "git+https://github.com/jquery/jquery.git",
+            "type" : "git"
+         },
+         "commitplease" : {
+            "components" : [
+               "Docs",
+               "Tests",
+               "Build",
+               "Release",
+               "Core",
+               "Ajax",
+               "Attributes",
+               "Callbacks",
+               "CSS",
+               "Data",
+               "Deferred",
+               "Deprecated",
+               "Dimensions",
+               "Effects",
+               "Event",
+               "Manipulation",
+               "Offset",
+               "Queue",
+               "Selector",
+               "Serialize",
+               "Traversing",
+               "Wrap"
+            ]
+         },
+         "_npmUser" : {
+            "name" : "timmywil",
+            "email" : "timmywillisn@gmail.com"
+         },
+         "license" : "MIT",
+         "_id" : "jquery@2.2.0",
+         "_npmVersion" : "3.3.12",
+         "dependencies" : {},
+         "dist" : {
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-2.2.0.tgz",
+            "shasum" : "d0e84ebbf199da51bf7ec39307f19b35754e9cba"
+         },
+         "description" : "JavaScript library for DOM operations",
+         "scripts" : {
+            "start" : "grunt watch",
+            "test" : "grunt && grunt test",
+            "build" : "npm install && grunt"
+         },
+         "title" : "jQuery",
+         "main" : "dist/jquery.js",
+         "maintainers" : [
+            {
+               "name" : "dmethvin",
+               "email" : "dave.methvin@gmail.com"
+            },
+            {
+               "email" : "scott.gonzalez@gmail.com",
+               "name" : "scott.gonzalez"
+            },
+            {
+               "email" : "m.goleb@gmail.com",
+               "name" : "m_gol"
+            },
+            {
+               "email" : "timmywillisn@gmail.com",
+               "name" : "timmywil"
+            }
+         ],
+         "gitHead" : "6fc01e29bdad0964f62ef56d01297039cdcadbe5",
+         "_from" : "."
+      },
+      "3.4.1" : {
+         "_npmUser" : {
+            "name" : "timmywil",
+            "email" : "4timmywil@gmail.com"
+         },
+         "license" : "MIT",
+         "repository" : {
+            "url" : "git+https://github.com/jquery/jquery.git",
+            "type" : "git"
+         },
+         "commitplease" : {
+            "markerPattern" : "^((clos|fix|resolv)(e[sd]|ing))|^(refs?)",
+            "components" : [
+               "Docs",
+               "Tests",
+               "Build",
+               "Support",
+               "Release",
+               "Core",
+               "Ajax",
+               "Attributes",
+               "Callbacks",
+               "CSS",
+               "Data",
+               "Deferred",
+               "Deprecated",
+               "Dimensions",
+               "Effects",
+               "Event",
+               "Manipulation",
+               "Offset",
+               "Queue",
+               "Selector",
+               "Serialize",
+               "Traversing",
+               "Wrap"
+            ],
+            "ticketPattern" : "^((Closes|Fixes) ([a-zA-Z]{2,}-)[0-9]+)|^(Refs? [^#])",
+            "nohook" : true
+         },
+         "dist" : {
+            "unpackedSize" : 1295318,
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-3.4.1.tgz",
+            "fileCount" : 125,
+            "npm-signature" : "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcyg1rCRA9TVsSAnZWagAAeOEP/2+ykv0pLlPLU8YLeOoS\nUTBRx0TwY8fcGwZfsxB2JERZfrQQM7l1l3aS7Rb5XYmL4rlHrnGq571H2ogF\ntuEPsLjSGbM+3eM6Y1MRCTXn4cp3KXVKU+oBuFrA6gSQkhPB9nYjaf0jUl5L\nVYMjB6CiqB5Pxy0j3hCrT7iMkoxY6b+V/3rN7HqRj1pL1N71QLrVyYv9AiHU\nuXaKlsI4xWg1RDrt4+Ef8xe4n5bwfWxn8hNIBwlldvexknA+FGz/LY42FOl7\n9alWTyfJMmK15ggMD02W8iCLTaUxC4Hz16ZeoGnnOZkPaZCSZEpAHCJSh5BV\n9J7GGhpiEtlQRQQbhRYl2nAb5Z02APUIJ7tQt1JYAtb1WJNJgOjDITvFqpxj\nbOc47BP+7pcWF4rqWviIjWts4mU3w0Yl+ZUaTSB6lOjBSH/ONC4CspyfKlQg\nu1Kcrk8skTT4fDNQcXLTDdXXCssqrU8nRtzKarLjuBvd0Cs0ZPSZqEJQG6OA\nJ7zdqnqwzfRrfbQwWi7OozkjSrnS2mLwFTxiuAsO86AgzwKYZQrMwEV89LXQ\n8cRPhH1jvPgh2RcLraKTuQsSZ2o/h+mrq8lhIDNBVJXmUZKNRSW9GNoD8QEY\na52Ygcu8lCFbtJ1gUvHwOzHaRmNqZb7dwMGV5zbTMSFViGSN1qabM8jNOwl4\nCp1s\r\n=n88a\r\n-----END PGP SIGNATURE-----\r\n",
+            "integrity" : "sha512-36+AdBzCL+y6qjw5Tx7HgzeGCzC81MDDgaUP8ld2zhx58HdqXGoBd+tHdrBMiyjGQs0Hxs/MLZTu/eHNJJuWPw==",
+            "shasum" : "714f1f8d9dde4bdfa55764ba37ef214630d80ef2"
+         },
+         "dependencies" : {},
+         "scripts" : {
+            "start" : "grunt watch",
+            "build" : "npm install && grunt",
+            "jenkins" : "npm run test:browserless",
+            "test:browser" : "grunt && grunt karma:main",
+            "test:browserless" : "grunt && grunt test:slow",
+            "test" : "grunt && grunt test:slow && grunt karma:main"
+         },
+         "description" : "JavaScript library for DOM operations",
+         "_id" : "jquery@3.4.1",
+         "_npmVersion" : "6.4.1",
+         "maintainers" : [
+            {
+               "email" : "dave.methvin@gmail.com",
+               "name" : "dmethvin"
+            },
+            {
+               "name" : "mgol",
+               "email" : "m.goleb@gmail.com"
+            },
+            {
+               "name" : "scott.gonzalez",
+               "email" : "scott.gonzalez@gmail.com"
+            },
+            {
+               "email" : "4timmywil@gmail.com",
+               "name" : "timmywil"
+            }
+         ],
+         "husky" : {
+            "hooks" : {
+               "pre-commit" : "grunt lint:newer qunit_fixture",
+               "commit-msg" : "node node_modules/commitplease"
+            }
+         },
+         "title" : "jQuery",
+         "main" : "dist/jquery.js",
+         "_npmOperationalInternal" : {
+            "tmp" : "tmp/jquery_3.4.1_1556745578228_0.09546423386966585",
+            "host" : "s3://npm-registry-packages"
+         },
+         "gitHead" : "15bc73803f76bc53b654b9fdbbbc096f56d7c03d",
+         "bugs" : {
+            "url" : "https://github.com/jquery/jquery/issues"
+         },
+         "_hasShrinkwrap" : false,
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "browser",
+            "library"
+         ],
+         "version" : "3.4.1",
+         "name" : "jquery",
+         "devDependencies" : {
+            "@babel/core" : "7.3.3",
+            "load-grunt-tasks" : "4.0.0",
+            "jsdom" : "13.2.0",
+            "raw-body" : "2.3.3",
+            "grunt-contrib-uglify" : "3.4.0",
+            "karma-chrome-launcher" : "2.2.0",
+            "sinon" : "2.3.7",
+            "karma-ie-launcher" : "1.0.0",
+            "@babel/plugin-transform-for-of" : "7.2.0",
+            "native-promise-only" : "0.8.1",
+            "strip-json-comments" : "2.0.1",
+            "grunt-cli" : "1.3.2",
+            "insight" : "0.10.1",
+            "grunt-git-authors" : "3.2.0",
+            "q" : "1.5.1",
+            "grunt-compare-size" : "0.4.2",
+            "gzip-js" : "0.3.2",
+            "eslint-config-jquery" : "1.0.1",
+            "promises-aplus-tests" : "2.1.2",
+            "karma" : "4.0.1",
+            "grunt-karma" : "3.0.1",
+            "grunt-eslint" : "21.0.0",
+            "grunt-babel" : "8.0.0",
+            "commitplease" : "3.2.0",
+            "sizzle" : "2.3.4",
+            "testswarm" : "1.1.0",
+            "grunt-newer" : "1.3.0",
+            "grunt-jsonlint" : "1.1.0",
+            "core-js" : "2.6.5",
+            "grunt-npmcopy" : "0.1.0",
+            "uglify-js" : "3.4.7",
+            "grunt-contrib-watch" : "1.1.0",
+            "karma-qunit" : "3.0.0",
+            "requirejs" : "2.3.6",
+            "grunt" : "1.0.3",
+            "karma-browserstack-launcher" : "1.4.0",
+            "husky" : "1.3.1",
+            "qunit" : "2.9.2",
+            "karma-jsdom-launcher" : "7.1.0",
+            "karma-firefox-launcher" : "1.1.0"
+         },
+         "directories" : {},
+         "homepage" : "https://jquery.com",
+         "_nodeVersion" : "8.16.0",
+         "author" : {
+            "url" : "https://github.com/jquery/jquery/blob/3.4.1/AUTHORS.txt",
+            "name" : "JS Foundation and other contributors"
+         }
+      },
+      "1.8.2" : {
+         "deprecated" : "Versions of the jquery npm package older than 1.9.0 are patched versions that don't work in web browsers. Please upgrade to >=1.11.0.",
+         "author" : {
+            "email" : "treasonx@gmail.com",
+            "name" : "James Morrin"
+         },
+         "licenses" : [
+            {
+               "type" : "MIT",
+               "url" : "https://github.com/coolaj86/node-jquery/blob/master/LICENSE-MIT"
+            }
+         ],
+         "main" : "lib/node-jquery",
+         "homepage" : "https://github.com/coolaj86/node-jquery",
+         "directories" : {},
+         "maintainers" : [
+            {
+               "name" : "coolaj86",
+               "email" : "coolaj86@gmail.com"
+            },
+            {
+               "name" : "treasonx",
+               "email" : "treasonx@gmail.com"
+            }
+         ],
+         "engines" : {
+            "node" : ">=0.6"
+         },
+         "_id" : "jquery@1.8.2",
+         "url" : "http://jquery.com",
+         "_npmVersion" : "1.1.61",
+         "dependencies" : {
+            "navigator" : "~1.0.1",
+            "jsdom" : "~0.2.14",
+            "htmlparser" : "1.7.6",
+            "location" : "0.0.1",
+            "xmlhttprequest" : "~1.4.2"
+         },
+         "name" : "jquery",
+         "dist" : {
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-1.8.2.tgz",
+            "shasum" : "46790ae07c6de38124eda90bbf7336b43df93305"
+         },
+         "description" : "jQuery: The Write Less, Do More, JavaScript Library (packaged for Node.JS)",
+         "scripts" : {
+            "test" : "grunt test"
+         },
+         "devDependencies" : {
+            "grunt" : "~0.3.8",
+            "nodeunit" : "~0.7.4"
+         },
+         "keywords" : [
+            "util",
+            "dom",
+            "jquery"
+         ],
+         "version" : "1.8.2",
+         "repository" : {
+            "url" : "git://github.com/coolaj86/node-jquery.git",
+            "type" : "git"
+         },
+         "_npmUser" : {
+            "name" : "treasonx",
+            "email" : "treasonx@gmail.com"
+         },
+         "bugs" : {
+            "url" : "https://github.com/coolaj86/node-jquery/issues"
+         }
+      },
+      "2.1.0-rc1" : {
+         "title" : "jQuery",
+         "licenses" : [
+            {
+               "type" : "MIT",
+               "url" : "https://github.com/jquery/jquery/blob/2.1.0-rc1/MIT-LICENSE.txt"
+            }
+         ],
+         "main" : "dist/jquery.js",
+         "homepage" : "http://jquery.com",
+         "directories" : {},
+         "maintainers" : [
+            {
+               "email" : "npm@jquery.com",
+               "name" : "jquery"
+            },
+            {
+               "email" : "dave.methvin@gmail.com",
+               "name" : "dmethvin"
+            },
+            {
+               "name" : "scott.gonzalez",
+               "email" : "scott.gonzalez@gmail.com"
+            }
+         ],
+         "_from" : ".",
+         "author" : {
+            "name" : "jQuery Foundation and other contributors",
+            "url" : "https://github.com/jquery/jquery/blob/2.1.0-rc1/AUTHORS.txt"
+         },
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "library"
+         ],
+         "version" : "2.1.0-rc1",
+         "repository" : {
+            "url" : "https://github.com/jquery/jquery.git",
+            "type" : "git"
+         },
+         "_npmUser" : {
+            "name" : "scott.gonzalez",
+            "email" : "scott.gonzalez@gmail.com"
+         },
+         "bugs" : {
+            "url" : "http://bugs.jquery.com"
+         },
+         "_id" : "jquery@2.1.0-rc1",
+         "_npmVersion" : "1.3.14",
+         "dependencies" : {},
+         "dist" : {
+            "shasum" : "8c9f5d9a055c2fedb3f5269617ae649497d6a3b0",
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-2.1.0-rc1.tgz"
+         },
+         "name" : "jquery",
+         "description" : "JavaScript library for DOM operations",
+         "devDependencies" : {
+            "gzip-js" : "0.3.2",
+            "grunt-compare-size" : "0.4.0",
+            "grunt-bowercopy" : "0.5.0",
+            "archiver" : "0.4.10",
+            "grunt-git-authors" : "1.2.0",
+            "grunt-cli" : "0.1.11",
+            "grunt" : "0.4.2",
+            "shelljs" : "0.2.6",
+            "requirejs" : "2.1.9",
+            "grunt-contrib-watch" : "0.5.3",
+            "grunt-contrib-jshint" : "0.7.2",
+            "grunt-jscs-checker" : "0.2.6",
+            "grunt-contrib-uglify" : "0.2.7",
+            "grunt-jsonlint" : "1.0.4",
+            "testswarm" : "1.1.0",
+            "load-grunt-tasks" : "0.2.0"
+         },
+         "scripts" : {
+            "build" : "npm install && grunt",
+            "test" : "grunt",
+            "start" : "grunt watch"
+         }
+      },
+      "3.0.0-beta1" : {
+         "version" : "3.0.0-beta1",
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "browser",
+            "library"
+         ],
+         "bugs" : {
+            "url" : "https://github.com/jquery/jquery/issues"
+         },
+         "_shasum" : "d2a4e368e2eed7050bf66abbbb54db2ea345349d",
+         "devDependencies" : {
+            "load-grunt-tasks" : "1.0.0",
+            "grunt-contrib-uglify" : "0.9.2",
+            "jsdom" : "5.6.1",
+            "grunt-jscs" : "2.1.0",
+            "sinon" : "1.10.3",
+            "grunt-git-authors" : "2.0.1",
+            "native-promise-only" : "0.7.8-a",
+            "qunitjs" : "1.17.1",
+            "strip-json-comments" : "1.0.3",
+            "grunt-cli" : "0.1.13",
+            "q" : "1.1.2",
+            "grunt-compare-size" : "0.4.0",
+            "win-spawn" : "2.0.0",
+            "gzip-js" : "0.3.2",
+            "promises-aplus-tests" : "2.1.0",
+            "testswarm" : "1.1.0",
+            "grunt-babel" : "5.0.1",
+            "sizzle" : "2.3.0",
+            "commitplease" : "2.0.0",
+            "core-js" : "0.9.17",
+            "grunt-jsonlint" : "1.0.4",
+            "grunt-npmcopy" : "0.1.0",
+            "grunt-contrib-jshint" : "0.11.2",
+            "grunt-contrib-watch" : "0.6.1",
+            "grunt" : "0.4.5",
+            "requirejs" : "2.1.17",
+            "qunit-assert-step" : "1.0.3"
+         },
+         "name" : "jquery",
+         "_nodeVersion" : "5.2.0",
+         "homepage" : "https://jquery.com",
+         "directories" : {},
+         "author" : {
+            "url" : "https://github.com/jquery/jquery/blob/3.0.0-beta1/AUTHORS.txt",
+            "name" : "jQuery Foundation and other contributors"
+         },
+         "commitplease" : {
+            "components" : [
+               "Docs",
+               "Tests",
+               "Build",
+               "Release",
+               "Core",
+               "Ajax",
+               "Attributes",
+               "Callbacks",
+               "CSS",
+               "Data",
+               "Deferred",
+               "Deprecated",
+               "Dimensions",
+               "Effects",
+               "Event",
+               "Manipulation",
+               "Offset",
+               "Queue",
+               "Selector",
+               "Serialize",
+               "Traversing",
+               "Wrap"
+            ]
+         },
+         "repository" : {
+            "url" : "git+https://github.com/jquery/jquery.git",
+            "type" : "git"
+         },
+         "license" : "MIT",
+         "_npmUser" : {
+            "name" : "timmywil",
+            "email" : "timmywillisn@gmail.com"
+         },
+         "_npmVersion" : "3.3.12",
+         "_id" : "jquery@3.0.0-beta1",
+         "description" : "JavaScript library for DOM operations",
+         "scripts" : {
+            "start" : "grunt watch",
+            "build" : "npm install && grunt",
+            "test" : "grunt && grunt test"
+         },
+         "dependencies" : {},
+         "dist" : {
+            "shasum" : "d2a4e368e2eed7050bf66abbbb54db2ea345349d",
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-3.0.0-beta1.tgz"
+         },
+         "main" : "dist/jquery.js",
+         "title" : "jQuery",
+         "maintainers" : [
+            {
+               "name" : "dmethvin",
+               "email" : "dave.methvin@gmail.com"
+            },
+            {
+               "name" : "scott.gonzalez",
+               "email" : "scott.gonzalez@gmail.com"
+            },
+            {
+               "name" : "m_gol",
+               "email" : "m.goleb@gmail.com"
+            },
+            {
+               "email" : "timmywillisn@gmail.com",
+               "name" : "timmywil"
+            }
+         ],
+         "gitHead" : "2ef761afd9addf78193f5191ece03bb20c9182c2",
+         "_from" : "."
+      },
+      "3.4.0" : {
+         "bugs" : {
+            "url" : "https://github.com/jquery/jquery/issues"
+         },
+         "version" : "3.4.0",
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "browser",
+            "library"
+         ],
+         "_hasShrinkwrap" : false,
+         "devDependencies" : {
+            "grunt-contrib-watch" : "1.1.0",
+            "uglify-js" : "3.4.7",
+            "grunt-npmcopy" : "0.1.0",
+            "core-js" : "2.6.5",
+            "grunt-jsonlint" : "1.1.0",
+            "testswarm" : "1.1.0",
+            "grunt-newer" : "1.3.0",
+            "commitplease" : "3.2.0",
+            "sizzle" : "2.3.4",
+            "grunt-karma" : "3.0.1",
+            "grunt-eslint" : "21.0.0",
+            "grunt-babel" : "8.0.0",
+            "karma" : "4.0.1",
+            "promises-aplus-tests" : "2.1.2",
+            "eslint-config-jquery" : "1.0.1",
+            "karma-firefox-launcher" : "1.1.0",
+            "karma-jsdom-launcher" : "7.1.0",
+            "qunit" : "2.9.2",
+            "husky" : "1.3.1",
+            "karma-browserstack-launcher" : "1.4.0",
+            "grunt" : "1.0.3",
+            "requirejs" : "2.3.6",
+            "karma-qunit" : "3.0.0",
+            "karma-ie-launcher" : "1.0.0",
+            "sinon" : "2.3.7",
+            "karma-chrome-launcher" : "2.2.0",
+            "grunt-contrib-uglify" : "3.4.0",
+            "raw-body" : "2.3.3",
+            "jsdom" : "13.2.0",
+            "load-grunt-tasks" : "4.0.0",
+            "@babel/core" : "7.3.3",
+            "gzip-js" : "0.3.2",
+            "grunt-compare-size" : "0.4.2",
+            "q" : "1.5.1",
+            "grunt-git-authors" : "3.2.0",
+            "strip-json-comments" : "2.0.1",
+            "insight" : "0.10.1",
+            "grunt-cli" : "1.3.2",
+            "native-promise-only" : "0.8.1",
+            "@babel/plugin-transform-for-of" : "7.2.0"
+         },
+         "name" : "jquery",
+         "homepage" : "https://jquery.com",
+         "directories" : {},
+         "_nodeVersion" : "8.15.1",
+         "author" : {
+            "name" : "JS Foundation and other contributors",
+            "url" : "https://github.com/jquery/jquery/blob/3.4.0/AUTHORS.txt"
+         },
+         "license" : "MIT",
+         "_npmUser" : {
+            "name" : "timmywil",
+            "email" : "4timmywil@gmail.com"
+         },
+         "commitplease" : {
+            "components" : [
+               "Docs",
+               "Tests",
+               "Build",
+               "Support",
+               "Release",
+               "Core",
+               "Ajax",
+               "Attributes",
+               "Callbacks",
+               "CSS",
+               "Data",
+               "Deferred",
+               "Deprecated",
+               "Dimensions",
+               "Effects",
+               "Event",
+               "Manipulation",
+               "Offset",
+               "Queue",
+               "Selector",
+               "Serialize",
+               "Traversing",
+               "Wrap"
+            ],
+            "markerPattern" : "^((clos|fix|resolv)(e[sd]|ing))|^(refs?)",
+            "ticketPattern" : "^((Closes|Fixes) ([a-zA-Z]{2,}-)[0-9]+)|^(Refs? [^#])",
+            "nohook" : true
+         },
+         "repository" : {
+            "type" : "git",
+            "url" : "git+https://github.com/jquery/jquery.git"
+         },
+         "description" : "JavaScript library for DOM operations",
+         "scripts" : {
+            "test" : "grunt && grunt test:slow && grunt karma:main",
+            "test:browserless" : "grunt && grunt test:slow",
+            "test:browser" : "grunt && grunt karma:main",
+            "jenkins" : "npm run test:browserless",
+            "build" : "npm install && grunt",
+            "start" : "grunt watch"
+         },
+         "dependencies" : {},
+         "dist" : {
+            "unpackedSize" : 1293692,
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-3.4.0.tgz",
+            "fileCount" : 125,
+            "npm-signature" : "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcrkmiCRA9TVsSAnZWagAA0FYP/3PRUJ9bvMXsEo01m0m0\n4/24H91hGidu20i5V2JNBhtlNttTH3NLlPYKGHO3wHFEA8iAKuiYyo/V5UlQ\nv4jUKqcFCtaz2pgdBICbAt0cNc1ZbRxXTL1ZI1HublxTkyx/d0kP0l001vYA\nIeLarSNrx4749LDHOeprO6TPoFeB+aCusWbLexcNs/Tel9Frn0oufEiDTjCI\nHAJHfjGDW8IZBw0fQaem7CxaUPiVFRUZghxYpM5ThGbGtxIsAiN9EQDpDmVC\nq855FOu7FsLviN20mJpJmq9ZuiGF9DoUA5QJIQ9INZBfd/uQ6TWRcqBqVtwH\nIgdfAVAACPBF+Zax3dy4cAOU+UHGqs/nStZ7wmewexsDdXb3PzkDvUxluzmL\nocg6y7gpp39Ev7qV+SNg7ZccgW/2rWHfy/l/Aofb0TFV53FCc3DEc9avzUkS\nPZE2jCTu3mUR1vpqr31R+AVo2ZMhTfcrGw2WwP1IDqc+Nt+7ySBiWVQHnT4a\nIjHALqztNKEkqFvxgm4VUkPgqqpFF4msCg5a8jwjJPiGKJgllv1clVwlFk77\nKQHztESClmebfruOidrX0qmBpixrraC2T401gZT9bV4qfqu6Td3q00TBkZjI\nKsiBfs6hq3Py3MOJt3S2xwx8smuhB7Q05e5TMficC0QMURF14U4Yi6WGJ5or\nBJa5\r\n=w1RE\r\n-----END PGP SIGNATURE-----\r\n",
+            "integrity" : "sha512-ggRCXln9zEqv6OqAGXFEcshF5dSBvCkzj6Gm2gzuR5fWawaX8t7cxKVkkygKODrDAzKdoYw3l/e3pm3vlT4IbQ==",
+            "shasum" : "8de513fa0fa4b2c7d2e48a530e26f0596936efdf"
+         },
+         "_npmVersion" : "6.4.1",
+         "_id" : "jquery@3.4.0",
+         "maintainers" : [
+            {
+               "name" : "dmethvin",
+               "email" : "dave.methvin@gmail.com"
+            },
+            {
+               "name" : "mgol",
+               "email" : "m.goleb@gmail.com"
+            },
+            {
+               "name" : "scott.gonzalez",
+               "email" : "scott.gonzalez@gmail.com"
+            },
+            {
+               "email" : "4timmywil@gmail.com",
+               "name" : "timmywil"
+            }
+         ],
+         "main" : "dist/jquery.js",
+         "husky" : {
+            "hooks" : {
+               "commit-msg" : "node node_modules/commitplease",
+               "pre-commit" : "grunt lint:newer qunit_fixture"
+            }
+         },
+         "title" : "jQuery",
+         "_npmOperationalInternal" : {
+            "tmp" : "tmp/jquery_3.4.0_1554925986191_0.6962955867267493",
+            "host" : "s3://npm-registry-packages"
+         },
+         "gitHead" : "180c5c33e477463ed93a9d5f7ac7cad7c9809f1c"
+      },
+      "2.1.0-beta2" : {
+         "bugs" : {
+            "url" : "http://bugs.jquery.com"
+         },
+         "_npmUser" : {
+            "email" : "dave.methvin@gmail.com",
+            "name" : "jquery"
+         },
+         "repository" : {
+            "type" : "git",
+            "url" : "https://github.com/jquery/jquery.git"
+         },
+         "version" : "2.1.0-beta2",
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "library"
+         ],
+         "devDependencies" : {
+            "grunt-git-authors" : "~1.2.0",
+            "grunt-cli" : "~0.1.11",
+            "which" : "~1.0.5",
+            "grunt" : "~0.4.1",
+            "requirejs" : "~2.1.9",
+            "gzip-js" : "0.3.2",
+            "grunt-compare-size" : "~0.4.0",
+            "archiver" : "~0.4.10",
+            "testswarm" : "~1.1.0",
+            "load-grunt-tasks" : "~0.2.0",
+            "grunt-bower-task" : "~0.3.2",
+            "grunt-contrib-watch" : "~0.5.3",
+            "grunt-contrib-jshint" : "~0.7.0",
+            "grunt-jscs-checker" : "~0.2.3",
+            "grunt-contrib-uglify" : "~0.2.7",
+            "grunt-jsonlint" : "~1.0.1"
+         },
+         "description" : "JavaScript library for DOM operations",
+         "dist" : {
+            "shasum" : "e0fbbe2beb45b4d8f808362c7c99ef5bfee7d8c6",
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-2.1.0-beta2.tgz"
+         },
+         "name" : "jquery",
+         "dependencies" : {},
+         "_npmVersion" : "1.3.11",
+         "_id" : "jquery@2.1.0-beta2",
+         "maintainers" : [
+            {
+               "email" : "waldron.rick@gmail.com",
+               "name" : "rwaldron"
+            },
+            {
+               "name" : "jquery",
+               "email" : "npm@jquery.com"
+            }
+         ],
+         "directories" : {},
+         "homepage" : "http://jquery.com",
+         "licenses" : [
+            {
+               "url" : "https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt",
+               "type" : "MIT"
+            }
+         ],
+         "title" : "jQuery",
+         "author" : {
+            "url" : "https://github.com/jquery/jquery/blob/master/AUTHORS.txt",
+            "name" : "jQuery Foundation and other contributors"
+         },
+         "_from" : "."
+      },
+      "2.1.0-beta3" : {
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "library"
+         ],
+         "repository" : {
+            "type" : "git",
+            "url" : "https://github.com/jquery/jquery.git"
+         },
+         "version" : "2.1.0-beta3",
+         "_npmUser" : {
+            "name" : "jquery",
+            "email" : "npm@jquery.org"
+         },
+         "bugs" : {
+            "url" : "http://bugs.jquery.com"
+         },
+         "_id" : "jquery@2.1.0-beta3",
+         "_npmVersion" : "1.3.21",
+         "dist" : {
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-2.1.0-beta3.tgz",
+            "shasum" : "5a89b624d8fa625fe5fa83a12a9acb1ef8a11d02"
+         },
+         "name" : "jquery",
+         "dependencies" : {},
+         "devDependencies" : {
+            "testswarm" : "1.1.0",
+            "load-grunt-tasks" : "0.2.0",
+            "grunt-jsonlint" : "1.0.4",
+            "grunt-jscs-checker" : "0.2.6",
+            "grunt-contrib-uglify" : "0.2.7",
+            "grunt-contrib-jshint" : "0.7.2",
+            "grunt-contrib-watch" : "0.5.3",
+            "requirejs" : "2.1.9",
+            "grunt" : "0.4.2",
+            "shelljs" : "0.2.6",
+            "grunt-cli" : "0.1.11",
+            "grunt-git-authors" : "1.2.0",
+            "grunt-bowercopy" : "0.4.1",
+            "archiver" : "0.4.10",
+            "grunt-compare-size" : "0.4.0",
+            "gzip-js" : "0.3.2"
+         },
+         "scripts" : {
+            "test" : "grunt",
+            "build" : "npm install && grunt",
+            "start" : "grunt watch"
+         },
+         "description" : "JavaScript library for DOM operations",
+         "title" : "jQuery",
+         "main" : "dist/jquery.js",
+         "licenses" : [
+            {
+               "url" : "https://github.com/jquery/jquery/blob/2.1.0-beta3/MIT-LICENSE.txt",
+               "type" : "MIT"
+            }
+         ],
+         "directories" : {},
+         "homepage" : "http://jquery.com",
+         "maintainers" : [
+            {
+               "name" : "jquery",
+               "email" : "npm@jquery.org"
+            }
+         ],
+         "author" : {
+            "name" : "jQuery Foundation and other contributors",
+            "url" : "https://github.com/jquery/jquery/blob/2.1.0-beta3/AUTHORS.txt"
+         },
+         "_from" : "."
+      },
+      "1.11.0-beta3" : {
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "library"
+         ],
+         "version" : "1.11.0-beta3",
+         "repository" : {
+            "type" : "git",
+            "url" : "https://github.com/jquery/jquery.git"
+         },
+         "_npmUser" : {
+            "email" : "npm@jquery.org",
+            "name" : "jquery"
+         },
+         "bugs" : {
+            "url" : "http://bugs.jquery.com"
+         },
+         "_id" : "jquery@1.11.0-beta3",
+         "_npmVersion" : "1.3.21",
+         "dependencies" : {},
+         "dist" : {
+            "shasum" : "0464a6aba9f35f6c83a203caa23ab420909ce852",
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-1.11.0-beta3.tgz"
+         },
+         "name" : "jquery",
+         "description" : "JavaScript library for DOM operations",
+         "scripts" : {
+            "build" : "npm install && grunt",
+            "test" : "grunt",
+            "start" : "grunt watch"
+         },
+         "devDependencies" : {
+            "grunt" : "0.4.2",
+            "shelljs" : "0.2.6",
+            "requirejs" : "2.1.9",
+            "grunt-git-authors" : "1.2.0",
+            "grunt-cli" : "0.1.11",
+            "grunt-compare-size" : "0.4.0",
+            "archiver" : "0.4.10",
+            "grunt-bowercopy" : "0.4.1",
+            "gzip-js" : "0.3.2",
+            "testswarm" : "1.1.0",
+            "load-grunt-tasks" : "0.2.0",
+            "grunt-jscs-checker" : "0.2.6",
+            "grunt-contrib-uglify" : "0.2.7",
+            "grunt-jsonlint" : "1.0.4",
+            "grunt-contrib-jshint" : "0.7.2",
+            "grunt-contrib-watch" : "0.5.3"
+         },
+         "title" : "jQuery",
+         "licenses" : [
+            {
+               "type" : "MIT",
+               "url" : "https://github.com/jquery/jquery/blob/1.11.0-beta3/MIT-LICENSE.txt"
+            }
+         ],
+         "main" : "dist/jquery.js",
+         "homepage" : "http://jquery.com",
+         "directories" : {},
+         "maintainers" : [
+            {
+               "name" : "jquery",
+               "email" : "npm@jquery.org"
+            }
+         ],
+         "_from" : ".",
+         "author" : {
+            "url" : "https://github.com/jquery/jquery/blob/1.11.0-beta3/AUTHORS.txt",
+            "name" : "jQuery Foundation and other contributors"
+         }
+      },
+      "2.1.1-rc1" : {
+         "title" : "jQuery",
+         "licenses" : [
+            {
+               "type" : "MIT",
+               "url" : "https://github.com/jquery/jquery/blob/2.1.1-rc1/MIT-LICENSE.txt"
+            }
+         ],
+         "main" : "dist/jquery.js",
+         "homepage" : "http://jquery.com",
+         "directories" : {},
+         "maintainers" : [
+            {
+               "email" : "dave.methvin@gmail.com",
+               "name" : "dmethvin"
+            },
+            {
+               "name" : "scott.gonzalez",
+               "email" : "scott.gonzalez@gmail.com"
+            },
+            {
+               "name" : "m_gol",
+               "email" : "m.goleb@gmail.com"
+            }
+         ],
+         "_from" : ".",
+         "author" : {
+            "name" : "jQuery Foundation and other contributors",
+            "url" : "https://github.com/jquery/jquery/blob/2.1.1-rc1/AUTHORS.txt"
+         },
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "library"
+         ],
+         "version" : "2.1.1-rc1",
+         "repository" : {
+            "url" : "https://github.com/jquery/jquery.git",
+            "type" : "git"
+         },
+         "_npmUser" : {
+            "name" : "m_gol",
+            "email" : "m.goleb@gmail.com"
+         },
+         "_shasum" : "95c494fdbbd0cefc305260e11ad46ae49a387c3d",
+         "bugs" : {
+            "url" : "http://bugs.jquery.com"
+         },
+         "_id" : "jquery@2.1.1-rc1",
+         "_npmVersion" : "1.4.7",
+         "dependencies" : {},
+         "name" : "jquery",
+         "dist" : {
+            "shasum" : "95c494fdbbd0cefc305260e11ad46ae49a387c3d",
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-2.1.1-rc1.tgz"
+         },
+         "description" : "JavaScript library for DOM operations",
+         "scripts" : {
+            "start" : "grunt watch",
+            "test" : "grunt",
+            "build" : "npm install && grunt"
+         },
+         "devDependencies" : {
+            "commitplease" : "1.7.0",
+            "load-grunt-tasks" : "0.3.0",
+            "testswarm" : "1.1.0",
+            "grunt-contrib-watch" : "0.5.3",
+            "grunt-contrib-jshint" : "0.8.0",
+            "grunt-jsonlint" : "1.0.4",
+            "grunt-contrib-uglify" : "0.3.2",
+            "grunt-jscs-checker" : "0.4.1",
+            "grunt-cli" : "0.1.13",
+            "grunt-git-authors" : "1.2.0",
+            "requirejs" : "2.1.10",
+            "grunt" : "0.4.2",
+            "gzip-js" : "0.3.2",
+            "grunt-bowercopy" : "0.7.1",
+            "grunt-compare-size" : "0.4.0"
+         }
+      },
+      "2.1.1-rc2" : {
+         "_npmVersion" : "1.2.25",
+         "_id" : "jquery@2.1.1-rc2",
+         "description" : "JavaScript library for DOM operations",
+         "scripts" : {
+            "start" : "grunt watch",
+            "test" : "grunt",
+            "build" : "npm install && grunt"
+         },
+         "devDependencies" : {
+            "grunt-git-authors" : "1.2.0",
+            "grunt-cli" : "0.1.13",
+            "grunt" : "0.4.2",
+            "requirejs" : "2.1.10",
+            "gzip-js" : "0.3.2",
+            "grunt-compare-size" : "0.4.0",
+            "grunt-bowercopy" : "0.7.1",
+            "load-grunt-tasks" : "0.3.0",
+            "testswarm" : "1.1.0",
+            "commitplease" : "1.7.0",
+            "grunt-contrib-jshint" : "0.8.0",
+            "grunt-contrib-watch" : "0.5.3",
+            "grunt-contrib-uglify" : "0.3.2",
+            "grunt-jscs-checker" : "0.4.1",
+            "grunt-jsonlint" : "1.0.4"
+         },
+         "dependencies" : {},
+         "name" : "jquery",
+         "dist" : {
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-2.1.1-rc2.tgz",
+            "shasum" : "99833e415efa7ac8a4efecc5df6894b2f938a598"
+         },
+         "version" : "2.1.1-rc2",
+         "repository" : {
+            "type" : "git",
+            "url" : "https://github.com/jquery/jquery.git"
+         },
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "library"
+         ],
+         "bugs" : {
+            "url" : "http://bugs.jquery.com"
+         },
+         "_npmUser" : {
+            "name" : "dmethvin",
+            "email" : "dave.methvin@gmail.com"
+         },
+         "_from" : ".",
+         "author" : {
+            "name" : "jQuery Foundation and other contributors",
+            "url" : "https://github.com/jquery/jquery/blob/2.1.1-rc2/AUTHORS.txt"
+         },
+         "licenses" : [
+            {
+               "type" : "MIT",
+               "url" : "https://github.com/jquery/jquery/blob/2.1.1-rc2/MIT-LICENSE.txt"
+            }
+         ],
+         "main" : "dist/jquery.js",
+         "title" : "jQuery",
+         "maintainers" : [
+            {
+               "email" : "dave.methvin@gmail.com",
+               "name" : "dmethvin"
+            },
+            {
+               "email" : "scott.gonzalez@gmail.com",
+               "name" : "scott.gonzalez"
+            },
+            {
+               "email" : "m.goleb@gmail.com",
+               "name" : "m_gol"
+            }
+         ],
+         "homepage" : "http://jquery.com",
+         "directories" : {}
+      },
+      "1.11.0-rc1" : {
+         "directories" : {},
+         "homepage" : "http://jquery.com",
+         "maintainers" : [
+            {
+               "email" : "dave.methvin@gmail.com",
+               "name" : "jquery"
+            }
+         ],
+         "title" : "jQuery",
+         "main" : "dist/jquery.js",
+         "licenses" : [
+            {
+               "type" : "MIT",
+               "url" : "https://github.com/jquery/jquery/blob/1.11.0-rc1/MIT-LICENSE.txt"
+            }
+         ],
+         "author" : {
+            "name" : "jQuery Foundation and other contributors",
+            "url" : "https://github.com/jquery/jquery/blob/1.11.0-rc1/AUTHORS.txt"
+         },
+         "_from" : ".",
+         "_npmUser" : {
+            "name" : "jquery",
+            "email" : "dave.methvin@gmail.com"
+         },
+         "bugs" : {
+            "url" : "http://bugs.jquery.com"
+         },
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "library"
+         ],
+         "repository" : {
+            "type" : "git",
+            "url" : "https://github.com/jquery/jquery.git"
+         },
+         "version" : "1.11.0-rc1",
+         "dist" : {
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-1.11.0-rc1.tgz",
+            "shasum" : "c2f6a4877374647b20b080c478d8dbcdfb4960ee"
+         },
+         "name" : "jquery",
+         "dependencies" : {},
+         "scripts" : {
+            "start" : "grunt watch",
+            "test" : "grunt",
+            "build" : "npm install && grunt"
+         },
+         "devDependencies" : {
+            "shelljs" : "0.2.6",
+            "grunt" : "0.4.2",
+            "requirejs" : "2.1.9",
+            "grunt-git-authors" : "1.2.0",
+            "grunt-cli" : "0.1.11",
+            "grunt-compare-size" : "0.4.0",
+            "grunt-bowercopy" : "0.5.0",
+            "archiver" : "0.4.10",
+            "gzip-js" : "0.3.2",
+            "load-grunt-tasks" : "0.2.0",
+            "testswarm" : "1.1.0",
+            "grunt-contrib-uglify" : "0.2.7",
+            "grunt-jscs-checker" : "0.2.6",
+            "grunt-jsonlint" : "1.0.4",
+            "grunt-contrib-watch" : "0.5.3",
+            "grunt-contrib-jshint" : "0.7.2"
+         },
+         "description" : "JavaScript library for DOM operations",
+         "_id" : "jquery@1.11.0-rc1",
+         "_npmVersion" : "1.3.23"
+      },
+      "1.12.2" : {
+         "_npmVersion" : "3.7.3",
+         "_id" : "jquery@1.12.2",
+         "scripts" : {
+            "build" : "npm install && grunt",
+            "test" : "grunt && grunt test",
+            "start" : "grunt watch"
+         },
+         "description" : "JavaScript library for DOM operations",
+         "dist" : {
+            "shasum" : "b8a8b45937312a19eebbcf5a0589b0311c8220bb",
+            "tarball" : "https://registry.npmjs.org/jquery/-/jquery-1.12.2.tgz"
+         },
+         "dependencies" : {},
+         "commitplease" : {
+            "components" : [
+               "Docs",
+               "Tests",
+               "Build",
+               "Release",
+               "Core",
+               "Ajax",
+               "Attributes",
+               "Callbacks",
+               "CSS",
+               "Data",
+               "Deferred",
+               "Deprecated",
+               "Dimensions",
+               "Effects",
+               "Event",
+               "Manipulation",
+               "Offset",
+               "Queue",
+               "Selector",
+               "Serialize",
+               "Traversing",
+               "Wrap"
+            ]
+         },
+         "repository" : {
+            "type" : "git",
+            "url" : "git+https://github.com/jquery/jquery.git"
+         },
+         "license" : "MIT",
+         "_npmUser" : {
+            "email" : "timmywillisn@gmail.com",
+            "name" : "timmywil"
+         },
+         "gitHead" : "a9b5f8ac96f6aa7bfc7b0795cb16d65c4f15b64e",
+         "_npmOperationalInternal" : {
+            "host" : "packages-12-west.internal.npmjs.com",
+            "tmp" : "tmp/jquery-1.12.2.tgz_1458236759160_0.3557943068444729"
+         },
+         "_from" : ".",
+         "main" : "dist/jquery.js",
+         "title" : "jQuery",
+         "maintainers" : [
+            {
+               "name" : "dmethvin",
+               "email" : "dave.methvin@gmail.com"
+            },
+            {
+               "email" : "scott.gonzalez@gmail.com",
+               "name" : "scott.gonzalez"
+            },
+            {
+               "email" : "m.goleb@gmail.com",
+               "name" : "m_gol"
+            },
+            {
+               "name" : "timmywil",
+               "email" : "timmywillisn@gmail.com"
+            }
+         ],
+         "devDependencies" : {
+            "core-js" : "0.9.17",
+            "grunt-jsonlint" : "1.0.4",
+            "grunt-npmcopy" : "0.1.0",
+            "grunt-contrib-watch" : "0.6.1",
+            "grunt-contrib-jshint" : "0.11.2",
+            "testswarm" : "1.1.0",
+            "grunt-babel" : "5.0.1",
+            "sizzle" : "2.2.1",
+            "commitplease" : "2.0.0",
+            "qunit-assert-step" : "1.0.3",
+            "grunt" : "0.4.5",
+            "requirejs" : "2.1.17",
+            "npm" : "2.1.12",
+            "grunt-contrib-uglify" : "0.9.2",
+            "jsdom" : "5.6.1",
+            "grunt-jscs" : "2.1.0",
+            "sinon" : "1.12.2",
+            "load-grunt-tasks" : "1.0.0",
+            "grunt-compare-size" : "0.4.0",
+            "win-spawn" : "2.0.0",
+            "gzip-js" : "0.3.2",
+            "grunt-git-authors" : "2.0.1",
+            "qunitjs" : "1.17.1",
+            "grunt-cli" : "0.1.13",
+            "strip-json-comments" : "1.0.3"
+         },
+         "name" : "jquery",
+         "version" : "1.12.2",
+         "keywords" : [
+            "jquery",
+            "javascript",
+            "browser",
+            "library"
+         ],
+         "bugs" : {
+            "url" : "https://github.com/jquery/jquery/issues"
+         },
+         "_shasum" : "b8a8b45937312a19eebbcf5a0589b0311c8220bb",
+         "author" : {
+            "url" : "https://github.com/jquery/jquery/blob/1.12-stable/AUTHORS.txt",
+            "name" : "jQuery Foundation and other contributors"
+         },
+         "_nodeVersion" : "5.8.0",
+         "directories" : {},
+         "homepage" : "http://jquery.com"
+      }
+   },
+   "readme" : "# jQuery\n\n> jQuery is a fast, small, and feature-rich JavaScript library.\n\nFor information on how to get started and how to use jQuery, please see [jQuery's documentation](http://api.jquery.com/).\nFor source files and issues, please visit the [jQuery repo](https://github.com/jquery/jquery).\n\nIf upgrading, please see the [blog post for 3.4.1](https://blog.jquery.com/2019/05/01/jquery-3-4-1-triggering-focus-events-in-ie-and-finding-root-elements-in-ios-10/). This includes notable differences from the previous version and a more readable changelog.\n\n## Including jQuery\n\nBelow are some of the most common ways to include jQuery.\n\n### Browser\n\n#### Script tag\n\n```html\n<script src=\"https://code.jquery.com/jquery-3.4.1.min.js\"></script>\n```\n\n#### Babel\n\n[Babel](http://babeljs.io/) is a next generation JavaScript compiler. One of the features is the ability to use ES6/ES2015 modules now, even though browsers do not yet support this feature natively.\n\n```js\nimport $ from \"jquery\";\n```\n\n#### Browserify/Webpack\n\nThere are several ways to use [Browserify](http://browserify.org/) and [Webpack](https://webpack.github.io/). For more information on using these tools, please refer to the corresponding project's documention. In the script, including jQuery will usually look like this...\n\n```js\nvar $ = require(\"jquery\");\n```\n\n#### AMD (Asynchronous Module Definition)\n\nAMD is a module format built for the browser. For more information, we recommend [require.js' documentation](http://requirejs.org/docs/whyamd.html).\n\n```js\ndefine([\"jquery\"], function($) {\n\n});\n```\n\n### Node\n\nTo include jQuery in [Node](nodejs.org), first install with npm.\n\n```sh\nnpm install jquery\n```\n\nFor jQuery to work in Node, a window with a document is required. Since no such window exists natively in Node, one can be mocked by tools such as [jsdom](https://github.com/tmpvar/jsdom). This can be useful for testing purposes.\n\n```js\nrequire(\"jsdom\").env(\"\", function(err, window) {\n\tif (err) {\n\t\tconsole.error(err);\n\t\treturn;\n\t}\n\n\tvar $ = require(\"jquery\")(window);\n});\n```\n",
+   "maintainers" : [
+      {
+         "name" : "dmethvin",
+         "email" : "dave.methvin@gmail.com"
+      },
+      {
+         "name" : "mgol",
+         "email" : "m.goleb@gmail.com"
+      },
+      {
+         "name" : "scott.gonzalez",
+         "email" : "scott.gonzalez@gmail.com"
+      },
+      {
+         "name" : "timmywil",
+         "email" : "4timmywil@gmail.com"
+      }
+   ],
+   "homepage" : "https://jquery.com",
+   "users" : {
+      "j3kz" : true,
+      "xmwx38" : true,
+      "skinnybrit51" : true,
+      "seangenabe" : true,
+      "andrew.oxenburgh" : true,
+      "adnanexy" : true,
+      "isis97" : true,
+      "gabrielsanterre" : true,
+      "marxjb" : true,
+      "natforyou" : true,
+      "felladrin" : true,
+      "cycomachead" : true,
+      "ahvonenj" : true,
+      "rhythm19" : true,
+      "arturmuller" : true,
+      "jeffb_incontact" : true,
+      "tcrowe" : true,
+      "bebaps" : true,
+      "oussoulessou" : true,
+      "takonyc" : true,
+      "dnarvaez" : true,
+      "victorcastelan" : true,
+      "ristostevcev" : true,
+      "csbun" : true,
+      "rmzxcm" : true,
+      "fps20only" : true,
+      "sirkinder" : true,
+      "tmurngon" : true,
+      "fadi" : true,
+      "maycon_ribeiro" : true,
+      "wjervis" : true,
+      "brettv" : true,
+      "dragonfire1119" : true,
+      "rgraves90" : true,
+      "ddmitov" : true,
+      "aquafadas" : true,
+      "adamk" : true,
+      "wkaifang" : true,
+      "ostgals" : true,
+      "wenhsiaoyi" : true,
+      "jamal-safwat" : true,
+      "hughker" : true,
+      "cvc" : true,
+      "pandao" : true,
+      "liamebirge" : true,
+      "ianpaschal" : true,
+      "matthewbauer" : true,
+      "langri-sha" : true,
+      "ousmane" : true,
+      "manojkhannakm" : true,
+      "bogdanvlviv" : true,
+      "krabello" : true,
+      "chiroc" : true,
+      "tektimmy" : true,
+      "thejohnsmith" : true,
+      "gurpreetbirdi" : true,
+      "axelrindle" : true,
+      "modao" : true,
+      "dexterneo" : true,
+      "cfleschhut" : true,
+      "kevinagin" : true,
+      "st3ko" : true,
+      "abpeinado" : true,
+      "honingwon" : true,
+      "modest" : true,
+      "alaeddine17" : true,
+      "duchenerc" : true,
+      "ericteng177" : true,
+      "matiasmarani" : true,
+      "junya" : true,
+      "mhaidarh" : true,
+      "emircanok" : true,
+      "yuch4n" : true,
+      "konfuzius" : true,
+      "i-erokhin" : true,
+      "mahmoodramzani" : true,
+      "blue0" : true,
+      "wildmind-ch" : true,
+      "wesleylhandy" : true,
+      "pocketfulofash" : true,
+      "mikemimik" : true,
+      "adeelquadri" : true,
+      "asj1992" : true,
+      "shahyar" : true,
+      "ackuser" : true,
+      "hanwf" : true,
+      "whiskeyjack" : true,
+      "bcipriano" : true,
+      "vsn4ik" : true,
+      "tiggem1993" : true,
+      "heisem" : true,
+      "jackvial" : true,
+      "mswanson1524" : true,
+      "santhoshbabu" : true,
+      "gilvannfilho" : true,
+      "claytonnnnnn" : true,
+      "rudchyk" : true,
+      "cloudychris" : true,
+      "midascreed" : true,
+      "noxracing" : true,
+      "dzhou777" : true,
+      "joannerpena" : true,
+      "lendix" : true,
+      "akshymalvia" : true,
+      "alexandermac" : true,
+      "vince-ann" : true,
+      "freebird" : true,
+      "simplyianm" : true,
+      "ameer157" : true,
+      "uselesscarrot" : true,
+      "oliverj" : true,
+      "anker" : true,
+      "xufz" : true,
+      "kimhoe" : true,
+      "mseminatore" : true,
+      "sky3r" : true,
+      "linger" : true,
+      "yanrivera" : true,
+      "damkat" : true,
+      "softskills" : true,
+      "dondyabla" : true,
+      "bjlxj_2008" : true,
+      "bengi" : true,
+      "haeck" : true,
+      "jlertle" : true,
+      "shakakira" : true,
+      "pfuri" : true,
+      "magemagic" : true,
+      "frankxin" : true,
+      "tobiasnickel" : true,
+      "igsys" : true,
+      "kongol.ml" : true,
+      "beatwinthewave" : true,
+      "onursumer" : true,
+      "giuseppe.morelli" : true,
+      "cripstian" : true,
+      "daniellink" : true,
+      "dhampik" : true,
+      "huiyifyj" : true,
+      "kingfeast" : true,
+      "hentai_mew" : true,
+      "frk1705" : true,
+      "71emj1" : true,
+      "weerd" : true,
+      "hal9zillion" : true,
+      "tdmalone" : true,
+      "jcdsr3" : true,
+      "landy2014" : true,
+      "jmm23" : true,
+      "oka-hide" : true,
+      "szilard-nemeth" : true,
+      "itskdk" : true,
+      "xfloops" : true,
+      "goatandsheep" : true,
+      "maxwhite" : true,
+      "shen-weizhong" : true,
+      "maddas" : true,
+      "funroll" : true,
+      "pddivine" : true,
+      "baraunaluciano" : true,
+      "fgribreau" : true,
+      "gluten" : true,
+      "sharrondenice" : true,
+      "ezakaze" : true,
+      "ibourgeois" : true,
+      "j717273419" : true,
+      "knoja4" : true,
+      "sgpr" : true,
+      "cueedee" : true,
+      "joshbruce" : true,
+      "fatelei" : true,
+      "pantyuhind" : true,
+      "memija" : true,
+      "birkey" : true,
+      "jream" : true,
+      "thisiskun" : true,
+      "seaseng" : true,
+      "alvin2ye" : true,
+      "davidjsalazarmoreno" : true,
+      "fchienvuhoang" : true,
+      "bumsuk" : true,
+      "kasumi" : true,
+      "pablopap" : true,
+      "potentii" : true,
+      "zhangqingfeng1984" : true,
+      "merbst" : true,
+      "shuoshubao" : true,
+      "thomas.miele" : true,
+      "alanho" : true,
+      "onheiron" : true,
+      "piotrd" : true,
+      "ftornik" : true,
+      "junos" : true,
+      "yangzw" : true,
+      "sedalski" : true,
+      "johnshao" : true,
+      "nysingh" : true,
+      "miadzadfallah" : true,
+      "karlitowhoelse" : true,
+      "fabiomendonca" : true,
+      "sibawite" : true,
+      "pnevares" : true,
+      "luiscauro" : true,
+      "wwag110465" : true,
+      "davidnyhuis" : true,
+      "mort3za" : true,
+      "ehabovich" : true,
+      "josejaguirre" : true,
+      "xgqfrms" : true,
+      "dmonti" : true,
+      "orellanajonathan" : true,
+      "odahcam" : true,
+      "xulayen" : true,
+      "chiaychang" : true,
+      "dreamseer" : true,
+      "adriasb" : true,
+      "zhuheyang" : true,
+      "oroce" : true,
+      "cubit" : true,
+      "cypark" : true,
+      "themadjoker" : true,
+      "lukecarrier" : true,
+      "redstrike" : true,
+      "parroit" : true,
+      "arttse" : true,
+      "paroczi" : true,
+      "ahillier" : true,
+      "morogasper" : true,
+      "teiming" : true,
+      "davidbaiguini" : true,
+      "ivan.marquez" : true,
+      "rylan_yan" : true,
+      "fbnlsr" : true,
+      "meligatt" : true,
+      "mhat" : true,
+      "andreasneumeier" : true,
+      "asm2hex" : true,
+      "sahilsk" : true,
+      "dericdavis" : true,
+      "xanderiel" : true,
+      "psycograph" : true,
+      "abuelwafa" : true,
+      "wkx101" : true,
+      "mmunchandersen" : true,
+      "ikeyan" : true,
+      "buzuli" : true,
+      "bak258" : true,
+      "kmck" : true,
+      "budiantoip" : true,
+      "ageofsys" : true,
+      "dodo" : true,
+      "chengsu" : true,
+      "d3ck" : true,
+      "bcawrse" : true,
+      "shogun88888888" : true,
+      "rahsaanbasek" : true,
+      "ggviana" : true,
+      "jimster305" : true,
+      "shelling" : true,
+      "mgol" : true,
+      "helcat" : true,
+      "ayad0net" : true,
+      "marcovossen" : true,
+      "tfentonz" : true,
+      "leodel" : true,
+      "faraoman" : true,
+      "olian04" : true,
+      "wtower" : true,
+      "justsso" : true,
+      "nickeltobias" : true,
+      "janspicka" : true,
+      "beth_rogers465" : true,
+      "hasanabb" : true,
+      "adswebwork" : true,
+      "alexpearly" : true,
+      "damianof" : true,
+      "tripu" : true,
+      "joaocunha" : true,
+      "wambulance" : true,
+      "demod" : true,
+      "sedmonds" : true,
+      "jetbug123" : true,
+      "yatsu" : true,
+      "inancgumus" : true,
+      "brentely" : true,
+      "veritasx" : true,
+      "marcobiedermann" : true,
+      "agoral" : true,
+      "pkhotpanya" : true,
+      "pherum" : true,
+      "wlmts" : true,
+      "jgreeley" : true,
+      "adamdreszer" : true,
+      "edmondnow" : true,
+      "xhxxhx" : true,
+      "hubojun" : true,
+      "zenrumi" : true,
+      "aldofunes" : true,
+      "wm123450405" : true,
+      "yesseecity" : true,
+      "jesus81" : true,
+      "rogeriera" : true,
+      "jkcpr" : true,
+      "komarovsergey" : true,
+      "manxisuo" : true,
+      "iampyramidone" : true,
+      "ovgu12" : true,
+      "vishwasc" : true,
+      "willbeeler" : true,
+      "orlenka" : true,
+      "thesoftwarepeople" : true,
+      "merlyn333" : true,
+      "cedx" : true,
+      "daavve" : true,
+      "timdp" : true,
+      "jakedalus" : true,
+      "fxkraus" : true,
+      "hypo9eal" : true,
+      "temelm" : true,
+      "rwhogg" : true,
+      "yisen" : true,
+      "kuravih" : true,
+      "matiasm15" : true,
+      "nazy" : true,
+      "mr_eaze" : true,
+      "mareksagan" : true,
+      "chenshao" : true,
+      "vinnyfonseca" : true,
+      "coalesce" : true,
+      "trotyl" : true,
+      "wearevilla" : true,
+      "rocket0191" : true,
+      "tooyond" : true,
+      "juje" : true,
+      "linkchef" : true,
+      "kazuyahama" : true,
+      "bendiken" : true,
+      "nitayneeman" : true,
+      "dainov" : true,
+      "broxmgs" : true,
+      "vivekwisdom" : true,
+      "chinawolf_wyp" : true,
+      "laoshaw" : true,
+      "luiko" : true,
+      "nhkchan" : true,
+      "mojaray2k" : true,
+      "bsurnida" : true,
+      "ovrmrw" : true,
+      "fdeneux" : true,
+      "highlanderkev" : true,
+      "losssoul" : true,
+      "johnny_kim" : true,
+      "tommyjs7" : true,
+      "adrianorosa" : true,
+      "princetoad" : true,
+      "juangotama" : true,
+      "jostw" : true,
+      "pajamasam" : true,
+      "ezeikel" : true,
+      "paulkolesnyk" : true,
+      "filipve" : true,
+      "rpgreen" : true,
+      "leobalter" : true
+   }
+}

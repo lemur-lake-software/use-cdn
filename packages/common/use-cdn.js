@@ -3,6 +3,7 @@
 const { applyOverride } = require("./util");
 const { WritableCache } = require("./caching");
 const { sessionFactories } = require("./sessions/all");
+const { resolverFactories } = require("./version-resolvers/all");
 
 /**
  * @typedef {object} PackageConfig
@@ -48,6 +49,7 @@ class UseCDN {
     this.logger = logger;
     this.cache = new WritableCache();
     this.sessions = Object.create(null);
+    this.resolvers = Object.create(null);
     this.initialized = false;
   }
 
@@ -115,12 +117,58 @@ class UseCDN {
       if (factory === undefined) {
         throw new Error(`unsupported cdn: ${cdn}`);
       }
-      // eslint-disable-next-line new-cap
-      session = this.sessions[cdn] = new factory(this.config.cdns[cdn],
-                                                 this.logger, this.cache);
+
+      const cdnConfig = this.config.cdns[cdn] || {};
+      let resolverName = cdnConfig.resolver;
+      if (resolverName in sessionFactories) {
+        throw new Error(`you may not use a session name as a resolver name, to
+specify the resolver native to a session, use "native"`);
+      }
+      if (resolverName === "native") {
+        resolverName = cdn;
+      }
+
+      session = this.sessions[cdn] =
+        // eslint-disable-next-line new-cap
+        new factory(cdnConfig, this.logger, this.cache,
+                    this.getVersionResolver(resolverName));
     }
 
     return session;
+  }
+
+  /**
+   * Get a version resolver. This method caches its return values. When first
+   * called on an instance of this class, the resolver does not exist yet. So
+   * this method creates it. Subsequent calls to this method requesting the came
+   * resolver on the same instance will return the same resolver as the one
+   * created on the first call for the same resolver.
+   *
+   * @param {string} name The name of the resolver we want to create.
+   *
+   * @returns {object} The resolver.
+   *
+   * @throws {Error} If the resolver requested is not supported.
+   */
+  getVersionResolver(name) {
+    this.assertInitialized();
+    name = name || "npm";
+    let resolver = this.resolvers[name];
+    if (!resolver) {
+      let factory = resolverFactories[name];
+      if (factory === undefined) {
+        const session = sessionFactories[name];
+        factory = session && session.NativeResolver;
+      }
+      if (factory === undefined) {
+        throw new Error(`unsupported resolver: ${name}`);
+      }
+      // eslint-disable-next-line new-cap
+      resolver = this.resolvers[name] = new factory(this.config.resolvers[name],
+                                                    this.logger, this.cache);
+    }
+
+    return resolver;
   }
 }
 

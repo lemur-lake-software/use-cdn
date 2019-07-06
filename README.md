@@ -9,6 +9,11 @@ options:
   and the values are objects that contain configuration settings. See ``CDN
   Configuration`` below.
 
+* ``resolvers: object`` (optional): this object allows configuring the various
+  version resolvers that you use in your configuration. A key of this object is
+  the name of a version resolver and the values are objects that contain
+  configuration settings. See ``Version Resolver Configuration`` below.
+
 * ``packages: object``: an array of package configuration. See ``Package
   Configuration`` below.
 
@@ -19,6 +24,17 @@ A CDN configuration may contain the following settings:
 * ``url: string`` (optional): you would use this to override the default URL
   associated with the CDN. This may be useful if you want to use a mirror of the
   CDN, for instance.
+
+* ``resolver: string`` (optional): The version resolver to use for this CND. If
+  a resolver is not provided, the ``npm`` resolver is used.
+
+## Version Resolver Configuration
+
+A version resolver configuration may contain the following settings:
+
+* ``url: string`` (optional): you would use this to override the default URL
+  associated with the resolver. This may be useful if you want to use a mirror
+  of the version resolver, for instance.
 
 ## Package Configuration
 
@@ -32,6 +48,53 @@ Each package configuration is an object with the following fields:
 
 * ``files``: a list of files to get from the CDN.
 
+## What's a version resolver? Why do I need one?
+
+Suppose I have a package that I advertise as working with "the latest version of
+jQuery". In my test suite I want to test my code wiht "the latest version of
+jQuery". The problem is that "the latest version of jQuery" is a moving
+target. I'd like it if my test suite would just automatically load the latest
+version rather than require me to manually update the version number loaded in
+the tests every time a new jQuery version is released. Note that if I *don't
+want* to automatically get the latest version but rather to manually update the
+version myself, I can specify a ``"jquery"`` package with a specific version
+number. But if I do want the latest version, I need a way to tell ``use-cdn``
+that I want the latest. Or if I want the latest ``"rc"``, I'd have update
+version numbers manually. The same thing happens if I want to setup a test suite
+that runs with, say, the latest version of jQuery 2. If ``use-cdn`` allowed only
+a literal and complete version number, then I'd have to chase new releases.
+
+A version resolver solves these issues. The ``npm`` cli tool is a good example
+of a tools that provides good version resolution. You can specify a package
+version with a tag like ``"latest"`` or ``"dev"`` or ``"rc"``. And you can
+specify a package version like ``"2"``, which means "the latest version in the
+``"2.x"`` series".
+
+The problem for ``use-cdn`` is that some CDNs peform version resolution, and
+some don't. ``unpkg.com``, for instance, performs version resolution in the same
+way ``npm`` does. However, ``cdnjs.com`` does not perform version resolution. So
+for CNDs that don't provide their own resolution method, an external version
+resolver can be used to provide some useful resolving semantics.
+
+Supported resolvers:
+
+* ``"npm"``: a resolver that uses ``registry.npmjs.org`` to resolve versions and
+  tags. This is the default resolver for **ALL** CDNs for which you do not
+  specify another resolver.
+
+* ``"null"``: a resolver that just returns the version or tag passed to it. If
+  asked to resolve ``"1"``, it will return ``"1"``. This resolver may be useful
+  if you want to set specific versions manually. Using the ``"null"`` resolver
+  for such cases allows you to skip the network requests that would be made for
+  resolving.
+
+* ``unpkg``'s native resolver: is the resolver you get when specifying the
+  ``"native"`` resolver on the ``"unpkg"`` CDN. This resolver queries
+  ``unpkg.com`` to resolver tags and version numbers. In theory, this resolver
+  performs the same resolution as the ``"npm"`` resolver since ``unpkg`` simply
+  exposes the packages available on ``npm``. However, this resolver uses
+  ``unpkg.com`` whereas the ``"npm"`` resolver uses ``registry.npmjs.org``.
+
 ## Configuration Examples
 
 Here is an example that uses the ``unpkg.com`` CDN (which is the default), but
@@ -44,8 +107,14 @@ module.exports = {
   cdns: {
     unpkg: {
       url: "https://mirror/",
+      resolver: "native",
     },
   },
+  resolvers: {
+    unpkg: {
+      url: "https://mirror/",
+    }
+  }
   packages: [{
     package: "jquery",
     version: "latest",

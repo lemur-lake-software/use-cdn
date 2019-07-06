@@ -56,6 +56,12 @@ module.exports = {
       url: "https://fnord",
     },
   },
+  resolvers: {
+    unpkg: {
+      url: "https://fnord",
+    },
+    npm: {},
+  },
   packages: [{
     package: "jquery",
     version: "latest",
@@ -87,6 +93,28 @@ module.exports = {
 `);
       expect(loadConfig)
         .to.throw(Error, /unknown CDN in the cdns configuration option: fnord/);
+    });
+
+    it("fails on unknown resolver in resolvers", async () => {
+      await fs.writeFile("./use-cdn.conf.js", `
+module.exports = {
+  cdns: {},
+  resolvers: {
+    fnord: {
+    },
+  },
+  packages: [{
+    package: "jquery",
+    version: "latest",
+    files: [
+      "jquery.js",
+    ],
+  }],
+};
+`);
+      expect(loadConfig).to
+        .throw(Error,
+               /unknown resolver in the resolvers configuration option: fnord/);
     });
 
     it("fails on incorrect data", async () => {
