@@ -141,4 +141,11 @@ describe("BaseVersionResolver", () => {
       });
     });
   });
+
+  describe("#fetchVersion", () => {
+    it("throws", async () => {
+      await expectRejection(new BaseVersionResolver(logger, cache)
+                            .fetchVersion());
+    });
+  });
 });

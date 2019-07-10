@@ -117,6 +117,66 @@ module.exports = {
                /unknown resolver in the resolvers configuration option: fnord/);
     });
 
+    it("fails on duplicate package name", async () => {
+      await fs.writeFile("./use-cdn.conf.js", `
+module.exports = {
+  packages: [{
+    package: "jquery",
+    version: "latest",
+    files: [
+      "jquery.js",
+    ],
+  }, {
+    package: "jquery",
+    version: "1",
+    files: [
+      "jquery.js",
+    ],
+  }],
+};
+`);
+      expect(loadConfig).to.throw(Error, "duplicate package: jquery");
+    });
+
+    it("fails on resolveAs duplicating a package name", async () => {
+      await fs.writeFile("./use-cdn.conf.js", `
+module.exports = {
+  packages: [{
+    package: "jquery",
+    version: "latest",
+    files: [
+      "jquery.js",
+    ],
+  }, {
+    package: "jquery-moo",
+    resolveAs: "jquery",
+    version: "1",
+    files: [
+      "jquery.js",
+    ],
+  }],
+};
+`);
+      expect(loadConfig).to.throw(Error, "duplicate package: jquery");
+    });
+
+    it("fails on cdn specifying unknown cdn", async () => {
+      await fs.writeFile("./use-cdn.conf.js", `
+module.exports = {
+  cdn: "unknown",
+  packages: [{
+    package: "jquery",
+    version: "latest",
+    files: [
+      "jquery.js",
+    ],
+  }],
+};
+`);
+      expect(loadConfig).to
+        .throw(Error, "unknown CDN in the cdn configuration option: unknown");
+    });
+
     it("fails on incorrect data", async () => {
       await fs.writeFile("./use-cdn.conf.js", `
 module.exports = [{

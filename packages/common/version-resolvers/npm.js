@@ -29,19 +29,6 @@ class NPMVersionResolver extends BaseVersionResolver {
     }
   }
 
-  /**
-   * Fetch the actual version number that a package and version-or-tag resolves
-   * to.
-   *
-   * @protected
-   *
-   * @param {string} pkg The package whose version-or-tag we want to fetch.
-   *
-   * @param {string} versionOrTag The version or tag to fetch.
-   *
-   * @returns {Promse<string>} A promise resolving to actual version number to
-   * which the pair resolves.
-   */
   async fetchVersion(pkg, versionOrTag) {
     const packageUrl = this.makePackageUrl(pkg);
     this.logger.debug(`resolving ${packageUrl}`);

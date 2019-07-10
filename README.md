@@ -4,6 +4,10 @@ Create a ``use-cdn.conf.js`` file in the cwd of your test runner. (This often is
 the top directory of your project.) It must export an object with the following
 options:
 
+* ``cdn: string`` (optional): The CDN to use for those packages that don't have
+  a ``cdn`` field. This effectively lets you define a default CDN for the whole
+  configuration.
+
 * ``cdns: object`` (optional): this object allows configuring the various CDNs
   that you use in your configuration. A key of this object is the name of a CDN
   and the values are objects that contain configuration settings. See ``CDN
@@ -43,10 +47,59 @@ Each package configuration is an object with the following fields:
 * ``package: string``: the name of the package. The specific format is dependent
   on the CDN you use.
 
+* ``resolveAs: string`` (optional): This is the package name that should be used
+  while resolving the package. Unfortunately, it is possible for a package to be
+  published to a CDN under a name and to a resolver under a different name. A
+  good example of this is Bootstrap, which is published to Cdnjs as
+  ``twitter-bootstrap`` and to NPM as ``bootstrap``. A configuration that
+  fetches Bootstrap from Cdnjs but uses NPM as the version resolver would have
+  to use ``package: "twitter-bootstrap", resolveAs: "bootstrap"``.
+
+* ``cdn: string`` (optional): the CDN to use to fetch the package. Default:
+  ``unpkg``.
+
 * ``version: string``: the version of the package. The specific format is
   dependent on the CDN you use.
 
 * ``files``: a list of files to get from the CDN.
+
+**NOTE**: use-cdn does not allow fetching the same package from two different
+CDNs in the same configuration. This is invalid:
+
+```
+{
+  packages: [{
+    package: "foo",
+    cdn: "unpkg",
+    [...],
+  }, {
+    package: "foo",
+    cdn: "cdnjs",
+    [...],
+  }],
+}
+```
+
+The name ``"foo"`` is duplicated. You also cannot have a ``resolveAs`` parameter
+which has the same value as another ``resolveAs`` or ``package`` field. This is
+invalid:
+
+```
+{
+  packages: [{
+    package: "foo",
+    resolveAs: "bar",
+    cdn: "unpkg",
+    [...],
+  }, {
+    package: "bar",
+    cdn: "cdnjs",
+    [...],
+  }],
+}
+```
+
+The name ``"bar"`` is duplicated.
 
 ## What's a version resolver? Why do I need one?
 
@@ -75,25 +128,6 @@ some don't. ``unpkg.com``, for instance, performs version resolution in the same
 way ``npm`` does. However, ``cdnjs.com`` does not perform version resolution. So
 for CNDs that don't provide their own resolution method, an external version
 resolver can be used to provide some useful resolving semantics.
-
-Supported resolvers:
-
-* ``"npm"``: a resolver that uses ``registry.npmjs.org`` to resolve versions and
-  tags. This is the default resolver for **ALL** CDNs for which you do not
-  specify another resolver.
-
-* ``"null"``: a resolver that just returns the version or tag passed to it. If
-  asked to resolve ``"1"``, it will return ``"1"``. This resolver may be useful
-  if you want to set specific versions manually. Using the ``"null"`` resolver
-  for such cases allows you to skip the network requests that would be made for
-  resolving.
-
-* ``unpkg``'s native resolver: is the resolver you get when specifying the
-  ``"native"`` resolver on the ``"unpkg"`` CDN. This resolver queries
-  ``unpkg.com`` to resolver tags and version numbers. In theory, this resolver
-  performs the same resolution as the ``"npm"`` resolver since ``unpkg`` simply
-  exposes the packages available on ``npm``. However, this resolver uses
-  ``unpkg.com`` whereas the ``"npm"`` resolver uses ``registry.npmjs.org``.
 
 ## Configuration Examples
 
@@ -167,14 +201,47 @@ module.exports = [{
 
 (PRs for adding other CDNs are welcome.)
 
-## ``unpkg.com``
+## ``unpkg``
 
-The package available on this CDN are those published to ``npmjs.com``. The
-``version`` string is any single version number supported by NPM. For instance,
+The package available on this CDN are those published to ``npmjs.com``.
+
+This CDN has a native version resolver which resolves version numbers in the
+same way the ``npm`` version resolver does. The ``version`` string is any single
+version number supported by NPM. For instance,
 
 * ``1`` refers to the latest version is the 1.x series.
 
 * ``latest`` refers to whatever version the ``latest`` dist-tag resolves to.
+
+## ``cdnjs``
+
+The package available on this CDN are those specifically published to this CDN.
+
+This CDN does not have a native version resolver.
+
+# Version Resolvers Supported
+
+## ``npm``
+
+This is a resolver that uses ``registry.npmjs.org`` to resolve versions and
+tags. This is the default resolver for **ALL** CDNs for which you do not specify
+another resolver.
+
+## ``null``
+
+This is a resolver that just returns the version or tag passed to it. If asked
+to resolve ``"1"``, it will return ``"1"``. This resolver may be useful if you
+want to set specific versions manually. Using the ``"null"`` resolver for such
+cases allows you to skip the network requests that would be made for resolving.
+
+## ``unpkg``
+
+This is the resolver you get when specifying the ``"native"`` resolver on the
+``"unpkg"`` CDN. This resolver queries ``unpkg.com`` to resolve tags and version
+numbers. In theory, this resolver performs the same resolution as the ``npm``
+resolver since ``unpkg`` simply exposes the packages available on
+``npm``. However, this resolver uses ``unpkg.com`` whereas the ``npm`` resolver
+uses ``registry.npmjs.org``.
 
 # Test Runners Supported
 
@@ -225,8 +292,9 @@ You must also modify your build procedure so that the ``use-cdn`` CLI tool runs
 
 ## Caching
 
-This library caches from run to run the data it gets from the CDNs. If the data
-is in the cache, then the CDN is not accessed again.
+This library caches from run to run the *file contents* it gets from the
+CDNs. If a file that is needed is in the cache, then the CDN is not accessed
+again to fetch this file.
 
 **THIS LIBRARY ASSUMES THAT THE CONTENT OF A VERSION IS IMMUTABLE.** It does not
 *verify*. It simply *assumes*. If ``foo@1.2.3`` is in the cache and it is
@@ -257,13 +325,19 @@ new release happens to be published at the same time the accesses are
 done. Suppose I need to get ``foo.js`` and ``foo.css`` from ``foo@latest``. When
 I grab ``foo.js`` when ``foo@latest`` is ``foo@1.2.3``, but ``foo@2.0.0``
 happens to be published before I grab ``foo.css``. So now I have a ``foo.js``
-and a ``foo.css`` from different versions of the pacakge.
+and a ``foo.css`` from *different versions of the pacakge*.
 
 That's a problem that happens only rarely but this library does prevent it,
 because it is rather easy to prevent. It resolves tags to a specific version
-number once per run and uses the same version number for the whole run. So in
-the scenario above, version 1.2.3 would be used. Then on subsequent runs
+number **once per run and uses the same version number for the whole run**. So
+in the scenario above, version 1.2.3 would be used. Then on subsequent runs
 ``latest`` would resolve to the new version number.
+
+Note, however, that version resolution is performed anew with each *invocation*
+of ``use-cdn``. Say you run ``use-cdn`` once and it resolves ``foo@1`` to
+``foo@1.2.3`` or ``foo@latest`` to ``foo@1.2.3``. If you run ``use-cdn`` again,
+it will resolve the version again. If version 1.3 was released before your
+second run, then ``foo@1`` and ``foo@latest`` will resolve to this new version.
 
 # Contributing
 

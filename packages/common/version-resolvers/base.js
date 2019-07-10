@@ -51,6 +51,24 @@ class BaseVersionResolver {
 
     return promise;
   }
+
+  /**
+   * Fetch the actual version number that a package and version-or-tag resolves
+   * to. Derived classes must implement this method.
+   *
+   * @protected
+   *
+   * @param {string} pkg The package whose version-or-tag we want to fetch.
+   *
+   * @param {string} versionOrTag The version or tag to fetch.
+   *
+   * @returns {Promse<string>} A promise resolving to actual version number to
+   * which the pair resolves.
+   */
+  // eslint-disable-next-line class-methods-use-this, no-unused-vars
+  async fetchVersion(pkg, versionOrTag) {
+    throw new Error("not implemented");
+  }
 }
 
 exports.BaseVersionResolver = BaseVersionResolver;

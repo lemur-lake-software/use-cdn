@@ -143,6 +143,11 @@ function loadConfig() {
     };
   }
 
+  const { cdn } = config;
+  if (cdn && !(cdn in sessionFactories)) {
+    throw new Error(`unknown CDN in the cdn configuration option: ${cdn}`);
+  }
+
   if (!config.cdns) {
     config.cdns = {};
   }
@@ -171,6 +176,22 @@ function loadConfig() {
 option: ${key}`);
       }
     }
+  }
+
+  const seen = new Set();
+  for (const { package: pkg, resolveAs } of config.packages) {
+    if (seen.has(pkg)) {
+      throw new Error(`duplicate package: ${pkg}`);
+    }
+
+    if (resolveAs !== undefined) {
+      if (seen.has(resolveAs)) {
+        throw new Error(`duplicate package: ${resolveAs}`);
+      }
+      seen.add(resolveAs);
+    }
+
+    seen.add(pkg);
   }
 
   return config;

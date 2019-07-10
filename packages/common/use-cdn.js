@@ -10,6 +10,14 @@ const { resolverFactories } = require("./version-resolvers/all");
  *
  * @prop {string} package The package to fetch.
  *
+ * @prop {string} [cdn] The CDN to use to fetch this package.
+ *
+ * @prop {string} [resolveAs] The package name to use for resolving the
+ * version. When using a resolver which is not native to the CDN you may run
+ * into situations where the package name is known to the resolver under a
+ * different name than the name it is known as to the CDN. You use this optional
+ * field in such cases.
+ *
  * @prop {string} version The version of the package, or a distribution tag.
  *
  * @prop {(string|Function)[]} files An array specifying the files to get from
@@ -21,14 +29,29 @@ const { resolverFactories } = require("./version-resolvers/all");
 /**
  * @typedef {object} CDNConfig
  *
- * @prop {string} url The URL at which this CDN resides.
+ * @prop {string} [url] The URL at which this CDN resides.
+ *
+ * @prop {string} [resolver] The resolver to use for this CDN. If unspecified,
+ * the default is to use the ``npm`` resolver.
+ */
+
+/**
+ * @typedef {object} ResolverConfig
+ *
+ * @prop {string} [url] The URL at which this resolver resides.
  */
 
 /**
  * @typedef {object} Config
  *
+ * @prop {string} [cdn] The default CDN to use to fetch the packages, for those
+ * packages that don't specify a ``cdn`` field.
+ *
  * @prop {Object.<string, CDNConfig>} cdns The configuration of each individual
  * CDNs.
+ *
+ * @prop {Object.<string, ResolverConfig>} resolvers The configuration of each
+ * individual resolver.
  *
  * @prop {PackageConfig[]} packages The packages to fetch.
  */
@@ -79,15 +102,15 @@ class UseCDN {
    */
   async resolve() {
     this.assertInitialized();
-    const { config: { packages } } = this;
+    const { config: { cdn: defaultCdn, packages } } = this;
     const promises = [];
     for (const spec of packages) {
-      const { cdn, package: pkg, files } = spec;
-      const session = this.getSession(cdn);
+      const { cdn, package: pkg, resolveAs, files } = spec;
+      const session = this.getSession(cdn || defaultCdn);
 
       const version = applyOverride(pkg, spec.version);
       for (const pathToServe of files) {
-        promises.push(session.resolve(pkg, version, pathToServe));
+        promises.push(session.resolve(pkg, resolveAs, version, pathToServe));
       }
     }
 

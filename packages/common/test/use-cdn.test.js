@@ -5,11 +5,13 @@ const fs = require("fs-extra");
 const { expect } = require("chai");
 const mockFs = require("mock-fs");
 const { expectRejection } = require("expect-rejection");
+const pickManifest = require("npm-pick-manifest");
 
 const { UseCDN } = require("../use-cdn");
 const { NPMVersionResolver } = require("../version-resolvers/npm");
 const { UnpkgSession: { NativeResolver: UnpkgVersionResolver } } =
       require("../sessions/unpkg");
+const jqueryJSON = require("./version-resolvers/jquery");
 
 class FakeLogger {
   // eslint-disable-next-line class-methods-use-this
@@ -32,6 +34,18 @@ describe("UseCDN", () => {
 
   before(() => {
     logger = new FakeLogger();
+
+    // We do this so that some modules loaded lazily by npm-pick-manifest
+    // get loaded prior to starting mockFs.
+    try {
+      pickManifest({
+        name: "foo",
+      }, "latest");
+    }
+    // eslint-disable-next-line no-empty
+    catch (err) {
+      // Ignore this error.
+    }
   });
 
 
@@ -115,6 +129,38 @@ describe("UseCDN", () => {
       scope.done();
     });
 
+    it("honors the top-level cdn setting", async () => {
+      const npm = nock("https://registry.npmjs.org/")
+          .get("/jquery")
+          .reply(200, jqueryJSON);
+
+      const cdnjs = nock("https://cdnjs.cloudflare.com/")
+          .get("/ajax/libs/jquery/3.4.1/a.js")
+          .reply(200, "a.js content");
+
+      const cdn = new UseCDN({
+        cdn: "cdnjs",
+        cdns: {},
+        resolvers: {},
+        packages: [{
+          package: "jquery",
+          version: "latest",
+          files: [
+            "a.js",
+          ],
+        }],
+      }, logger);
+      await cdn.init();
+      await cdn.resolve();
+
+      expect((await fs.readFile(cdn.cache.makeFilePath("jquery", "3.4.1", "a.js")))
+             .toString()).to.equal("a.js content");
+      expect(await fs.readlink(cdn.cache.makePackagePath("jquery", "latest")))
+        .to.equal("3.4.1");
+
+      npm.done();
+      cdnjs.done();
+    });
 
     it("throws if the object is not initialized", async () => {
       const cdn = new UseCDN([], logger);
@@ -139,8 +185,8 @@ describe("UseCDN", () => {
     it("throws if called with an unsupported cdn", async () => {
       const cdn = new UseCDN(EMPTY, logger);
       await cdn.init();
-      expect(() => cdn.getSession("cdnjs"))
-        .to.throw(Error, "unsupported cdn: cdnjs");
+      expect(() => cdn.getSession("nonexistent"))
+        .to.throw(Error, "unsupported cdn: nonexistent");
     });
 
     it("throws if with a resolver having a CDN name", async () => {

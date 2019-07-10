@@ -55,20 +55,7 @@ describe("use-cdn", function useCDN() {
   });
 
   it("runs with actual configuration", async () => {
-    await fs.writeFile(path.join(tmpdir, "use-cdn.conf.js"), `
-module.exports = [{
-  package: "bootstrap",
-  version: "3",
-  files: [
-    "dist/js/bootstrap.js",
-  ],
-}, {
-  package: "jquery",
-  version: "latest",
-  files: [
-    () => "dist/jquery.js",
-  ],
-}];`);
+    await fs.copy("test/simple.conf.js", path.join(tmpdir, "use-cdn.conf.js"));
     await run();
     let { stdout } = await execFile("find", [path.join(tmpdir, ".use-cdn/"),
                                              "-type", "f"]);
@@ -77,6 +64,24 @@ module.exports = [{
     expect(stdout.split("\n").sort().join("\n")).to.equal(`
 test/tmp/.use-cdn/cache/bootstrap/${bs3}/dist/js/bootstrap.js
 test/tmp/.use-cdn/cache/jquery/${jq3}/dist/jquery.js
+test/tmp/.use-cdn/meta`);
+    ({ stdout } = await execFile("find", [path.join(tmpdir, ".use-cdn/"),
+                                          "-type", "l", "-printf", "%p %l\n"]));
+    expect(stdout.split("\n").sort().join("\n")).to.equal(`
+test/tmp/.use-cdn/cache/bootstrap/3 ${bs3}
+test/tmp/.use-cdn/cache/jquery/latest ${jq3}`);
+  });
+
+  it("runs with complex configuration", async () => {
+    await fs.copy("test/complex.conf.js", path.join(tmpdir, "use-cdn.conf.js"));
+    await run();
+    let { stdout } = await execFile("find", [path.join(tmpdir, ".use-cdn/"),
+                                             "-type", "f"]);
+    const bs3 = "3.4.1";
+    const jq3 = "3.4.1";
+    expect(stdout.split("\n").sort().join("\n")).to.equal(`
+test/tmp/.use-cdn/cache/jquery/${jq3}/jquery.js
+test/tmp/.use-cdn/cache/twitter-bootstrap/${bs3}/js/bootstrap.js
 test/tmp/.use-cdn/meta`);
     ({ stdout } = await execFile("find", [path.join(tmpdir, ".use-cdn/"),
                                           "-type", "l", "-printf", "%p %l\n"]));

@@ -12,6 +12,10 @@
           "description": "The package name.",
           "type": "string"
         },
+        "resolveAs": {
+          "description": "The package name to use for version resolution.",
+          "type": "string"
+        },
         "version": {
           "description": "The package's version.",
           "type": "string"
@@ -66,6 +70,10 @@
   }, {
     "type": "object",
     "properties": {
+      "cdn": {
+        "description": "The CDN to use when a package does not specify a CDN.",
+        "type": "string"
+      },
       "cdns": {
         "description": "Configuration for cdns.",
         "type": "object",
