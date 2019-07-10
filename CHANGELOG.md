@@ -1,3 +1,8 @@
+<a name="2.0.1"></a>
+## [2.0.1](https://github.com/lemur-lake-software/use-cdn/compare/v2.0.0...v2.0.1) (2019-07-10)
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/lemur-lake-software/use-cdn/compare/v1.0.0...v2.0.0) (2019-07-10)
 
