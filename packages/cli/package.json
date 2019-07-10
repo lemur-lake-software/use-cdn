@@ -1,6 +1,6 @@
 {
   "name": "@use-cdn/cli",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "This is the cli utility for the use-cdn suite of packages.",
   "bin": {
     "use-cdn": "./bin/use-cdn"
@@ -22,6 +22,6 @@
   "author": "Louis-Dominique <ldd@lddubeau.com>",
   "license": "MIT",
   "dependencies": {
-    "@use-cdn/common": "1.0.0"
+    "@use-cdn/common": "2.0.0"
   }
 }
