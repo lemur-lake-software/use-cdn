@@ -27,7 +27,7 @@
   "devDependencies": {
     "@commitlint/cli": "^8.0.0",
     "@commitlint/config-angular": "^8.0.0",
-    "ajv": "^6.10.0",
+    "ajv": "^6.10.1",
     "chai": "^4.2.0",
     "conventional-changelog-cli": "^2.0.21",
     "eslint": "^5.16.0",
