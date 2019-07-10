@@ -4,7 +4,9 @@
   "description": "This is the common code for the suite of use-cdn packages.",
   "files": [
     "*.js",
-    "sessions/**/*.js"
+    "*.json",
+    "sessions/**/*.js",
+    "version-resolvers/**/*.js"
   ],
   "repository": "https://github.com/lemur-lake-software/use-cdn.git",
   "scripts": {
