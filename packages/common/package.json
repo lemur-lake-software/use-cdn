@@ -21,7 +21,7 @@
   "author": "Louis-Dominique <ldd@lddubeau.com>",
   "license": "MIT",
   "dependencies": {
-    "ajv": "^6.10.1",
+    "ajv": "^6.10.2",
     "fs-extra": "^8.1.0",
     "log4js": "^4.5.1",
     "npm-pick-manifest": "^2.2.3",
