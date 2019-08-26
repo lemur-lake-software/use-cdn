@@ -36,7 +36,7 @@
     "fs-extra": "^8.1.0",
     "husky": "^3.0.4",
     "link-parent-bin": "^1.0.2",
-    "log4js": "^4.5.1",
+    "log4js": "^5.1.0",
     "mocha": "^6.2.0",
     "mock-fs": "^4.10.1",
     "monist": "^1.2.0",
