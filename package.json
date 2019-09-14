@@ -30,7 +30,7 @@
     "ajv": "^6.10.2",
     "chai": "^4.2.0",
     "conventional-changelog-cli": "^2.0.23",
-    "eslint": "^6.3.0",
+    "eslint": "^6.4.0",
     "eslint-config-lddubeau-base": "^4.0.2",
     "expect-rejection": "^1.1.0",
     "fs-extra": "^8.1.0",
