@@ -45,7 +45,7 @@
     "nyc": "^14.1.1",
     "renovate-config-lddubeau": "^1.0.0",
     "require-reload": "^0.2.2",
-    "sinon": "^7.4.2",
+    "sinon": "^7.5.0",
     "sinon-chai": "^3.3.0",
     "superagent": "^5.1.0"
   },
