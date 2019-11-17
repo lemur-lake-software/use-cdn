@@ -29,7 +29,7 @@
     "@commitlint/config-angular": "^8.2.0",
     "ajv": "^6.10.2",
     "chai": "^4.2.0",
-    "conventional-changelog-cli": "^2.0.27",
+    "conventional-changelog-cli": "^2.0.28",
     "eslint": "^6.6.0",
     "eslint-config-lddubeau-base": "^4.0.2",
     "expect-rejection": "^1.1.0",
