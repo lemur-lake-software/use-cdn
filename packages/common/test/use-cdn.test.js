@@ -2,9 +2,9 @@
 
 const nock = require("nock");
 const fs = require("fs-extra");
-const { expect } = require("chai");
+const chai = require("chai");
 const mockFs = require("mock-fs");
-const { expectRejection } = require("expect-rejection");
+const { expectRejection, use: erUse } = require("expect-rejection");
 const pickManifest = require("npm-pick-manifest");
 
 const { UseCDN } = require("../use-cdn");
@@ -12,6 +12,9 @@ const { NPMVersionResolver } = require("../version-resolvers/npm");
 const { UnpkgSession: { NativeResolver: UnpkgVersionResolver } } =
       require("../sessions/unpkg");
 const jqueryJSON = require("./version-resolvers/jquery");
+
+const { expect } = chai;
+erUse(chai);
 
 class FakeLogger {
   // eslint-disable-next-line class-methods-use-this

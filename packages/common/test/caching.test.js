@@ -1,11 +1,13 @@
 "use strict";
 
 const path = require("path");
-
 const fs = require("fs-extra");
-const { expect } = require("chai");
+const chai = require("chai");
 const mockFs = require("mock-fs");
-const { expectRejection } = require("expect-rejection");
+const { expectRejection, use: erUse } = require("expect-rejection");
+
+const { expect } = chai;
+erUse(chai);
 
 const { SyncReadableCache, WritableCache } = require("../caching");
 const paths = require("../paths");

@@ -4,15 +4,18 @@ const sinon = require("sinon");
 const sinonChai = require("sinon-chai");
 const nock = require("nock");
 const fs = require("fs-extra");
-const { expect, use } = require("chai");
+const chai = require("chai");
 const mockFs = require("mock-fs");
-const { expectRejection } = require("expect-rejection");
+const { expectRejection, use: erUse } = require("expect-rejection");
 
 const { WritableCache } = require("../../caching");
 const { BaseVersionResolver } = require("../../version-resolvers/base");
 const { BaseSession } = require("../../sessions/base");
 
+const { expect, use } = chai;
+
 use(sinonChai);
+erUse(chai);
 
 class FakeLogger {
   // eslint-disable-next-line class-methods-use-this

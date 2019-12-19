@@ -3,10 +3,12 @@
 const childProcess = require("child_process");
 const path = require("path");
 const util = require("util");
-
-const { expect } = require("chai");
+const chai = require("chai");
 const fs = require("fs-extra");
-const { expectRejection } = require("expect-rejection");
+const { expectRejection, use: erUse } = require("expect-rejection");
+
+const { expect } = chai;
+erUse(chai);
 
 const execFile = util.promisify(childProcess.execFile);
 

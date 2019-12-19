@@ -1,14 +1,17 @@
 "use strict";
 
 const nock = require("nock");
-const { expect } = require("chai");
+const chai = require("chai");
 const mockFs = require("mock-fs");
-const { expectRejection } = require("expect-rejection");
+const { expectRejection, use: erUse } = require("expect-rejection");
 const pickManifest = require("npm-pick-manifest");
 
 const jqueryJSON = require("./jquery");
 const { WritableCache } = require("../../caching");
 const { NPMVersionResolver } = require("../../version-resolvers/npm");
+
+const { expect } = chai;
+erUse(chai);
 
 class FakeLogger {
   // eslint-disable-next-line class-methods-use-this
