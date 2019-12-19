@@ -4,11 +4,11 @@ const nock = require("nock");
 const chai = require("chai");
 const mockFs = require("mock-fs");
 const { expectRejection, use: erUse } = require("expect-rejection");
-const pickManifest = require("npm-pick-manifest");
 
 const jqueryJSON = require("./jquery");
 const { WritableCache } = require("../../caching");
 const { NPMVersionResolver } = require("../../version-resolvers/npm");
+const { triggerLazyLoading } = require("../testutil");
 
 const { expect } = chai;
 erUse(chai);
@@ -26,18 +26,7 @@ describe("NPMVersionResolver", () => {
 
   before(() => {
     logger = new FakeLogger();
-
-    // We do this so that some modules loaded lazily by npm-pick-manifest
-    // get loaded prior to starting mockFs.
-    try {
-      pickManifest({
-        name: "foo",
-      }, "latest");
-    }
-    // eslint-disable-next-line no-empty
-    catch (err) {
-      // Ignore this error.
-    }
+    triggerLazyLoading();
   });
 
   beforeEach(async () => {
