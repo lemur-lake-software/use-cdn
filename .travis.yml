@@ -1,8 +1,8 @@
 language: node_js
 node_js:
   - node
+  - 12
   - 10
-  - 8
 cache: npm
 # Developers do not need coveralls installed locally while developing. So
 # there's no great benefit to adding it to devDependencies. Instead, we install
