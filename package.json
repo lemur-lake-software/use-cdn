@@ -40,7 +40,7 @@
     "mocha": "^6.2.2",
     "mock-fs": "^4.10.4",
     "monist": "^1.2.0",
-    "nock": "^11.7.0",
+    "nock": "^11.7.1",
     "npm-pick-manifest": "^5.0.0",
     "nyc": "^14.1.1",
     "renovate-config-lddubeau": "^1.0.0",
