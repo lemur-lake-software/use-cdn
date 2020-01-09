@@ -24,9 +24,8 @@ class FakeFactory {
   }
 }
 
-function cachePath(filePath) {
-  return path.join(process.cwd(), ".use-cdn", "cache", filePath);
-}
+const cachePath =
+      filePath => path.join(process.cwd(), ".use-cdn", "cache", filePath);
 
 describe("framework", () => {
   before(async () => {
