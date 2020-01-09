@@ -42,7 +42,7 @@
     "monist": "^1.4.0",
     "nock": "^11.7.2",
     "npm-pick-manifest": "^5.0.0",
-    "nyc": "^14.1.1",
+    "nyc": "^15.0.0",
     "renovate-config-lddubeau": "^1.0.0",
     "require-reload": "^0.2.2",
     "sinon": "^8.0.4",
