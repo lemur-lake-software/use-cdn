@@ -111,7 +111,8 @@ describe("BaseSession", () => {
 
     it("takes into account resolveAs when calling fetchVersion", async () => {
       makeScope();
-      const fetchVersion = sinon.stub(resolver, "fetchVersion").returns("1.0.0");
+      const fetchVersion =
+            sinon.stub(resolver, "fetchVersion").returns("1.0.0");
       expect(await session.resolve("foo", "fooPkg", "latest", "dist/foo.js"))
         .to.equal(expectedPath);
       expect(fetchVersion).to.have.been.calledWithExactly("fooPkg", "latest");
@@ -164,7 +165,8 @@ describe("BaseSession", () => {
     describe("when fetchFile throws", () => {
       it("throws and does not save to the cache", async () => {
         sinon.stub(resolver, "fetchVersion").returns("1.0.0");
-        sinon.stub(session, "fetchFile").returns(Promise.reject(new Error("Q")));
+        sinon.stub(session, "fetchFile")
+          .returns(Promise.reject(new Error("Q")));
         await expectRejection(session.resolve(...stockResource));
         expect(await fs.exists(expectedPath)).to.be.false;
       });

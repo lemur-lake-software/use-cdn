@@ -20,10 +20,9 @@ const { resolverFactories } = require("./version-resolvers/all");
  *
  * @returns {boolean} Whether the string is a tag.
  */
-function isTag(versionOrTag) {
-  // eslint-disable-next-line no-restricted-globals
-  return isNaN(+versionOrTag[0]);
-}
+const isTag =
+      // eslint-disable-next-line no-restricted-globals
+      versionOrTag => isNaN(+versionOrTag[0]);
 
 let cachedOverrides;
 
@@ -126,7 +125,6 @@ const configValidator = ajv.compile(configSchema);
  * @returns {string} The configuration.
  */
 function loadConfig() {
-  // eslint-disable-next-line import/no-dynamic-require, global-require
   let config = reload(path.resolve("./use-cdn.conf.js"));
 
   if (!configValidator(config)) {

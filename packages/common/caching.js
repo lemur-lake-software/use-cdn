@@ -98,8 +98,8 @@ class WritableCache extends BaseCache {
       }
       catch (ex) {
         throw new Error(`cannot read ${metaPath}; we're assuming that \
-${dataBasePath} is not a use-cdn directory: move the data somewhere else or delete \
-it`);
+${dataBasePath} is not a use-cdn directory: move the data somewhere else or \
+delete it`);
       }
 
       if (meta.version < CURRENT_VERSION) {

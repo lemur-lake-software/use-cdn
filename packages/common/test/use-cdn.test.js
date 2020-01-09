@@ -59,7 +59,6 @@ describe("UseCDN", () => {
 
   describe("#init", () => {
     it("initializes", async () => {
-      // eslint-disable-next-line no-new
       const cdn = new UseCDN([], logger);
       await cdn.init();
       expect(cdn.initialized).to.be.true;
@@ -69,7 +68,7 @@ describe("UseCDN", () => {
   describe("#resolve", () => {
     it("resolves", async () => {
       const responses = {
-        __proto__: null,
+        "__proto__": null,
         "/foo@1.0.0": [302, "", { location: "/foo@1.0.0/foo.js" }],
         "/foo@1.0.0/a.js": [200, "content of foo@1.0.0/a.js"],
         "/foo@1.0.0/b.js": [200, "content of foo@1.0.0/b.js"],
@@ -145,7 +144,8 @@ describe("UseCDN", () => {
       await cdn.init();
       await cdn.resolve();
 
-      expect((await fs.readFile(cdn.cache.makeFilePath("jquery", "3.4.1", "a.js")))
+      expect((await fs.readFile(cdn.cache.makeFilePath("jquery", "3.4.1",
+                                                       "a.js")))
              .toString()).to.equal("a.js content");
       expect(await fs.readlink(cdn.cache.makePackagePath("jquery", "latest")))
         .to.equal("3.4.1");

@@ -11,15 +11,14 @@ exports.triggerLazyLoading = function triggerLazyLoading() {
       name: "foo",
     }, "1.2.3");
   }
-  // eslint-disable-next-line no-empty
   catch (err) {
     // Ignore this error.
   }
 
   try {
     pickManifest({
-      name: "foo",
-      versions: {
+      "name": "foo",
+      "versions": {
         "1.2.3": "foo",
       },
       "dist-tags": {
@@ -27,7 +26,6 @@ exports.triggerLazyLoading = function triggerLazyLoading() {
       },
     }, "fnord");
   }
-  // eslint-disable-next-line no-empty
   catch (err) {
     // Ignore this error.
   }

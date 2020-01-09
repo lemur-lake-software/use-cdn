@@ -2,6 +2,7 @@
 
 const { expect } = require("chai");
 
+// eslint-disable-next-line no-shadow
 const { setup, getLogger } = require("../logger");
 
 describe("logger", () => {
