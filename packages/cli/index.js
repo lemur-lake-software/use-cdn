@@ -12,7 +12,7 @@ async function main() {
   await use.resolve();
 }
 
-process.on("unhandledRejection", (err) => {
+process.on("unhandledRejection", err => {
   // eslint-disable-next-line no-console
   console.error(err.stack);
   process.exit(1);

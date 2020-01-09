@@ -29,6 +29,7 @@ describe("use-cdn", function useCDN() {
     await fs.remove(tmpdir);
   });
 
+  // eslint-disable-next-line no-shadow
   async function run() {
     try {
       await execFile(useCdnPath, { cwd: tmpdir });
@@ -42,6 +43,7 @@ describe("use-cdn", function useCDN() {
     }
   }
 
+  // eslint-disable-next-line no-invalid-this
   this.timeout(5000);
 
   it("fails if there is no configuration to be found", async () => {
