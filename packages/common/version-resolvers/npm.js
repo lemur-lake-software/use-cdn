@@ -53,7 +53,6 @@ ${res.body.name}`);
    *
    * @returns {string} The package's URL.
    */
-  // eslint-disable-next-line class-methods-use-this
   makePackageUrl(pkg) {
     return `${this.base}${pkg}`;
   }

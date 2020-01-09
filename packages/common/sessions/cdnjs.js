@@ -31,7 +31,6 @@ class CdnjsSession extends BaseSession {
    *
    * @returns {string} The package's URL.
    */
-  // eslint-disable-next-line class-methods-use-this
   makePackageUrl(pkg, version) {
     return `${this.base}ajax/libs/${pkg}/${version}`;
   }

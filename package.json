@@ -9,7 +9,7 @@
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "clean": "monist run clean",
     "postinstall": "link-parent-bin",
-    "lint": "npmPkgJsonLint package.json",
+    "lint": "monist run --serial --local-deps=install lint",
     "self:publish": "monist npm --serial publish",
     "self:test-publish": "env npm_config_registry=http://localhost:4873 npm run self:publish",
     "preversion": "monist npm --serial version $npm_package_version",
