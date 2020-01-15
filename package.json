@@ -25,7 +25,7 @@
   "author": "Louis-Dominique <ldd@lddubeau.com>",
   "license": "MIT",
   "devDependencies": {
-    "@commitlint/cli": "^8.3.4",
+    "@commitlint/cli": "^8.3.5",
     "@commitlint/config-angular": "^8.3.4",
     "ajv": "^6.10.2",
     "chai": "^4.2.0",
