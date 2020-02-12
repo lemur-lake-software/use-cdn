@@ -38,7 +38,7 @@
     "eslint-plugin-react": "^7.18.3",
     "expect-rejection": "^2.0.0",
     "fs-extra": "^8.1.0",
-    "husky": "^4.2.1",
+    "husky": "^4.2.2",
     "link-parent-bin": "^1.0.2",
     "log4js": "^6.1.2",
     "mocha": "^7.0.1",
