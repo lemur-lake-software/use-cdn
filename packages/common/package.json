@@ -27,6 +27,6 @@
     "log4js": "^6.1.2",
     "npm-pick-manifest": "^5.0.0",
     "require-reload": "^0.2.2",
-    "superagent": "^5.2.1"
+    "superagent": "^5.2.2"
   }
 }
