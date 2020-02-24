@@ -42,7 +42,7 @@
     "link-parent-bin": "^1.0.2",
     "log4js": "^6.1.2",
     "mocha": "^7.0.1",
-    "mock-fs": "^4.10.4",
+    "mock-fs": "^4.11.0",
     "monist": "^1.7.0",
     "nock": "^11.9.0",
     "npm-pick-manifest": "^5.0.0",
