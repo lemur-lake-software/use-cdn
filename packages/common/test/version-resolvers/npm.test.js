@@ -136,8 +136,7 @@ describe("NPMVersionResolver", () => {
       it("with bad content", async () => {
         scope = scope.reply(200, {});
         await expectRejection(resolver.fetchVersion("foo", "1"),
-                              Error, "No valid versions available for \
-undefined");
+                              Error, "No versions available for undefined");
         scope.done();
       });
 
