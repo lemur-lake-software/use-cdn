@@ -5,5 +5,6 @@ module.exports = {
   },
   rules: {
     "no-unused-expressions": ["off", "False positives with chai."],
+    "max-lines-per-function": ["off", "describe blocks often fail this test."],
   },
 };
