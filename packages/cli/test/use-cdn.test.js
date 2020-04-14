@@ -14,6 +14,9 @@ const execFile = util.promisify(childProcess.execFile);
 
 const tmpdir = "test/tmp";
 
+const bs3 = "3.4.1";
+const jq3 = "3.5.0";
+
 describe("use-cdn", function useCDN() {
   let useCdnPath;
 
@@ -63,8 +66,6 @@ describe("use-cdn", function useCDN() {
     await run();
     let { stdout } = await execFile("find", [path.join(tmpdir, ".use-cdn/"),
                                              "-type", "f"]);
-    const bs3 = "3.4.1";
-    const jq3 = "3.4.1";
     expect(stdout.split("\n").sort().join("\n")).to.equal(`
 test/tmp/.use-cdn/cache/bootstrap/${bs3}/dist/js/bootstrap.js
 test/tmp/.use-cdn/cache/jquery/${jq3}/dist/jquery.js
@@ -81,8 +82,6 @@ test/tmp/.use-cdn/cache/jquery/latest ${jq3}`);
     await run();
     let { stdout } = await execFile("find", [path.join(tmpdir, ".use-cdn/"),
                                              "-type", "f"]);
-    const bs3 = "3.4.1";
-    const jq3 = "3.4.1";
     expect(stdout.split("\n").sort().join("\n")).to.equal(`
 test/tmp/.use-cdn/cache/jquery/${jq3}/jquery.js
 test/tmp/.use-cdn/cache/twitter-bootstrap/${bs3}/js/bootstrap.js
