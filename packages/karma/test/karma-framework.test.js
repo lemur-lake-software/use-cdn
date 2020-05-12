@@ -73,7 +73,7 @@ module.exports = [{
     framework(config, new FakeFactory());
     expect(config.files).to.deep.equal([
       cachePath("bootstrap/3.4.1/dist/js/bootstrap.js"),
-      cachePath("jquery/3.5.0/dist/jquery.js")].map(x => ({
+      cachePath("jquery/3.5.1/dist/jquery.js")].map(x => ({
         pattern: x,
         included: true,
         served: true,

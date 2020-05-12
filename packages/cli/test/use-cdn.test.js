@@ -15,7 +15,7 @@ const execFile = util.promisify(childProcess.execFile);
 const tmpdir = "test/tmp";
 
 const bs3 = "3.4.1";
-const jq3 = "3.5.0";
+const jq3 = "3.5.1";
 
 describe("use-cdn", function useCDN() {
   let useCdnPath;
