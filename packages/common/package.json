@@ -24,7 +24,7 @@
   "dependencies": {
     "ajv": "^6.12.2",
     "fs-extra": "^9.0.0",
-    "log4js": "^6.2.1",
+    "log4js": "^6.3.0",
     "npm-pick-manifest": "^6.0.0",
     "require-reload": "^0.2.2",
     "superagent": "^5.2.2"
