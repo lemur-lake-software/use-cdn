@@ -40,7 +40,7 @@
     "expect-rejection": "^2.0.0",
     "fs-extra": "^9.0.1",
     "husky": "^4.3.8",
-    "link-parent-bin": "^1.0.2",
+    "link-parent-bin": "^2.0.0",
     "log4js": "^6.3.0",
     "mocha": "^7.2.0",
     "mock-fs": "^4.13.0",
